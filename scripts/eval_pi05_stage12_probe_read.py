@@ -16,6 +16,7 @@ from libero.libero import benchmark, get_libero_path
 from libero.libero.envs import OffScreenRenderEnv
 import numpy as np
 from PIL import Image
+from robosuite.utils.camera_utils import get_camera_transform_matrix
 import torch
 from tqdm import tqdm
 
@@ -24,6 +25,7 @@ from vla_coordinates.pi05_runtime import load_pi05_policy, prepare_pi05_observat
 
 
 LIBERO_DUMMY_ACTION = np.asarray([0.0] * 6 + [-1.0], dtype=np.float32)
+RENDER_SIZE = 256
 FIRST_GRASP_NONE = -1
 FIRST_GRASP_BOTH = 2
 STAGE11_MATCH_FIELDS = (
@@ -297,8 +299,8 @@ def main() -> None:
     env = OffScreenRenderEnv(
         bddl_file_name=bddl_path,
         camera_names=["agentview", "robot0_eye_in_hand"],
-        camera_heights=256,
-        camera_widths=256,
+        camera_heights=RENDER_SIZE,
+        camera_widths=RENDER_SIZE,
     )
     env.seed(args.seed + task_id)
 
@@ -317,6 +319,10 @@ def main() -> None:
                     for name in object_instances
                 ]
                 initial_eef = np.asarray(observation["robot0_eef_pos"], dtype=np.float32).copy()
+                # Read-only camera query so decoded goals can be drawn on the agent-view frames.
+                world_to_pixel = get_camera_transform_matrix(
+                    env.sim, "agentview", RENDER_SIZE, RENDER_SIZE
+                ).astype(np.float32)
                 min_eef_distance = [math.inf, math.inf]
                 max_displacement = [0.0, 0.0]
                 ever_grasped = [False, False]
@@ -435,6 +441,8 @@ def main() -> None:
                     query_object_xyz=np.stack(query_object_xyz),
                     query_eef_xyz=np.stack(query_eef_xyz),
                     query_grasped=np.asarray(query_grasped, dtype=bool),
+                    agentview_world_to_pixel=world_to_pixel,
+                    render_size=np.asarray(RENDER_SIZE, dtype=np.int16),
                 )
 
                 record = {

@@ -1,0 +1,344 @@
+[
+ {
+  "id": "0A",
+  "pair_id": 0,
+  "scene_side": 0,
+  "object_names": [
+   "alphabet soup",
+   "cream cheese"
+  ],
+  "prompts": [
+   "pick up the alphabet soup and place it in the basket",
+   "pick up the cream cheese and place it in the basket"
+  ],
+  "swapped_compliance": 0.06,
+  "native_compliance": 0.98,
+  "swapped_first_grasp": {
+   "native_object": 40,
+   "instructed_object": 3,
+   "both": 0,
+   "none": 7
+  },
+  "laso": {
+   "mean_shift": 0.6926375206400734,
+   "shift_bootstrap_95": [
+    0.6648349043799869,
+    0.719665417442544
+   ],
+   "mean_native_prompt_position": -0.09083947801458311,
+   "mean_swapped_prompt_position": 0.6017980426254905,
+   "validity_floor": {
+    "compliant_aligned": 49,
+    "determinate": 49,
+    "correct": 49,
+    "rate": 1.0,
+    "passed": true
+   }
+  },
+  "lopo": {
+   "mean_shift": 0.4115012835921853,
+   "validity_floor": {
+    "compliant_aligned": 49,
+    "determinate": 49,
+    "correct": 49,
+    "rate": 1.0,
+    "passed": true
+   }
+  },
+  "video_states": [
+   47,
+   21,
+   7,
+   24,
+   3,
+   44,
+   27,
+   6
+  ]
+ },
+ {
+  "id": "1A",
+  "pair_id": 1,
+  "scene_side": 0,
+  "object_names": [
+   "salad dressing",
+   "ketchup"
+  ],
+  "prompts": [
+   "pick up the salad dressing and place it in the basket",
+   "pick up the ketchup and place it in the basket"
+  ],
+  "swapped_compliance": 0.98,
+  "native_compliance": 0.98,
+  "swapped_first_grasp": {
+   "native_object": 0,
+   "instructed_object": 49,
+   "both": 0,
+   "none": 1
+  },
+  "laso": {
+   "mean_shift": 0.5106624878892388,
+   "shift_bootstrap_95": [
+    0.4538000962737817,
+    0.5669086450670577
+   ],
+   "mean_native_prompt_position": 0.23646510457595127,
+   "mean_swapped_prompt_position": 0.7471275924651904,
+   "validity_floor": {
+    "compliant_aligned": 49,
+    "determinate": 43,
+    "correct": 42,
+    "rate": 0.9767441860465116,
+    "passed": true
+   }
+  },
+  "lopo": {
+   "mean_shift": 0.36791686467426565,
+   "validity_floor": {
+    "compliant_aligned": 49,
+    "determinate": 40,
+    "correct": 32,
+    "rate": 0.8,
+    "passed": false
+   }
+  },
+  "video_states": [
+   25,
+   19,
+   24,
+   12,
+   31,
+   3,
+   43,
+   11
+  ]
+ },
+ {
+  "id": "2A",
+  "pair_id": 2,
+  "scene_side": 0,
+  "object_names": [
+   "bbq sauce",
+   "chocolate pudding"
+  ],
+  "prompts": [
+   "pick up the bbq sauce and place it in the basket",
+   "pick up the chocolate pudding and place it in the basket"
+  ],
+  "swapped_compliance": 1.0,
+  "native_compliance": 1.0,
+  "swapped_first_grasp": {
+   "native_object": 0,
+   "instructed_object": 50,
+   "both": 0,
+   "none": 0
+  },
+  "laso": {
+   "mean_shift": 0.2625952905792589,
+   "shift_bootstrap_95": [
+    0.21063339143278575,
+    0.3115052182039232
+   ],
+   "mean_native_prompt_position": 0.33351997718061244,
+   "mean_swapped_prompt_position": 0.5961152677598713,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 35,
+    "correct": 33,
+    "rate": 0.9428571428571428,
+    "passed": true
+   }
+  },
+  "lopo": {
+   "mean_shift": -0.08400038519359965,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 41,
+    "correct": 26,
+    "rate": 0.6341463414634146,
+    "passed": false
+   }
+  },
+  "video_states": [
+   23,
+   46,
+   9,
+   4,
+   22,
+   8,
+   11,
+   25
+  ]
+ },
+ {
+  "id": "3A",
+  "pair_id": 3,
+  "scene_side": 0,
+  "object_names": [
+   "tomato sauce",
+   "butter"
+  ],
+  "prompts": [
+   "pick up the tomato sauce and place it in the basket",
+   "pick up the butter and place it in the basket"
+  ],
+  "swapped_compliance": 0.46,
+  "native_compliance": 1.0,
+  "swapped_first_grasp": {
+   "native_object": 2,
+   "instructed_object": 23,
+   "both": 0,
+   "none": 25
+  },
+  "laso": {
+   "mean_shift": 0.6124528311824892,
+   "shift_bootstrap_95": [
+    0.5836320499715055,
+    0.6427339979411689
+   ],
+   "mean_native_prompt_position": -0.036728924051030586,
+   "mean_swapped_prompt_position": 0.5757239071314586,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 50,
+    "correct": 50,
+    "rate": 1.0,
+    "passed": true
+   }
+  },
+  "lopo": {
+   "mean_shift": 0.10788009228601549,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 44,
+    "correct": 44,
+    "rate": 1.0,
+    "passed": true
+   }
+  },
+  "video_states": [
+   43,
+   3,
+   38,
+   18,
+   21,
+   31,
+   27,
+   19
+  ]
+ },
+ {
+  "id": "0B",
+  "pair_id": 0,
+  "scene_side": 1,
+  "object_names": [
+   "alphabet soup",
+   "cream cheese"
+  ],
+  "prompts": [
+   "pick up the alphabet soup and place it in the basket",
+   "pick up the cream cheese and place it in the basket"
+  ],
+  "swapped_compliance": 1.0,
+  "native_compliance": 1.0,
+  "swapped_first_grasp": {
+   "native_object": 0,
+   "instructed_object": 50,
+   "both": 0,
+   "none": 0
+  },
+  "laso": {
+   "mean_shift": 0.42679515688694963,
+   "shift_bootstrap_95": [
+    0.38762344302494595,
+    0.4698620747258216
+   ],
+   "mean_native_prompt_position": 0.32645535661866626,
+   "mean_swapped_prompt_position": 0.7532505135056161,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 39,
+    "correct": 38,
+    "rate": 0.9743589743589743,
+    "passed": true
+   }
+  },
+  "lopo": {
+   "mean_shift": 0.22701671728092263,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 36,
+    "correct": 29,
+    "rate": 0.8055555555555556,
+    "passed": false
+   }
+  },
+  "video_states": [
+   45,
+   47,
+   23,
+   40,
+   26,
+   24,
+   12,
+   2
+  ]
+ },
+ {
+  "id": "3B",
+  "pair_id": 3,
+  "scene_side": 1,
+  "object_names": [
+   "tomato sauce",
+   "butter"
+  ],
+  "prompts": [
+   "pick up the tomato sauce and place it in the basket",
+   "pick up the butter and place it in the basket"
+  ],
+  "swapped_compliance": 0.98,
+  "native_compliance": 1.0,
+  "swapped_first_grasp": {
+   "native_object": 0,
+   "instructed_object": 49,
+   "both": 0,
+   "none": 1
+  },
+  "laso": {
+   "mean_shift": 0.5580455683562985,
+   "shift_bootstrap_95": [
+    0.5227779839463396,
+    0.5944597858395029
+   ],
+   "mean_native_prompt_position": 0.250053743725359,
+   "mean_swapped_prompt_position": 0.8080993120816575,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 45,
+    "correct": 42,
+    "rate": 0.9333333333333333,
+    "passed": true
+   }
+  },
+  "lopo": {
+   "mean_shift": 0.610179507130829,
+   "validity_floor": {
+    "compliant_aligned": 50,
+    "determinate": 46,
+    "correct": 44,
+    "rate": 0.9565217391304348,
+    "passed": true
+   }
+  },
+  "video_states": [
+   11,
+   42,
+   35,
+   48,
+   6,
+   21,
+   31,
+   4
+  ]
+ }
+]

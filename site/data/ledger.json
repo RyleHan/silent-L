@@ -1,0 +1,106 @@
+[
+ {
+  "stage": "1",
+  "title": "OthelloGPT-style coordinates",
+  "question": "Are objects coded more linearly as TARGET / ALTERNATIVE than by identity?",
+  "result": "No advantage: relative − absolute F1 = −0.003 [−0.008, 0.002].",
+  "decision": "negative",
+  "doc": "docs/research_log.md#stage-1-question"
+ },
+ {
+  "stage": "2",
+  "title": "OpenVLA world-state atlas",
+  "question": "Which world-state factors become readable only once the prompt is integrated?",
+  "result": "Target XYZ R² +0.60 over the prompt-blind control; absolute geometry needs no language.",
+  "decision": "positive",
+  "doc": "docs/research_log.md#stage-2-openvla-world-state-atlas"
+ },
+ {
+  "stage": "3",
+  "title": "π0.5 prefix transfer",
+  "question": "Does the goal-centric state exist in a second architecture?",
+  "result": "Target XYZ +0.39 in the PaliGemma prefix, peaking in blocks 8–13.",
+  "decision": "positive",
+  "doc": "docs/research_log.md#stage-3-pi05-paired-prompt-transfer"
+ },
+ {
+  "stage": "4",
+  "title": "π0.5 action expert",
+  "question": "Does the state reach the computation that produces actions?",
+  "result": "Yes, preserved rather than sharpened: expert − prefix ≈ 0.",
+  "decision": "positive",
+  "doc": "docs/research_log.md#stage-4-pi05-action-expert-transfer"
+ },
+ {
+  "stage": "5",
+  "title": "Counterfactual residual patching",
+  "question": "Is the prompt-induced residual at one expert block causal?",
+  "result": "22% local action recovery, none of it through the probe subspace; closed loop 80% → 20%.",
+  "decision": "boundary",
+  "doc": "docs/research_log.md#stage-5-natural-counterfactual-action-expert-patching"
+ },
+ {
+  "stage": "6",
+  "title": "FFN steering reproduction",
+  "question": "Does a published VLA steering cluster reproduce on this stack?",
+  "result": "Hooks valid, directional effect not reproduced; gate failed.",
+  "decision": "negative",
+  "doc": "docs/research_log.md#stage-6-write-native-steering-calibration"
+ },
+ {
+  "stage": "7",
+  "title": "Underspecified instruction",
+  "question": "Is there one internal default target that behaviour follows?",
+  "result": "Internal default leans B; behaviour picks the scene's own object. Stage 7B not admitted.",
+  "decision": "stop",
+  "doc": "docs/research_log.md#stage-7-language-dependence-and-native-pathway-gate"
+ },
+ {
+  "stage": "8",
+  "title": "Full-pathway replay",
+  "question": "Is the intervention operator, not the state, what failed in Stage 5?",
+  "result": "Replaying all 18 expert blocks: max action error 0.0, 40/40 success.",
+  "decision": "positive",
+  "doc": "docs/research_log.md#stage-8-full-expert-pathway-replay-positive-control"
+ },
+ {
+  "stage": "9",
+  "title": "Soft conceptor gate",
+  "question": "Does a path-compatible soft gate improve closed-loop success?",
+  "result": "40% → 53% on 30 held-out states, CI [−3.3, +30.0] pp.",
+  "decision": "inconclusive",
+  "doc": "docs/research_log.md#stage-9-bounded-coast-reimplementation-pilot"
+ },
+ {
+  "stage": "10",
+  "title": "Four-pair confirmation",
+  "question": "Do the representation results survive more objects and unseen pairs?",
+  "result": "Goal state positive for every pair; only the action expert generalises to an unseen pair.",
+  "decision": "positive",
+  "doc": "docs/research_log.md#stage-10-final-multi-pair-confirmation"
+ },
+ {
+  "stage": "11",
+  "title": "Instruction compliance",
+  "question": "Does pi0.5 obey a swapped instruction?",
+  "result": "6% / 98% / 100% / 46% by pair; the failing pairs obey in the opposite scene.",
+  "decision": "boundary",
+  "doc": "docs/research_log.md#stage-11-multi-pair-instruction-compliance-gate"
+ },
+ {
+  "stage": "12",
+  "title": "Heard but not obeyed?",
+  "question": "When pi0.5 grasps the wrong object, does its goal state name the instructed one?",
+  "result": "Preregistered read 23/29 vs 10/30 across probes: inconclusive.",
+  "decision": "inconclusive",
+  "doc": "docs/protocols/stage12_probe_read.md"
+ },
+ {
+  "stage": "13",
+  "title": "Language shift vs obedience",
+  "question": "Does how far the instruction moves the internal goal predict obedience?",
+  "result": "No: shift size vs obedience ρ = −0.97 across six conditions; sign unstable across probes.",
+  "decision": "negative",
+  "doc": "docs/protocols/stage13_language_shift.md"
+ }
+]

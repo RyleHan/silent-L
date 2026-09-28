@@ -11,6 +11,11 @@
 !/docs/
 !/artifacts/
 !/LICENSE
+!/site/
+!/assets/
+!/package.json
+!/package-lock.json
+!/.github/
 
 __pycache__/
 *.pyc

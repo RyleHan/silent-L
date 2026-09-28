@@ -2,8 +2,9 @@
 
 > **Chronological research log.** This is the original stage-by-stage lab
 > notebook (Stages 1–11), kept verbatim apart from relative link fixes. The
-> project summary is in the top-level [README](../README.md); the Stage 12
-> preregistration is in [protocols/stage12_probe_read.md](protocols/stage12_probe_read.md).
+> project summary is in the top-level [README](../README.md); Stages 12 and 13
+> are documented in [protocols/stage12_probe_read.md](protocols/stage12_probe_read.md)
+> and [protocols/stage13_language_shift.md](protocols/stage13_language_shift.md).
 > Cluster paths below refer to the NHR@FAU TinyGPU setup used for all runs.
 
 Independent research project testing whether VLA residual streams represent task

@@ -1,189 +1,196 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="artifacts/hero/hero_dark.png">
-    <img alt="Goal state is decodable and locally causal in OpenVLA and pi0.5, but single-block intervention fails closed-loop control while full 18-block pathway replay recovers the policy exactly." src="artifacts/hero/hero_light.png" width="100%">
-  </picture>
+  <a href="https://rylehan.github.io/silent-L/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/figures/hero_dark.png">
+      <img alt="Same scene, two instructions: pi0.5's decoded goal moves toward the named object, and the robot still grasps the scene's usual object." src="assets/figures/hero_light.png" width="100%">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://rylehan.github.io/silent-L/"><b>Interactive explorer</b></a>
+  &nbsp;·&nbsp; <a href="docs/research_log.md">Research log</a>
+  &nbsp;·&nbsp; <a href="docs/protocols">Preregistered protocols</a>
+  &nbsp;·&nbsp; <a href="#reproducing">Reproduce</a>
 </p>
 
 # The Silent L?
 
-**Do vision-language-action models hear the instruction, obey it, and can the
-instruction be written back into them?**
+**π0.5 hears the instruction. What it hears does not decide what it does.**
 
-> VLAs hear the instruction. They don't always obey it. And you can't just
-> write it in.
-
-A growing set of benchmarks shows that VLAs often act on visual shortcuts
-instead of language ([LIBERO-Plus](https://arxiv.org/abs/2510.13626),
+Vision-language-action models often act on visual shortcuts instead of
+language ([LIBERO-Plus](https://arxiv.org/abs/2510.13626),
 [LIBERO-CF](https://arxiv.org/abs/2602.17659),
-[LangGap](https://arxiv.org/abs/2603.00592)). Those benchmarks measure
-behaviour. This project asks where along the pipeline language is lost, using
-one exact counterfactual: **the same simulator state, the same robot state, the
-same flow-matching noise, and two instructions that name different objects.**
-Anything that differs between the two forward passes is caused by language.
+[LangGap](https://arxiv.org/abs/2603.00592)). Those benchmarks see the
+behaviour. They cannot say whether the model **failed to hear** the
+instruction or **heard it and acted on something else**.
 
-The study covers OpenVLA-7B and pi0.5 on LIBERO-Object: 4 object pairs,
-8 tasks, 400 rollouts, 15,275 cached states, episode-held-out splits with a
-locked test set, three probe seeds, 10,000-sample episode bootstraps, and a
-preregistered gate before every causal stage.
+This project separates the two with one exact counterfactual: the same
+simulator state, the same robot state, the same flow-matching noise, and two
+instructions that name different objects. Anything that differs between the
+two forward passes is caused by language. We follow it from the language model,
+through π0.5's action expert, to the gripper, in OpenVLA-7B and π0.5 on
+LIBERO-Object.
 
-## TL;DR
+<sub>4 object pairs · 8 tasks · 15,275 cached states · 600 closed-loop compliance rollouts, each replayed under read-only capture · 13 preregistered stages, every outcome kept</sub>
 
-| Question | Answer | Key evidence |
+## Findings
+
+| | Finding | Evidence |
 |---|---|---|
-| **Heard?** Is the instruction integrated into the model's state? | **Yes.** Both VLAs encode a goal-centric state that is only readable once language is present, and it reaches pi0.5's action expert. | Target-XYZ R² gain over a prompt-blind visual control: OpenVLA **+0.543**, pi0.5 prefix **+0.327**, pi0.5 action expert **+0.366** |
-| **Obeyed?** Does behaviour follow it? | **Usually, but not reliably.** Instruction following fails sharply for particular instruction–scene combinations. | Swapped-instruction first-grasp compliance **6% / 98% / 100% / 46%** across 4 pairs; the same failing pairs recover to **100% / 98%** in the opposite scene |
-| **Writable?** Can a decoded goal state be used as a control handle? | **Not as a compact axis.** Causal control works only when the intervention preserves the model's own computation path. | One-block patch: **22%** local action recovery, closed-loop success **80% → 20%**. Full 18-block replay: **40/40**, max action error **0.0** |
-| **Heard but not obeyed?** On the rollouts where pi0.5 grasps the wrong object, what does its goal state say? | **Preregistered test: inconclusive.** Exploratory: the instruction still moves the decoded goal substantially towards the named object. | Swapping A→B shifts the decoded target towards B in **40/40** wrong-object rollouts (0.40–0.70 of the A–B distance); the discrete read gives 23/29 (primary) vs 10/30 (second probe) |
+| **Heard** | The instruction creates a goal-centric state that a prompt-blind readout of the same image cannot recover, and it reaches the action expert. | Target-XYZ R² over the prompt-blind control: OpenVLA **+0.54**, π0.5 prefix **+0.33**, π0.5 action expert **+0.37** |
+| **Obeyed** | Obedience to a swapped instruction depends on the scene, not the words. | 6% / 98% / 100% / 46% across four object pairs; the two failing pairs obey 100% / 98% in the opposite scene |
+| **Heard ≠ obeyed** | Before the arm moves, the instruction pulls the decoded goal toward the named object even when the robot then grasps the other one, and the size of that pull does not predict obedience. | **40/40** wrong-object rollouts shift toward the named object (0.40–0.70 of the object distance); shift vs obedience across six conditions ρ = −0.97, the opposite of the predicted sign |
+| **Writable** | The decoded goal is not a control handle. Only interventions that preserve the model's computation path control it. | One-block patch: 22% local action recovery, <1% through the probe subspace, closed loop 80% → 20%. Full 18-block replay: **40/40**, max action error **0.0** |
 
-## The instrument: one scene, two instructions
+## The instrument
 
-![One scene, two latent worlds](artifacts/paper_figure1/one_scene_two_latent_worlds.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/tomography_dark.png">
+  <img alt="Decoded goal at every block of pi0.5 under the native and the swapped instruction." src="assets/figures/tomography_light.png" width="100%">
+</picture>
 
-```text
-same RGB + same wrist image + same robot state + same noise
-        |                                   |
- "pick up the alphabet soup ..."    "pick up the cream cheese ..."
-        |                                   |
-     h(o, p_A)                           h(o, p_B)
-```
+- **Paired prompts.** Every image is evaluated under both instructions with
+  identical robot state and noise. Labels are recomputed per prompt: for one
+  physical state, "target XYZ" is object A's position under prompt A and object
+  B's under prompt B, so a single linear probe must follow the instruction.
+- **Read-only hooks.** Post-block residuals are captured from the official
+  sampler. Hooked and unhooked actions agree to `0.0`, and every replayed
+  rollout reproduces its original outcome exactly.
+- **Probes that never saw the states.** The goal probes used on closed-loop
+  rollouts are refit with the evaluated scene left out. A probe that had seen
+  those states would have reported 39/40 instead of 23/29
+  ([Stage 12](docs/protocols/stage12_probe_read.md)).
+- **Prompt-blind controls.** OpenVLA's mean visual residual and π0.5's SigLIP
+  tokens before any language block are asserted identical across the two
+  prompts.
 
-- Residuals are read with forward hooks after every block: 32 Llama blocks in
-  OpenVLA; 18 PaliGemma prefix blocks and 18 action-expert blocks in pi0.5.
-- Labels are recomputed per prompt. For one physical state, "target XYZ" is
-  object A's position under prompt A and object B's under prompt B, so a single
-  linear probe must follow the instruction to fit both.
-- The negative control is a **prompt-blind** visual readout: the mean visual
-  residual in OpenVLA, and the projected SigLIP tokens before any language
-  block in pi0.5. Its features are asserted identical across the two prompts.
-- Layers are selected on validation episodes only. Test episodes are read once.
+## 1 · Heard
 
-## Q1. Heard: language creates a goal-centric state
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/heard_dark.png">
+  <img alt="Layer-wise R2 of target position with and without language in OpenVLA, the pi0.5 prefix, and the pi0.5 action expert." src="assets/figures/heard_light.png" width="100%">
+</picture>
 
-Absolute object and robot geometry is equally readable with or without
-language, since it is visible in the image. Target-relative geometry is not.
+Absolute object and robot positions are equally readable with or without
+language; they are in the image. The target's position becomes readable only
+once the instruction is integrated. On unseen object pairs (leave-one-pair-out)
+the backbone maps do not transfer (OpenVLA −0.35, π0.5 prefix −0.31), while the
+action expert does best (target displacement +0.11, positive on 4/4 pairs):
+the most shared goal-relative code lives closest to the action.
 
-| Readout (Stage 10, 4 pairs, 3 seeds) | Prompt-aware minus prompt-blind, target XYZ R² |
-|---|---:|
-| OpenVLA prompt end | +0.543 |
-| OpenVLA action boundary | +0.495 |
-| pi0.5 PaliGemma prefix, prompt end | +0.327 |
-| pi0.5 action expert, 10-token mean | +0.366 |
-| pi0.5 action expert, first token | +0.311 |
+## 2 · Obeyed
 
-Every row is positive in all three seeds, and every object pair shows a
-positive gain for each model's principal readout.
+Unmodified π0.5, all 50 official initial states per scene, native versus
+swapped instruction, first object grasped
+([Stage 11](docs/research_log.md#stage-11-multi-pair-instruction-compliance-gate)):
 
-**Where it generalises.** A leave-one-pair-out test trains on three pairs and
-tests on an unseen fourth. Backbone target-XYZ maps do not transfer (OpenVLA
-−0.348, pi0.5 prefix −0.308). The pi0.5 action expert does best: target XYZ
-+0.049 (positive on 3/4 pairs) and target displacement +0.110 (4/4). Pooled
-decoding therefore contains substantial pair-specific coding; the most shared
-goal-relative abstraction lives in the action expert.
+| Pair | Native instruction | Swapped instruction | Swapped, opposite scene |
+|---|---:|---:|---:|
+| alphabet soup / cream cheese | 98% | **6%** (80% grasp the scene's object) | 100% |
+| salad dressing / ketchup | 98% | 98% | — |
+| bbq sauce / chocolate pudding | 100% | 100% | — |
+| tomato sauce / butter | 100% | **46%** (50% grasp nothing) | 98% |
 
-![Stage 10 multi-pair confirmation](artifacts/stage10_v2/figures/stage10_multi_pair_confirmation.png)
+π0.5 can read both object names in both scenes. It fails on particular
+instruction–scene combinations, so no universal "VLAs ignore language" claim
+is made.
 
-## Q2. Obeyed: compliance depends on the scene
+## 3 · Heard is not obeyed
 
-**Stage 11** runs the unmodified pi0.5 policy on all 50 official initial states
-of one anchor scene per pair, once with the native instruction and once with
-the other object named. There are no hooks and no interventions. The endpoint
-is the first object grasped.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/obeyed_dark.png">
+  <img alt="Decoded goal under native and swapped instructions for six conditions, against obedience; and per-state shifts in the condition that almost never obeys." src="assets/figures/obeyed_light.png" width="100%">
+</picture>
 
-| Pair | Native prompt | Swapped prompt | Swapped-prompt first grasp |
-|---|---:|---:|---|
-| alphabet soup / cream cheese | 98% | **6%** | 80% native object, 6% instructed, 14% none |
-| salad dressing / ketchup | 98% | 98% | 98% instructed |
-| bbq sauce / chocolate pudding | 100% | 100% | 100% instructed |
-| tomato sauce / butter | 100% | **46%** | 4% native object, 46% instructed, 50% none |
+**Stage 12 (preregistered): inconclusive.** On the 40 rollouts where π0.5
+grasps the wrong object, the primary goal probe points at the instructed
+object in 23/29 determinate reads (0.79, 95% CI [0.62, 0.90]), short of the
+0.70 threshold, and a leave-pair-out probe points the other way (10/30).
+[Protocol, amendment and audits](docs/protocols/stage12_probe_read.md).
 
-The failures do not follow object identity. In the opposite scene, the two
-failing pairs obey the swapped instruction 100% and 98% of the time. pi0.5 can
-read both object names; it fails on particular instruction–scene
-combinations. The preregistered criterion for a general phenomenon (a positive
-effect in at least 3/4 pairs) is not met, so no universal "language is ignored"
-claim is made.
+**Exploratory, robust across probes:** in all 40 of those rollouts the swapped
+instruction moves the decoded goal toward the named object, by 0.40–0.70 of the
+object distance, before any motion.
 
-**Stage 7A** adds an instruction that names no object ("pick up an object and
-place it in the basket"). The internal target readouts lean towards object B
-(interpolation 0.68 in the prefix and 0.65 in the expert, where 0 = object A
-and 1 = object B). Behaviour instead picks the object associated with the
-scene's own task in both scenes (80% target grasp). The model's internal
-default and its behavioural default disagree.
+**Stage 13 (exploratory, analysis fixed in advance): the predicted relation is
+absent.** Across all six scene × instruction conditions, a larger shift does
+not go with more obedience (ρ = −0.97; with one probe shared across the two
+scenes of a pair the sign flips), so the size of the instruction's pull on the
+decoded goal does not predict what the robot does.
+[Protocol and results](docs/protocols/stage13_language_shift.md).
 
-![Stage 11 instruction compliance](artifacts/instruction_compliance_v1.png)
+Three independent observations agree: the probe subspace carries under 1% of
+the instruction's causal effect on the action (Stage 5); with an
+underspecified instruction the internal default and the behavioural default
+disagree (Stage 7); and the decoded goal moves toward the named object whether
+or not the robot obeys (Stages 12–13). The linear goal state is a faithful
+record of what was said. Object selection runs through something it does not
+capture.
 
-**Stage 12** asks the question that links Q1 and Q2: when pi0.5 grasps the
-wrong object, does its goal state at the first policy query (before the arm
-moves) name the instructed object, or the one it is about to grasp? Stage 11
-rollouts are replayed under the official sampler with read-only hooks; all 200
-outcomes reproduce exactly and hooked actions match unhooked ones to 0.0. The
-probes never saw these initial states.
+A post-hoc observation, not yet tested: in the two failing scenes the
+native-instruction goal sits squarely on the scene's own object (−0.09 and
+−0.04 on the object axis), while in the four obeying scenes it already leans
+0.24–0.33 toward the other object.
 
-- **Preregistered result: inconclusive.** On 40 wrong-object rollouts, the
-  primary probe points at the instructed object in 23/29 determinate reads
-  (0.79, 95% CI [0.62, 0.90]), short of the 0.70 lower-bound threshold, and a
-  second probe (leave-pair-out) points the other way (10/30).
-- **Exploratory:** under both probes, and in the PaliGemma prefix, swapping
-  the instruction moves the decoded goal towards the named object in every one
-  of the 40 wrong-object states, by 0.40–0.70 of the object distance. That
-  shift is as large where the policy disobeys as overall. It stops near the
-  midpoint, which is why a two-way read is fragile.
+## 4 · Writable
 
-![Stage 12 first-query goal read](artifacts/pi05_stage12_probe_read/stage12_first_query_goal_read.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/writable_dark.png">
+  <img alt="Four rungs of intervention: decode, patch one block, close the loop, replay the path." src="assets/figures/writable_light.png" width="100%">
+</picture>
 
-Full protocol, amendment, audits, and results:
-[docs/protocols/stage12_probe_read.md](docs/protocols/stage12_probe_read.md).
-
-## Q3. Writable: readable is not controllable
-
-| Intervention on pi0.5 (target-switching) | Offline effect | Closed loop |
+| Intervention on π0.5 (target switching) | Offline | Closed loop |
 |---|---|---|
-| Natural counterfactual residual, expert block 13 | Recovers 21–23% of the prompt-induced action change | Success on target A drops 80% → 20%; target B stays 0% |
-| …restricted to the rank-30 probe goal subspace | 0.4–0.7% recovery | — |
-| …with that subspace removed | 21–22% recovery | — |
-| Episode-shuffled / norm-matched random controls | 8% / 0.5–0.7% | Random: no change |
-| **Full replay of all 18 expert blocks at all 10 denoising steps** | max action error **0.0** | **40/40** success, matching the correct prompt |
+| Natural counterfactual residual, expert block 13 | 21–23% of the prompt-induced action change | target A success 80% → 20%; target B stays 0% |
+| …restricted to the rank-30 probe goal subspace | 0.4–0.7% | — |
+| …with that subspace removed | 21–22% | — |
+| Episode-shuffled / norm-matched random | 8% / < 1% | no change |
+| **Replay all 18 expert blocks at all 10 denoising steps** | max action error **0.0** | **40/40**, identical to the correct prompt |
 | COAST-style soft conceptor gate (LIBERO-10 KS3, 30 held-out states) | — | 40% → 53%, 95% CI [−3.3, +30.0] pp |
 
-1. The prompt-induced residual difference at a single block is locally causal,
-   but the variables the probes decode are not what carries the effect.
-2. Writing that residual back at one block creates a hybrid computation that
-   damages otherwise successful behaviour.
-3. Replaying the whole prompt-conditioned expert pathway is an exact positive
-   control. The operator can work, but only when it respects the model's
-   computation path.
-4. A soft subspace gate is promising but underpowered. No policy improvement is
-   claimed.
+A reproduction of the released FFN steering cluster of
+[Häon et al.](https://arxiv.org/abs/2509.00328) was valid at the hook level but
+did not reproduce its directional effect on this stack (Stage 6).
 
-A reproduction of the released FFN steering cluster from
-[Häon et al.](https://arxiv.org/abs/2509.00328) (Stage 6) was valid at the
-implementation level but did not reproduce its directional effect on this
-stack.
+## The ledger
 
-![Causal intervention hierarchy](artifacts/paper_main_figure/vla_world_state_causal_story.png)
+Every stage had its question, endpoint and stopping rule written down before
+it ran.
+
+| Stage | Question | Outcome |
+|---|---|---|
+| 1 | Relative (TARGET / ALTERNATIVE) vs absolute object coordinates, OthelloGPT-style | negative: −0.003 F1 |
+| 2–4 | Goal-centric state in OpenVLA, the π0.5 prefix, the π0.5 action expert | positive |
+| 5 | One-block counterfactual patching | local 22%, not via the probe subspace; closed loop fails |
+| 6 | Published FFN steering cluster | not reproduced |
+| 7 | Underspecified instruction: one internal default target? | no; follow-up not admitted |
+| 8 | Full expert-pathway replay (operator positive control) | passed: error 0.0, 40/40 |
+| 9 | Soft conceptor gate | positive point estimate, CI crosses zero |
+| 10 | Four-pair confirmation and leave-pair-out | confirmed; generalisation only in the expert |
+| 11 | Instruction compliance, four pairs, reciprocal scenes | scene-dependent, 2/4 pairs fail |
+| 12 | Heard but not obeyed at the first query | inconclusive |
+| 13 | Does the goal shift predict obedience? | no |
 
 ## What this project does not claim
 
 - It is not a learned world model; no multi-step transition prediction is
   tested.
-- It does not claim that VLAs ignore language in general. Behaviour is
-  pair- and scene-dependent.
+- It does not claim that VLAs ignore language in general; obedience is pair-
+  and scene-dependent.
 - It does not claim that the decoded goal variables are the mechanism the
-  policy uses. The semantic-subspace ablation says they are not, at block 13.
+  policy uses; Stages 5, 12 and 13 all argue that they are not.
 - It does not claim a policy improvement.
 
-## Where this started: the OthelloGPT hypothesis (negative)
+## Where this started
 
 The project began by asking whether VLAs, like OthelloGPT's `MINE / YOURS`
 board, represent objects more linearly in instruction-relative coordinates
-(`TARGET / ALTERNATIVE`) than in absolute identity coordinates. After
-reproducing the OthelloGPT reference (best-layer probe accuracy 0.992 relative
-versus 0.752 absolute), the matched OpenVLA test found no advantage: relative
-minus absolute foreground macro-F1 is −0.0033 [−0.0084, 0.0022] at the prompt
-end. Prompt-aware tokens can relabel by instruction, but relative coordinates
-are not a more natural basis. That negative result motivated the broader
-goal-state atlas above.
+than in absolute identity coordinates. After reproducing the OthelloGPT
+reference (best-layer probe accuracy 0.992 relative vs 0.752 absolute), the
+matched OpenVLA test found no advantage (relative − absolute foreground F1
+−0.0033 [−0.0084, 0.0022]). That negative result opened the broader question
+above.
 
 ## Related work
 
@@ -195,35 +202,35 @@ goal-state atlas above.
 | [Grant et al.](https://arxiv.org/abs/2603.19233) / [Action Atlas](https://action-atlas.com/) | Mechanism | Visual pathway dominance across six VLAs; language matters when scenes are ambiguous |
 | [Emergent world representations in OpenVLA](https://arxiv.org/abs/2509.24559) | Representation | World state is linearly decodable in OpenVLA |
 | [DR.VLA](https://arxiv.org/abs/2603.19183), [Häon et al.](https://arxiv.org/abs/2509.00328), [COAST](https://arxiv.org/abs/2605.17144) | Steering | Sparse features, FFN steering, conceptor steering |
-| [Decoding task progress](https://arxiv.org/abs/2608.13474) | Representation | Readable progress signal that does not steer behaviour |
+| [Decoding task progress](https://arxiv.org/abs/2608.13474) | Representation | A readable progress signal that does not steer behaviour |
 
-What this project adds is the same-state, same-noise paired-prompt control at
-the representation level; a leave-one-pair-out test of goal-state
-generalisation; and an intervention ladder with an exact operator positive
+What this project adds: a same-state, same-noise paired-prompt control at the
+representation level; goal probes that never saw the evaluated states; a
+direct comparison between what the goal state says and what the robot does, on
+the same rollouts; and an intervention ladder with an exact operator positive
 control.
 
 ## Repository
 
 ```text
-vla_coordinates/   runtimes and hooks: OpenVLA residuals, pi0.5 prefix/expert
-                   capture, paired patching, full-path replay, conceptor gate
-scripts/           data generation, residual extraction, probes, bootstraps,
-                   closed-loop evaluation, summaries and figures
-configs/           frozen object-pair configuration (libero_object_pairs_v2.json)
+vla_coordinates/   runtimes and hooks: OpenVLA residuals, pi0.5 prefix/expert capture,
+                   paired patching, full-path replay, conceptor gate, stored goal probes
+scripts/           data generation, extraction, probes, bootstraps, closed-loop evaluation,
+                   summaries, explorer export, figure rendering
+configs/           frozen object-pair configuration
 cluster/           Slurm jobs and environment scripts used for every run
-artifacts/         locked summaries, metrics, figures, and smoke-run videos
-docs/              research log (Stages 1–11) and preregistered protocols
-tests/             unit tests for summary statistics and decision rules
+artifacts/         locked summaries, metrics and figures per stage
+docs/              research log (Stages 1–11) and preregistered protocols (Stages 12–13)
+site/              the interactive explorer (static; deployed to GitHub Pages)
+assets/figures/    README figures, rendered from site/figures.html
+tests/             unit tests for statistics and decision rules
 ```
-
-Pinned upstream revisions, checkpoints, and environment details are in the
-[research log](docs/research_log.md#cluster-layout).
 
 ### Reproducing
 
-All experiments ran as Slurm jobs on the NHR@FAU TinyGPU cluster (RTX 3080,
-V100, A100). Each stage in the [research log](docs/research_log.md) lists the
-exact job files in execution order, and every stage has a smoke job.
+All experiments ran as Slurm jobs on the NHR@FAU TinyGPU cluster. Each stage in
+the [research log](docs/research_log.md) and the protocols lists its job files
+in order, and every stage has a smoke job.
 
 ```bash
 git clone https://github.com/RyleHan/silent-L.git && cd silent-L
@@ -233,13 +240,27 @@ bash cluster/setup_pi05_env.sh    # pi0.5 environment and checkpoint conversion
 sbatch cluster/jobs/eval_pi05_stage12_probe_read_smoke.sbatch   # submit from the repo root
 ```
 
-The `cluster/env_*.sh` scripts resolve the project root from their own
-location and read `VLA_HOME_ROOT` (default `$HOME`, where the LIBERO and vendor
-checkouts live) and `VLA_WORK_ROOT`. Jobs source them via `$SLURM_SUBMIT_DIR`,
-so they must be submitted from the repository root. Partition names in the job
-headers are TinyGPU-specific. A released residual cache for CPU-only probe
-analysis is planned.
+The `cluster/env_*.sh` scripts resolve the project root from their own location
+and read `VLA_HOME_ROOT` (default `$HOME`, holding the LIBERO and vendor
+checkouts) and `VLA_WORK_ROOT`. Partition names in job headers are
+TinyGPU-specific.
+
+### Explorer and figures
+
+```bash
+python3 scripts/serve_site.py      # http://127.0.0.1:8765, with HTTP range support for video seeking
+npm install && npm run figures     # re-render assets/figures/*.png with local Chrome
+```
+
+`scripts/export_explorer_data.py` rebuilds `site/data/` from the cluster runs.
 
 ## Citation
 
-A preprint is in preparation. Until then, please cite this repository.
+```bibtex
+@misc{silentl2026,
+  title        = {The Silent L? Paired-Prompt Probing of Whether Vision-Language-Action Models Hear, Obey, and Can Be Written with Language},
+  author       = {RyleHan},
+  year         = {2026},
+  howpublished = {\url{https://github.com/RyleHan/silent-L}}
+}
+```

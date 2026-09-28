@@ -1,0 +1,12 @@
+{
+  "name": "silent-l-figures",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "python3 scripts/serve_site.py",
+    "figures": "node scripts/render_figures.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}
