@@ -43,6 +43,15 @@ async function main() {
   await selectCondition(selected, disobeying);
 
   layerCurves(document.getElementById("layers"), layers);
+  const bib = document.getElementById("bib");
+  const bibtex = bib.textContent.trim();
+  const copy = el("button", { class: "copy", type: "button" }, "copy");
+  copy.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(bibtex);
+    copy.textContent = "copied";
+    setTimeout(() => { copy.textContent = "copy"; }, 1500);
+  });
+  bib.append(copy);
   ladder(document.getElementById("ladder"));
   ledger(document.getElementById("ledger-rows"), rows, window.STAGE13_RESULT);
 }

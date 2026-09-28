@@ -3,7 +3,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { el, orient, tooltip, fmt, pct, REPO } from "./core.js";
 
-const MONO = "JetBrains Mono, ui-monospace, monospace";
+const MONO = "Source Sans 3, Helvetica Neue, Arial, sans-serif";
 
 function frame(root, width, height, margin) {
   root.replaceChildren();
@@ -20,7 +20,7 @@ function frame(root, width, height, margin) {
 function styleAxis(selection) {
   selection.selectAll("path").attr("stroke", "var(--line-2)");
   selection.selectAll("line").attr("stroke", "var(--line-2)");
-  selection.selectAll("text").attr("fill", "var(--faint)").style("font-family", MONO).style("font-size", "10px");
+  selection.selectAll("text").attr("fill", "var(--faint)").style("font-family", MONO).style("font-size", "12px");
 }
 
 // ---------------------------------------------------------------- Heard: layer curves
@@ -38,8 +38,8 @@ export function layerCurves(root, layers, { height = 300 } = {}) {
   for (const stream of STREAMS) {
     const cell = el("div");
     cell.append(
-      el("div", { class: "mono", style: "font-size:12px;color:var(--text);margin-bottom:2px" }, stream.title),
-      el("div", { class: "mono", style: "font-size:11px;color:var(--faint);margin-bottom:8px" }, stream.sub),
+      el("div", { class: "chart-title" }, stream.title),
+      el("div", { class: "chart-sub" }, stream.sub),
     );
     const plot = el("div");
     cell.append(plot);
@@ -70,7 +70,7 @@ export function layerCurves(root, layers, { height = 300 } = {}) {
     const peak = d3.maxIndex(aware);
     g.append("circle").attr("cx", x(peak)).attr("cy", y(aware[peak])).attr("r", 3.5).attr("fill", "var(--other)");
     g.append("text").attr("x", x(peak)).attr("y", y(aware[peak]) - 9).attr("text-anchor", peak > aware.length * 0.75 ? "end" : "middle")
-      .style("font-family", MONO).style("font-size", "10px").attr("fill", "var(--other)")
+      .style("font-family", MONO).style("font-size", "12px").attr("fill", "var(--other)")
       .text(`+${(aware[peak] - control[peak]).toFixed(2)}`);
 
     const cursor = g.append("line").attr("y1", 0).attr("y2", h).attr("stroke", "var(--line-2)").style("opacity", 0);
@@ -107,13 +107,13 @@ export function conditionRows(root, index, stage13, { selected, onSelect, height
     g.append("line").attr("x1", x(value)).attr("x2", x(value)).attr("y1", -8).attr("y2", h)
       .attr("stroke", value === 0 ? "var(--native)" : "var(--other)").attr("opacity", 0.35);
     g.append("text").attr("x", x(value)).attr("y", -16).attr("text-anchor", value === 0 ? "middle" : "end").style("font-family", MONO)
-      .style("font-size", "10px").attr("fill", value === 0 ? "var(--native)" : "var(--other)").text(label);
+      .style("font-size", "12px").attr("fill", value === 0 ? "var(--native)" : "var(--other)").text(label);
   }
   g.append("line").attr("x1", x(0.5)).attr("x2", x(0.5)).attr("y1", 0).attr("y2", h).attr("stroke", "var(--line-2)").attr("stroke-dasharray", "2 3");
   g.append("g").attr("transform", `translate(0,${h})`).call(d3.axisBottom(x).ticks(6).tickSize(3)).call(styleAxis);
   g.append("text").attr("x", plotW / 2).attr("y", h + 34).attr("text-anchor", "middle").style("font-family", MONO)
-    .style("font-size", "10.5px").attr("fill", "var(--muted)").text("decoded goal at the first query: native instruction → swapped instruction");
-  g.append("text").attr("x", plotW + 36).attr("y", -16).style("font-family", MONO).style("font-size", "10px")
+    .style("font-size", "12.5px").attr("fill", "var(--muted)").text("decoded goal at the first query: native instruction → swapped instruction");
+  g.append("text").attr("x", plotW + 36).attr("y", -16).style("font-family", MONO).style("font-size", "12px")
     .attr("fill", "var(--muted)").text("robot obeys swap");
 
   const row = g.append("g").selectAll("g").data(rows).join("g")
@@ -129,9 +129,9 @@ export function conditionRows(root, index, stage13, { selected, onSelect, height
     .on("mouseleave", () => tip.hide());
   row.append("rect").attr("x", -204).attr("y", -y.bandwidth() / 2 - 6).attr("width", w + 204).attr("height", y.bandwidth() + 12)
     .attr("rx", 8).attr("fill", (c) => (c.id === selected ? "var(--surface-2)" : "transparent"));
-  row.append("text").attr("x", -196).attr("y", -3).style("font-family", MONO).style("font-size", "11px").attr("fill", "var(--text)")
+  row.append("text").attr("x", -196).attr("y", -3).style("font-family", MONO).style("font-size", "13px").attr("fill", "var(--text)")
     .text((c) => `${c.id} · ${orient(c).nativeName} scene`);
-  row.append("text").attr("x", -196).attr("y", 12).style("font-family", MONO).style("font-size", "10px").attr("fill", "var(--faint)")
+  row.append("text").attr("x", -196).attr("y", 12).style("font-family", MONO).style("font-size", "12px").attr("fill", "var(--faint)")
     .text((c) => `“pick up the ${orient(c).otherName}”`);
   row.append("line").attr("x1", (c) => x(c.laso.mean_native_prompt_position)).attr("x2", (c) => x(c.laso.mean_swapped_prompt_position) - 7)
     .attr("stroke", "var(--line-2)").attr("stroke-width", 2);
@@ -143,13 +143,13 @@ export function conditionRows(root, index, stage13, { selected, onSelect, height
   const bars = row.append("g").attr("transform", `translate(${plotW + 36},0)`);
   bars.append("rect").attr("y", -5).attr("width", barW - 44).attr("height", 10).attr("rx", 5).attr("fill", "var(--line)");
   bars.append("rect").attr("y", -5).attr("width", (c) => Math.max(3, (barW - 44) * c.swapped_compliance)).attr("height", 10).attr("rx", 5).attr("fill", statusColor);
-  bars.append("text").attr("x", barW - 38).attr("y", 4).style("font-family", MONO).style("font-size", "11px").attr("fill", "var(--text)")
+  bars.append("text").attr("x", barW - 38).attr("y", 4).style("font-family", MONO).style("font-size", "13px").attr("fill", "var(--text)")
     .text((c) => pct(c.swapped_compliance));
 
   const primary = stage13.primary;
   if (primary.spearman_rho !== undefined) {
     g.append("text").attr("x", plotW / 2).attr("y", h + 52).attr("text-anchor", "middle").style("font-family", MONO)
-      .style("font-size", "10px").attr("fill", "var(--faint)")
+      .style("font-size", "12px").attr("fill", "var(--faint)")
       .text(`Spearman rho(shift, obedience) = ${fmt(primary.spearman_rho)} across ${primary.included_conditions.length} conditions: the predicted positive relation is absent`);
   }
 }
@@ -169,7 +169,7 @@ export function dumbbells(root, condition, { height = 420, width = 520, highligh
   const y = d3.scaleBand().domain(rows.map((r) => r.state)).range([0, h]).padding(0.3);
   for (const [value, color, label] of [[0, "var(--native)", o.nativeName], [1, "var(--other)", o.otherName]]) {
     g.append("line").attr("x1", x(value)).attr("x2", x(value)).attr("y1", -6).attr("y2", h).attr("stroke", color).attr("opacity", 0.35);
-    g.append("text").attr("x", x(value)).attr("y", -12).attr("text-anchor", "middle").style("font-family", MONO).style("font-size", "10px").attr("fill", color).text(label);
+    g.append("text").attr("x", x(value)).attr("y", -12).attr("text-anchor", "middle").style("font-family", MONO).style("font-size", "12px").attr("fill", color).text(label);
   }
   g.append("line").attr("x1", x(0.5)).attr("x2", x(0.5)).attr("y1", 0).attr("y2", h).attr("stroke", "var(--line-2)").attr("stroke-dasharray", "2 3");
   const color = (r) => (r.swapped.commanded ? "var(--pass)" : r.swapped.first_grasp === -1 ? "var(--faint)" : "var(--fail)");
@@ -183,9 +183,9 @@ export function dumbbells(root, condition, { height = 420, width = 520, highligh
   [["var(--pass)", "obeyed"], ["var(--fail)", "grasped the scene's object"], ["var(--faint)", "no grasp"]].forEach(([fill, label], i) => {
     const item = legend.append("g").attr("transform", `translate(${[0, 90, 300][i]},0)`);
     item.append("circle").attr("r", 3.5).attr("cy", -3).attr("fill", fill);
-    item.append("text").attr("x", 8).style("font-family", MONO).style("font-size", "10px").attr("fill", "var(--muted)").text(label);
+    item.append("text").attr("x", 8).style("font-family", MONO).style("font-size", "12px").attr("fill", "var(--muted)").text(label);
   });
-  legend.append("text").attr("y", 16).style("font-family", MONO).style("font-size", "10px")
+  legend.append("text").attr("y", 16).style("font-family", MONO).style("font-size", "12px")
     .attr("fill", "var(--faint)").text("blue: native instruction · coloured: swapped instruction");
 }
 
@@ -205,15 +205,15 @@ export function tomography(root, condition, state, { width = 640, height = 190 }
   const { g, w, h } = frame(root, width, height, { top: 8, right: 8, bottom: 26, left: 118 });
   const x = d3.scaleBand().domain(d3.range(18)).range([0, w]).padding(0.08);
   const y = d3.scaleBand().domain(rows.map((r) => r.label)).range([0, h]).padding(0.14);
+  const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const [nativeColor, midColor, otherColor] = [css("--native"), css("--mid"), css("--other")];
   const scale = (value) => {
     const t = Math.max(0, Math.min(1, o.t(value)));
-    return t < 0.5
-      ? d3.interpolateRgb(getComputedStyle(document.documentElement).getPropertyValue("--native").trim(), "#3a3f48")(t * 2)
-      : d3.interpolateRgb("#3a3f48", getComputedStyle(document.documentElement).getPropertyValue("--other").trim())((t - 0.5) * 2);
+    return t < 0.5 ? d3.interpolateRgb(nativeColor, midColor)(t * 2) : d3.interpolateRgb(midColor, otherColor)((t - 0.5) * 2);
   };
   for (const row of rows) {
     g.append("text").attr("x", -10).attr("y", y(row.label) + y.bandwidth() / 2 + 4).attr("text-anchor", "end")
-      .style("font-family", MONO).style("font-size", "10px").attr("fill", "var(--muted)").text(row.label);
+      .style("font-family", MONO).style("font-size", "12px").attr("fill", "var(--muted)").text(row.label);
     g.append("g").selectAll("rect").data(row.values).join("rect")
       .attr("x", (_, i) => x(i)).attr("y", y(row.label)).attr("width", x.bandwidth()).attr("height", y.bandwidth()).attr("rx", 3)
       .attr("fill", (v) => scale(v))

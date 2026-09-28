@@ -5,7 +5,6 @@ import { createPlayer } from "./player.js";
 import { layerCurves, conditionRows, dumbbells, tomography, ladder } from "./charts.js";
 
 const params = new URLSearchParams(location.search);
-document.documentElement.dataset.theme = params.get("theme") || "dark";
 const root = document.getElementById("fig");
 
 function header(title, sub) {
@@ -28,20 +27,15 @@ async function featured() {
 const FIGURES = {
   async hero() {
     const index = await load("index.json");
-    const stage13 = await load("stage13.json");
     const { condition, state } = await featured();
-    const left = el("div", {},
-      el("div", { class: "eyebrow" }, el("span", { class: "dot" }), "VLA interpretability · OpenVLA & ", el("span", { class: "nc" }, "π"), "0.5"),
-      el("h1", { html: "The Silent <em>L</em>?" }),
-      el("p", { class: "lede", html: window.HERO_LEDE || "Same scene, two instructions. π0.5 hears the swapped instruction, and its internal goal moves toward the named object. Then it grabs the scene's usual object anyway." }),
-      el("div", { class: "stat-row" },
-        ...(window.HERO_STATS || [["heard", "+0.37 R²"], ["heard ≠ obeyed", "40 / 40"], ["writable", "0.0 error"]])
-          .map(([k, v]) => el("div", {}, el("div", { class: "k" }, k), el("div", { class: "v" }, v)))),
-    );
-    const right = el("div", { class: "panel player" });
-    root.append(el("div", { class: "hero-grid" }, left, right));
-    await createPlayer(right, { index, conditionId: condition.id, state, still: true, stillLabel: params.get("still") || "grasp" });
-    void stage13;
+    const o = orient(condition);
+    root.append(...header("Same scene, two instructions. The model hears the swap; the robot <em>does not follow it</em>.",
+      `π0.5 on LIBERO-Object, one initial state, identical noise. The crosshair is the goal decoded from the action expert at each policy query. `
+      + `Told to pick up the ${o.otherName}, π0.5's goal moves toward it, and the robot grasps the ${o.nativeName} anyway.`));
+    const player = el("div", { class: "panel player" });
+    root.append(player);
+    await createPlayer(player, { index, conditionId: condition.id, state, still: true, stillLabel: params.get("still") || "grasp" });
+    root.append(footer(`condition ${condition.id} · initial state ${state} · action expert block 13 · leave-scene-out probe`));
   },
 
   async heard() {

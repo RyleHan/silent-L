@@ -21,7 +21,7 @@ function sayInstruction(condition, promptSide) {
 
 function buildMeter(condition) {
   const o = orient(condition);
-  const root = svg("svg", { viewBox: "0 0 400 46", class: "meter", preserveAspectRatio: "none" });
+  const root = svg("svg", { viewBox: "0 0 400 46", class: "meter" });
   const x = (t) => 40 + Math.max(-0.35, Math.min(1.35, t)) * 320;
   root.append(
     svg("line", { x1: x(0), x2: x(1), y1: 20, y2: 20, stroke: "var(--line-2)", "stroke-width": 2 }),
@@ -29,9 +29,9 @@ function buildMeter(condition) {
     svg("circle", { cx: x(0), cy: 20, r: 5, fill: "var(--native)" }),
     svg("circle", { cx: x(1), cy: 20, r: 5, fill: "var(--other)" }),
   );
-  const labelA = svg("text", { x: x(0) - 6, y: 42, "text-anchor": "start", "font-size": 10, fill: "var(--native)", "font-family": "JetBrains Mono" });
+  const labelA = svg("text", { x: x(0) - 6, y: 42, "text-anchor": "start", "font-size": 10, fill: "var(--native)", "font-family": "Source Sans 3, Arial, sans-serif" });
   labelA.textContent = o.nativeName;
-  const labelB = svg("text", { x: x(1) + 6, y: 42, "text-anchor": "end", "font-size": 10, fill: "var(--other)", "font-family": "JetBrains Mono" });
+  const labelB = svg("text", { x: x(1) + 6, y: 42, "text-anchor": "end", "font-size": 10, fill: "var(--other)", "font-family": "Source Sans 3, Arial, sans-serif" });
   labelB.textContent = o.otherName;
   const ghosts = svg("g");
   const marker = svg("g");
@@ -71,8 +71,9 @@ function buildOverlay(condition) {
       svg("circle", { r: 1.6, fill: color }),
     );
     const text = svg("text", {
-      y: anchorUp ? -15 : 22, "text-anchor": "middle", "font-size": 7.5, "font-family": "JetBrains Mono",
-      fill: color, "paint-order": "stroke", stroke: "rgba(0,0,0,0.75)", "stroke-width": 2.4,
+      y: anchorUp ? -14 : 20, "text-anchor": "middle", "font-size": 7, "font-weight": 600,
+      "font-family": "Source Sans 3, Helvetica Neue, Arial, sans-serif",
+      fill: color, "paint-order": "stroke", stroke: "rgba(255,255,255,0.9)", "stroke-width": 2.2, "stroke-linejoin": "round",
     });
     text.textContent = label;
     group.append(text);

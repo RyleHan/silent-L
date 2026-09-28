@@ -1,136 +1,157 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Silent L? · Do VLAs listen?</title>
-  <meta name="description" content="Paired-prompt probing and causal intervention on OpenVLA and π0.5: do vision-language-action models hear, obey, and let you write the instruction?">
-  <meta property="og:title" content="The Silent L? Do vision-language-action models listen?">
-  <meta property="og:description" content="π0.5 hears the instruction. What it hears does not decide what it does. Same scene, two instructions, traced from the language model to the gripper.">
+  <title>The Silent L? · Do VLAs act on the instructions they hear?</title>
+  <meta name="description" content="Paired-prompt probing and causal intervention on OpenVLA and π0.5: the model hears the instruction, but what it hears does not decide what it does.">
+  <meta property="og:title" content="The Silent L? Do vision-language-action models act on the instructions they hear?">
+  <meta property="og:description" content="π0.5 hears the instruction. What it hears does not decide what it does.">
   <meta property="og:image" content="https://rylehan.github.io/silent-L/og.png">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307080a'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-style='italic' font-size='22' fill='%23ffb454' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f6f5f0'/%3E%3Ctext x='16' y='24' font-family='Georgia' font-style='italic' font-size='24' fill='%23c15f3c' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <nav class="nav">
-    <div class="wrap">
+    <div class="wide">
       <a class="brand" href="#">silent-<b>L</b></a>
       <div class="nav-links">
-        <a href="#instrument" class="opt">instrument</a>
-        <a href="#heard">heard</a>
-        <a href="#obeyed">obeyed</a>
-        <a href="#writable">writable</a>
+        <a href="#instrument" class="opt">method</a>
+        <a href="#heard" class="opt">results</a>
         <a href="#ledger" class="opt">ledger</a>
-        <a href="https://github.com/RyleHan/silent-L" target="_blank" rel="noopener">github ↗</a>
+        <a href="https://github.com/RyleHan/silent-L" target="_blank" rel="noopener">code ↗</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="wrap">
-      <div class="eyebrow"><span class="dot"></span>VLA interpretability · OpenVLA &amp; <span class="nc">π</span>0.5 · LIBERO</div>
+  <header class="paper">
+    <div class="col">
+      <div class="kicker">Research · 2026 · OpenVLA and π0.5 on LIBERO</div>
       <h1 class="title">The Silent <em>L</em>?</h1>
-      <p class="lede" id="lede">
-        A robot is told to pick up the <strong>cream cheese</strong>. It reaches for the alphabet soup.
-        Did it not hear the instruction, or did it hear it and act on something else?
-        We give two vision-language-action models the same scene with two different instructions and
-        follow the instruction through the network: into the language model, through the action expert, out to the gripper.
-      </p>
-      <div class="claims" id="claims"></div>
-      <div class="panel player" id="player" style="margin-top:28px"></div>
-      <p class="caption"><b>Same initial state, same robot state, same flow-matching noise.</b> Left: the scene's own instruction. Right: the other object named.
-        The white crosshair is where a linear probe on π0.5's action expert places the goal at each policy query; the strip underneath tracks it between the two objects.</p>
+      <p class="subtitle">Do vision-language-action models act on the instructions they hear?</p>
+      <div class="byline"><a href="https://github.com/RyleHan">RyleHan</a></div>
+      <div class="buttons">
+        <a class="button" href="https://github.com/RyleHan/silent-L" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Code
+        </a>
+        <a class="button" href="https://github.com/RyleHan/silent-L/blob/main/docs/research_log.md" target="_blank" rel="noopener">Research log</a>
+        <a class="button" href="https://github.com/RyleHan/silent-L/tree/main/docs/protocols" target="_blank" rel="noopener">Preregistered protocols</a>
+        <a class="button" href="#citation">BibTeX</a>
+      </div>
+
+      <div class="tldr">
+        <div class="label">TL;DR</div>
+        <p>π0.5 hears the instruction. What it hears does not decide what it does.</p>
+      </div>
     </div>
   </header>
 
-  <section class="block" id="instrument">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-num">01 / INSTRUMENT</div>
-        <div>
-          <h2>One scene, two instructions.</h2>
-          <p>Everything that differs between the two forward passes is caused by language. We read the residual stream after every block
-            with forward hooks that never modify the computation (hooked and unhooked actions agree to <span class="mono">0.0</span>), and decode a goal
-            position with linear probes that never saw these initial states.</p>
-        </div>
-      </div>
-      <div class="panel panel-pad">
-        <div class="mono" style="font-size:12px;color:var(--muted);margin-bottom:12px">Decoded goal at every block of π0.5 for the state above, first policy query, before any motion</div>
-        <div id="tomography"></div>
-        <p class="caption">Each cell is one probe reading (blue = the scene's object, amber = the other object). Under the swapped instruction the goal leaves the scene's object as it passes through the network; the outlined column is expert block 13, the preregistered readout.</p>
-      </div>
+  <div class="wide"><div class="claims" id="claims"></div></div>
+
+  <figure class="wide">
+    <div class="panel player" id="player"></div>
+    <figcaption><b>Figure 1. Same scene, two instructions.</b> Both rollouts start from the same simulator state with the same flow-matching noise; only the instruction differs.
+      The crosshair marks where a linear probe on π0.5's action expert places the goal at each policy query, and the strip below tracks it between the two objects.
+      Choose a condition or an initial state to compare.</figcaption>
+  </figure>
+
+  <section id="instrument">
+    <div class="col">
+      <h2>One exact counterfactual</h2>
+      <p>Benchmarks such as <a href="https://arxiv.org/abs/2510.13626">LIBERO-Plus</a>, <a href="https://arxiv.org/abs/2602.17659">LIBERO-CF</a> and <a href="https://arxiv.org/abs/2603.00592">LangGap</a> show that vision-language-action models often act on visual shortcuts instead of language.
+        Behaviour alone cannot tell whether a model <em>failed to hear</em> an instruction or <em>heard it and acted on something else</em>.</p>
+      <p>We give OpenVLA-7B and π0.5 the same image, robot state and noise under two instructions that name different objects, so anything that differs between the two forward passes is caused by language.
+        Residuals are read after every block with hooks that never modify the computation (hooked and unhooked actions agree to <span class="mono">0.0</span>), and goal probes are refit so that they never see the initial states they are evaluated on.</p>
     </div>
+    <figure class="wide">
+      <div class="panel panel-pad" id="tomography"></div>
+      <figcaption><b>Figure 2. The instruction arriving block by block.</b> Probe readings of the goal after every PaliGemma prefix and action-expert block of π0.5, for the state shown in Figure 1, at the first policy query before any motion.
+        Blue: the scene's usual object; clay: the other object. The outlined column is expert block 13, the preregistered readout.</figcaption>
+    </figure>
   </section>
 
-  <section class="block" id="heard">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-num">02 / HEARD</div>
-        <div>
-          <h2>Language creates a goal the image cannot.</h2>
-          <p>Absolute object and robot positions are equally readable with or without language. The <em>target's</em> position is not:
-            it becomes linearly readable only after the instruction is integrated, in both VLAs, and it survives into the action expert.</p>
-        </div>
-      </div>
+  <section id="heard">
+    <div class="col">
+      <h2><span class="num">01</span>Heard</h2>
+      <p>Absolute object and robot positions are equally readable with or without language; they are in the image.
+        The <em>target's</em> position is not. It becomes linearly readable only after the instruction is integrated, in both models, and it survives into π0.5's action expert.
+        On object pairs never seen by the probe, only the action expert's goal-relative code transfers.</p>
+    </div>
+    <figure class="wide">
       <div class="panel panel-pad" id="layers"></div>
-      <p class="caption">Held-out test R², mean of three probe seeds, 400 rollouts / 15,275 states / 4 object pairs. Shaded: what language adds over a prompt-blind control that sees the same image.</p>
+      <figcaption><b>Figure 3. Language creates a goal the image cannot.</b> Held-out test R² of linear probes after every block, mean of three seeds; 400 rollouts, 15,275 states, four object pairs.
+        The shaded band is what language adds over a prompt-blind control that sees the same image.</figcaption>
+    </figure>
+  </section>
+
+  <section id="obeyed">
+    <div class="col">
+      <h2><span class="num">02</span>Obeyed, <em>sometimes</em></h2>
+      <p>Given the other object's name, unmodified π0.5 obeys 6%, 98%, 100% and 46% of the time across four object pairs.
+        The two failing pairs obey 100% and 98% of the time in the opposite scene, so the model can read both names; it fails on particular instruction–scene combinations.</p>
     </div>
   </section>
 
-  <section class="block" id="obeyed">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-num">03 / OBEYED</div>
-        <div>
-          <h2 id="obeyed-title">What it hears is <em>not</em> what it does.</h2>
-          <p id="obeyed-text">π0.5 obeys a swapped instruction anywhere from 6% to 100% of the time, depending on the scene.
-            Before the arm moves, the instruction pulls the decoded goal toward the named object in every condition, including the ones where the robot then grabs the wrong thing.
-            How far it is pulled does not predict whether the robot obeys.</p>
-        </div>
-      </div>
+  <section id="dissociation">
+    <div class="col">
+      <h2><span class="num">03</span>Heard is not obeyed</h2>
+      <p>Before the arm moves, the swapped instruction pulls the decoded goal toward the named object in every condition, including the rollouts where the robot then grasps the wrong one: 40 of 40 in the condition that almost never obeys.
+        How far the goal is pulled does not predict obedience; across six conditions the relation runs opposite to the predicted sign (ρ = −0.97), and with a probe shared across scenes it flips.</p>
+      <p class="note">The preregistered first-query test (Stage 12) is inconclusive: 23/29 with the primary probe against 10/30 with a leave-pair-out probe. The six-condition analysis (Stage 13) is exploratory, with its analysis fixed before the data were read.</p>
+    </div>
+    <figure class="wide">
       <div class="grid-2">
         <div class="panel panel-pad"><div id="scatter"></div></div>
-        <div class="panel panel-pad"><div class="mono" id="dumbbell-title" style="font-size:12px;color:var(--muted)"></div><div id="dumbbells"></div></div>
+        <div class="panel panel-pad"><div class="chart-title" id="dumbbell-title"></div><div id="dumbbells"></div></div>
       </div>
-      <p class="caption" id="obeyed-caption">Click a condition to load it into the player above. Exploratory analysis fixed in advance in <a href="https://github.com/RyleHan/silent-L/blob/main/docs/protocols/stage13_language_shift.md">the Stage 13 protocol</a>.</p>
-    </div>
+      <figcaption><b>Figure 4. The goal moves; behaviour does not follow.</b> Left: mean decoded goal under the scene's own instruction (blue) and the swapped one, for six scene × instruction conditions, beside how often the robot obeys. Click a row to load it into Figure 1.
+        Right: every initial state of the selected condition.</figcaption>
+    </figure>
   </section>
 
-  <section class="block" id="writable">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-num">04 / WRITABLE</div>
-        <div>
-          <h2>Readable is not <em>writable</em>.</h2>
-          <p>If the goal is in there, can we write it back in? Only when the intervention respects the model's own computation path.
-            Patching the right residual at one block moves the action locally, then wrecks the rollout; replaying the whole pathway reproduces the policy exactly.</p>
-        </div>
-      </div>
+  <section id="writable">
+    <div class="col">
+      <h2><span class="num">04</span>Readable is not writable</h2>
+      <p>If the goal is represented, can it be written back in? Patching the prompt-induced residual at one expert block moves the action locally, then breaks the closed-loop rollout; the probe's own subspace carries under 1% of the effect.
+        Replaying the whole prompt-conditioned expert pathway reproduces the correct policy exactly. Control works only through the model's own computation path.</p>
+    </div>
+    <figure class="wide">
       <div id="ladder"></div>
-      <p class="caption">π0.5 on LIBERO-Object, same-state counterfactual prompts; a soft conceptor gate (COAST-style) gives 40% → 53% on a separate task with a confidence interval that still crosses zero.</p>
-    </div>
+      <figcaption><b>Figure 5. Four rungs of intervention on π0.5.</b> Same-state counterfactual prompts on LIBERO-Object; closed-loop results on 20 held-out initial states per target. A soft conceptor gate gives 40% → 53% on a separate task with a confidence interval that crosses zero.</figcaption>
+    </figure>
   </section>
 
-  <section class="block" id="ledger">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-num">05 / LEDGER</div>
-        <div>
-          <h2>Thirteen gates, every outcome kept.</h2>
-          <p>Each stage had its question, endpoint and stopping rule written down before it ran. Negative and inconclusive results stay in the record.</p>
-        </div>
-      </div>
-      <div id="ledger-rows"></div>
+  <section id="ledger">
+    <div class="col">
+      <h2>The ledger</h2>
+      <p>Every stage had its question, endpoint and stopping rule written down before it ran. Negative and inconclusive results stay in the record.</p>
+    </div>
+    <div class="wide" id="ledger-rows"></div>
+  </section>
+
+  <section id="citation">
+    <div class="col">
+      <h2>Citation</h2>
+      <pre class="bib" id="bib">@misc{silentl2026,
+  title        = {The Silent L? Paired-Prompt Probing of Whether
+                  Vision-Language-Action Models Hear, Obey, and Can Be
+                  Written with Language},
+  author       = {RyleHan},
+  year         = {2026},
+  howpublished = {\url{https://github.com/RyleHan/silent-L}}
+}</pre>
     </div>
   </section>
 
   <footer>
-    <div class="wrap">
-      <div>silent-L · OpenVLA-7B and π0.5 on LIBERO-Object · MIT licence</div>
-      <div><a href="https://github.com/RyleHan/silent-L">code</a> · <a href="https://github.com/RyleHan/silent-L/blob/main/docs/research_log.md">research log</a> · <a href="https://github.com/RyleHan/silent-L/tree/main/docs/protocols">protocols</a></div>
+    <div class="wide">
+      <div>OpenVLA-7B and π0.5 on LIBERO-Object · MIT licence</div>
+      <div><a href="https://github.com/RyleHan/silent-L">github.com/RyleHan/silent-L</a></div>
     </div>
   </footer>
 

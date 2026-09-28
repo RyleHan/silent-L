@@ -1,9 +1,6 @@
 <p align="center">
   <a href="https://rylehan.github.io/silent-L/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/figures/hero_dark.png">
-      <img alt="Same scene, two instructions: pi0.5's decoded goal moves toward the named object, and the robot still grasps the scene's usual object." src="assets/figures/hero_light.png" width="100%">
-    </picture>
+    <img alt="Same scene, two instructions: pi0.5's decoded goal moves toward the named object, and the robot still grasps the scene's usual object." src="assets/figures/hero.png" width="100%">
   </a>
 </p>
 
@@ -45,10 +42,7 @@ LIBERO-Object.
 
 ## The instrument
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/tomography_dark.png">
-  <img alt="Decoded goal at every block of pi0.5 under the native and the swapped instruction." src="assets/figures/tomography_light.png" width="100%">
-</picture>
+<img alt="Decoded goal at every block of pi0.5 under the native and the swapped instruction." src="assets/figures/tomography.png" width="100%">
 
 - **Paired prompts.** Every image is evaluated under both instructions with
   identical robot state and noise. Labels are recomputed per prompt: for one
@@ -67,10 +61,7 @@ LIBERO-Object.
 
 ## 1 · Heard
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/heard_dark.png">
-  <img alt="Layer-wise R2 of target position with and without language in OpenVLA, the pi0.5 prefix, and the pi0.5 action expert." src="assets/figures/heard_light.png" width="100%">
-</picture>
+<img alt="Layer-wise R2 of target position with and without language in OpenVLA, the pi0.5 prefix, and the pi0.5 action expert." src="assets/figures/heard.png" width="100%">
 
 Absolute object and robot positions are equally readable with or without
 language; they are in the image. The target's position becomes readable only
@@ -98,10 +89,7 @@ is made.
 
 ## 3 · Heard is not obeyed
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/obeyed_dark.png">
-  <img alt="Decoded goal under native and swapped instructions for six conditions, against obedience; and per-state shifts in the condition that almost never obeys." src="assets/figures/obeyed_light.png" width="100%">
-</picture>
+<img alt="Decoded goal under native and swapped instructions for six conditions, against obedience; and per-state shifts in the condition that almost never obeys." src="assets/figures/obeyed.png" width="100%">
 
 **Stage 12 (preregistered): inconclusive.** On the 40 rollouts where π0.5
 grasps the wrong object, the primary goal probe points at the instructed
@@ -135,10 +123,7 @@ native-instruction goal sits squarely on the scene's own object (−0.09 and
 
 ## 4 · Writable
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/figures/writable_dark.png">
-  <img alt="Four rungs of intervention: decode, patch one block, close the loop, replay the path." src="assets/figures/writable_light.png" width="100%">
-</picture>
+<img alt="Four rungs of intervention: decode, patch one block, close the loop, replay the path." src="assets/figures/writable.png" width="100%">
 
 | Intervention on π0.5 (target switching) | Offline | Closed loop |
 |---|---|---|
