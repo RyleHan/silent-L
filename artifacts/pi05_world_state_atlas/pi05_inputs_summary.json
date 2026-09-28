@@ -1,0 +1,123 @@
+{
+  "source_h5": "/home/woody/iwnt/iwnt144h/vla_coordinates/datasets/libero_object_trajectories_v1/paired_trajectories.h5",
+  "output_h5": "/home/woody/iwnt/iwnt144h/vla_coordinates/datasets/libero_object_trajectories_v1/pi05_inputs.h5",
+  "num_samples": 1946,
+  "split_counts": {
+    "test": 331,
+    "train": 1392,
+    "valid": 223
+  },
+  "task_counts": {
+    "0": 953,
+    "1": 993
+  },
+  "robot_states_finite": true,
+  "paired_prompts": [
+    "pick up the alphabet soup and place it in the basket",
+    "pick up the cream cheese and place it in the basket"
+  ],
+  "pixel_replay_audit": {
+    "num_samples": 16,
+    "mean_abs_pixel_error": 0.1392411212531888,
+    "max_abs_pixel_error": 53,
+    "records": [
+      {
+        "source_index": 0,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.01572464923469388,
+        "max_abs_pixel_error": 5
+      },
+      {
+        "source_index": 1,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.15974436649659865,
+        "max_abs_pixel_error": 38
+      },
+      {
+        "source_index": 2,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.17173549107142858,
+        "max_abs_pixel_error": 50
+      },
+      {
+        "source_index": 3,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.18147454294217688,
+        "max_abs_pixel_error": 41
+      },
+      {
+        "source_index": 4,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.19323315263605442,
+        "max_abs_pixel_error": 53
+      },
+      {
+        "source_index": 5,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.20826025722789115,
+        "max_abs_pixel_error": 36
+      },
+      {
+        "source_index": 6,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.23739105017006804,
+        "max_abs_pixel_error": 39
+      },
+      {
+        "source_index": 7,
+        "task_id": 0,
+        "mean_abs_pixel_error": 0.28798628826530615,
+        "max_abs_pixel_error": 45
+      },
+      {
+        "source_index": 953,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.019949776785714284,
+        "max_abs_pixel_error": 12
+      },
+      {
+        "source_index": 954,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.05709236819727891,
+        "max_abs_pixel_error": 24
+      },
+      {
+        "source_index": 955,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.05907870960884354,
+        "max_abs_pixel_error": 27
+      },
+      {
+        "source_index": 956,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.06523038903061225,
+        "max_abs_pixel_error": 29
+      },
+      {
+        "source_index": 957,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.06949537627551021,
+        "max_abs_pixel_error": 23
+      },
+      {
+        "source_index": 958,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.11759938350340136,
+        "max_abs_pixel_error": 37
+      },
+      {
+        "source_index": 959,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.17255261479591838,
+        "max_abs_pixel_error": 32
+      },
+      {
+        "source_index": 960,
+        "task_id": 1,
+        "mean_abs_pixel_error": 0.2113095238095238,
+        "max_abs_pixel_error": 36
+      }
+    ]
+  },
+  "elapsed_seconds": 41.16549819801003
+}

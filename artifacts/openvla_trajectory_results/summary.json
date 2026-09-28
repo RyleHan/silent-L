@@ -1,0 +1,1002 @@
+{
+  "selection_rule": "Select layers using validation data only; report held-out test at that fixed layer.",
+  "metric": "foreground_macro_f1",
+  "readouts": {
+    "prompt_end": {
+      "validation_delta_selected_layer": 23,
+      "validation_at_selected_layer": {
+        "absolute": 0.9293357036119482,
+        "target_alternative": 0.9365102284107056,
+        "delta": 0.0071745247987574645
+      },
+      "test_at_selected_layer": {
+        "absolute": 0.9481854208010574,
+        "target_alternative": 0.9469100768668481,
+        "delta": -0.0012753439342092499
+      },
+      "coordinate_specific_validation_selected_layers": {
+        "absolute": {
+          "layer": "13",
+          "validation": {
+            "accuracy": 0.9962426429372198,
+            "macro_f1": 0.9630447236389212,
+            "foreground_macro_f1": 0.9455060419208123,
+            "mean_iou": 0.9299356844314653,
+            "foreground_mean_iou": 0.8967779196252591,
+            "per_class_f1": [
+              0.998122087075139,
+              0.9543551923460235,
+              0.9366568914956012
+            ],
+            "per_class_iou": [
+              0.9962512140438781,
+              0.9126953869614944,
+              0.8808604522890238
+            ],
+            "confusion": [
+              [
+                109756,
+                119,
+                97
+              ],
+              [
+                94,
+                2394,
+                0
+              ],
+              [
+                103,
+                16,
+                1597
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0010438651079311967,
+              "prediction_agreement": 0.9983884692192078
+            }
+          },
+          "test": {
+            "accuracy": 0.9968667390483383,
+            "macro_f1": 0.9713091412904632,
+            "foreground_macro_f1": 0.9577746699678514,
+            "mean_iou": 0.9450177461636066,
+            "foreground_mean_iou": 0.9191459089577263,
+            "per_class_f1": [
+              0.9983780839356865,
+              0.947819871336669,
+              0.9677294685990339
+            ],
+            "per_class_iou": [
+              0.9967614205753672,
+              0.9008152173913043,
+              0.9374766005241483
+            ],
+            "confusion": [
+              [
+                163122,
+                223,
+                69
+              ],
+              [
+                141,
+                3315,
+                0
+              ],
+              [
+                97,
+                1,
+                2504
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0006551430560648441,
+              "prediction_agreement": 0.9992328882217407
+            }
+          }
+        },
+        "target_alternative": {
+          "layer": "16",
+          "validation": {
+            "accuracy": 0.9961375420403588,
+            "macro_f1": 0.9635660257606794,
+            "foreground_macro_f1": 0.9463244243617359,
+            "mean_iou": 0.9307898556758406,
+            "foreground_mean_iou": 0.898131756855203,
+            "per_class_f1": [
+              0.9980492285585664,
+              0.9492168960607499,
+              0.9434319526627221
+            ],
+            "per_class_iou": [
+              0.9961060533171161,
+              0.9033423667570009,
+              0.892921146953405
+            ],
+            "confusion": [
+              [
+                109742,
+                106,
+                124
+              ],
+              [
+                96,
+                2000,
+                6
+              ],
+              [
+                103,
+                6,
+                1993
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0015982177574187517,
+              "prediction_agreement": 0.997933030128479
+            }
+          },
+          "test": {
+            "accuracy": 0.9965658043806647,
+            "macro_f1": 0.967466004021125,
+            "foreground_macro_f1": 0.9520850451765603,
+            "mean_iou": 0.9378558253515297,
+            "foreground_mean_iou": 0.9085526816105205,
+            "per_class_f1": [
+              0.9982279217102545,
+              0.9513832051072189,
+              0.9527868852459017
+            ],
+            "per_class_iou": [
+              0.9964621128335482,
+              0.9072744302216672,
+              0.9098309329993738
+            ],
+            "confusion": [
+              [
+                163078,
+                173,
+                163
+              ],
+              [
+                121,
+                2906,
+                2
+              ],
+              [
+                122,
+                1,
+                2906
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.001162951230071485,
+              "prediction_agreement": 0.9984540343284607
+            }
+          }
+        }
+      },
+      "common_validation_selected_layer": {
+        "layer": "16",
+        "validation": {
+          "absolute": {
+            "accuracy": 0.9960762331838565,
+            "macro_f1": 0.9620066908728041,
+            "foreground_macro_f1": 0.9440079586303871,
+            "mean_iou": 0.928049992839969,
+            "foreground_mean_iou": 0.8940668584408824,
+            "per_class_f1": [
+              0.9980041553576381,
+              0.952171302781669,
+              0.9358446144791054
+            ],
+            "per_class_iou": [
+              0.9960162616381423,
+              0.9087089381207029,
+              0.879424778761062
+            ],
+            "confusion": [
+              [
+                109759,
+                121,
+                92
+              ],
+              [
+                109,
+                2379,
+                0
+              ],
+              [
+                117,
+                9,
+                1590
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0012037634151056409,
+              "prediction_agreement": 0.9982483386993408
+            }
+          },
+          "target_alternative": {
+            "accuracy": 0.9961375420403588,
+            "macro_f1": 0.9635660257606794,
+            "foreground_macro_f1": 0.9463244243617359,
+            "mean_iou": 0.9307898556758406,
+            "foreground_mean_iou": 0.898131756855203,
+            "per_class_f1": [
+              0.9980492285585664,
+              0.9492168960607499,
+              0.9434319526627221
+            ],
+            "per_class_iou": [
+              0.9961060533171161,
+              0.9033423667570009,
+              0.892921146953405
+            ],
+            "confusion": [
+              [
+                109742,
+                106,
+                124
+              ],
+              [
+                96,
+                2000,
+                6
+              ],
+              [
+                103,
+                6,
+                1993
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0015982177574187517,
+              "prediction_agreement": 0.997933030128479
+            }
+          }
+        },
+        "test": {
+          "absolute": {
+            "accuracy": 0.9967900302114804,
+            "macro_f1": 0.9706907722821465,
+            "foreground_macro_f1": 0.9568686042224288,
+            "mean_iou": 0.9438815194926744,
+            "foreground_mean_iou": 0.917484403580578,
+            "per_class_f1": [
+              0.9983351084015817,
+              0.9467506441454336,
+              0.9669865642994241
+            ],
+            "per_class_iou": [
+              0.9966757513168669,
+              0.8988855667300897,
+              0.9360832404310665
+            ],
+            "confusion": [
+              [
+                163102,
+                223,
+                89
+              ],
+              [
+                149,
+                3307,
+                0
+              ],
+              [
+                83,
+                0,
+                2519
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0007608105661347508,
+              "prediction_agreement": 0.999126672744751
+            }
+          },
+          "target_alternative": {
+            "accuracy": 0.9965658043806647,
+            "macro_f1": 0.967466004021125,
+            "foreground_macro_f1": 0.9520850451765603,
+            "mean_iou": 0.9378558253515297,
+            "foreground_mean_iou": 0.9085526816105205,
+            "per_class_f1": [
+              0.9982279217102545,
+              0.9513832051072189,
+              0.9527868852459017
+            ],
+            "per_class_iou": [
+              0.9964621128335482,
+              0.9072744302216672,
+              0.9098309329993738
+            ],
+            "confusion": [
+              [
+                163078,
+                173,
+                163
+              ],
+              [
+                121,
+                2906,
+                2
+              ],
+              [
+                122,
+                1,
+                2906
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.001162951230071485,
+              "prediction_agreement": 0.9984540343284607
+            }
+          }
+        }
+      }
+    },
+    "action_boundary": {
+      "validation_delta_selected_layer": 22,
+      "validation_at_selected_layer": {
+        "absolute": 0.9348102248305914,
+        "target_alternative": 0.9412005535470058,
+        "delta": 0.0063903287164144285
+      },
+      "test_at_selected_layer": {
+        "absolute": 0.9494072281948045,
+        "target_alternative": 0.948425040297098,
+        "delta": -0.0009821878977065435
+      },
+      "coordinate_specific_validation_selected_layers": {
+        "absolute": {
+          "layer": "15",
+          "validation": {
+            "accuracy": 0.9966017376681614,
+            "macro_f1": 0.9671387854744721,
+            "foreground_macro_f1": 0.9515470014041467,
+            "mean_iou": 0.9372650417819924,
+            "foreground_mean_iou": 0.9075723992742957,
+            "per_class_f1": [
+              0.9983223536151232,
+              0.9515806322529012,
+              0.9515133705553922
+            ],
+            "per_class_iou": [
+              0.9966503267973856,
+              0.9076335877862596,
+              0.9075112107623319
+            ],
+            "confusion": [
+              [
+                109791,
+                113,
+                68
+              ],
+              [
+                110,
+                2378,
+                0
+              ],
+              [
+                78,
+                19,
+                1619
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0008410074515268207,
+              "prediction_agreement": 0.9988614320755005
+            }
+          },
+          "test": {
+            "accuracy": 0.996937547205438,
+            "macro_f1": 0.9719621164126133,
+            "foreground_macro_f1": 0.9587373087373088,
+            "mean_iou": 0.9462064231409681,
+            "foreground_mean_iou": 0.9208953843524433,
+            "per_class_f1": [
+              0.9984117317632226,
+              0.9495209495209496,
+              0.9679536679536679
+            ],
+            "per_class_iou": [
+              0.9968285007180177,
+              0.9038932752518377,
+              0.937897493453049
+            ],
+            "confusion": [
+              [
+                163126,
+                217,
+                71
+              ],
+              [
+                136,
+                3320,
+                0
+              ],
+              [
+                95,
+                0,
+                2507
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0006851035286672413,
+              "prediction_agreement": 0.999020516872406
+            }
+          }
+        },
+        "target_alternative": {
+          "layer": "15",
+          "validation": {
+            "accuracy": 0.996549187219731,
+            "macro_f1": 0.9663509452098563,
+            "foreground_macro_f1": 0.9503675869034118,
+            "mean_iou": 0.9358394814566809,
+            "foreground_mean_iou": 0.9054387348539941,
+            "per_class_f1": [
+              0.9983176618227452,
+              0.9527446300715992,
+              0.9479905437352246
+            ],
+            "per_class_iou": [
+              0.9966409746620548,
+              0.9097538742023701,
+              0.9011235955056179
+            ],
+            "confusion": [
+              [
+                109781,
+                91,
+                100
+              ],
+              [
+                83,
+                1996,
+                23
+              ],
+              [
+                96,
+                1,
+                2005
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0014652298996225,
+              "prediction_agreement": 0.998073160648346
+            }
+          },
+          "test": {
+            "accuracy": 0.9968726397280967,
+            "macro_f1": 0.9701140310978836,
+            "foreground_macro_f1": 0.9559728338365919,
+            "mean_iou": 0.942706739706087,
+            "foreground_mean_iou": 0.9156611166047837,
+            "per_class_f1": [
+              0.998396425620467,
+              0.9548662399474808,
+              0.9570794277257031
+            ],
+            "per_class_iou": [
+              0.9967979859086937,
+              0.9136306532663316,
+              0.9176915799432356
+            ],
+            "confusion": [
+              [
+                163123,
+                154,
+                137
+              ],
+              [
+                115,
+                2909,
+                5
+              ],
+              [
+                118,
+                1,
+                2910
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0010634870268404484,
+              "prediction_agreement": 0.9985366463661194
+            }
+          }
+        }
+      },
+      "common_validation_selected_layer": {
+        "layer": "15",
+        "validation": {
+          "absolute": {
+            "accuracy": 0.9966017376681614,
+            "macro_f1": 0.9671387854744721,
+            "foreground_macro_f1": 0.9515470014041467,
+            "mean_iou": 0.9372650417819924,
+            "foreground_mean_iou": 0.9075723992742957,
+            "per_class_f1": [
+              0.9983223536151232,
+              0.9515806322529012,
+              0.9515133705553922
+            ],
+            "per_class_iou": [
+              0.9966503267973856,
+              0.9076335877862596,
+              0.9075112107623319
+            ],
+            "confusion": [
+              [
+                109791,
+                113,
+                68
+              ],
+              [
+                110,
+                2378,
+                0
+              ],
+              [
+                78,
+                19,
+                1619
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0008410074515268207,
+              "prediction_agreement": 0.9988614320755005
+            }
+          },
+          "target_alternative": {
+            "accuracy": 0.996549187219731,
+            "macro_f1": 0.9663509452098563,
+            "foreground_macro_f1": 0.9503675869034118,
+            "mean_iou": 0.9358394814566809,
+            "foreground_mean_iou": 0.9054387348539941,
+            "per_class_f1": [
+              0.9983176618227452,
+              0.9527446300715992,
+              0.9479905437352246
+            ],
+            "per_class_iou": [
+              0.9966409746620548,
+              0.9097538742023701,
+              0.9011235955056179
+            ],
+            "confusion": [
+              [
+                109781,
+                91,
+                100
+              ],
+              [
+                83,
+                1996,
+                23
+              ],
+              [
+                96,
+                1,
+                2005
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0014652298996225,
+              "prediction_agreement": 0.998073160648346
+            }
+          }
+        },
+        "test": {
+          "absolute": {
+            "accuracy": 0.996937547205438,
+            "macro_f1": 0.9719621164126133,
+            "foreground_macro_f1": 0.9587373087373088,
+            "mean_iou": 0.9462064231409681,
+            "foreground_mean_iou": 0.9208953843524433,
+            "per_class_f1": [
+              0.9984117317632226,
+              0.9495209495209496,
+              0.9679536679536679
+            ],
+            "per_class_iou": [
+              0.9968285007180177,
+              0.9038932752518377,
+              0.937897493453049
+            ],
+            "confusion": [
+              [
+                163126,
+                217,
+                71
+              ],
+              [
+                136,
+                3320,
+                0
+              ],
+              [
+                95,
+                0,
+                2507
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0006851035286672413,
+              "prediction_agreement": 0.999020516872406
+            }
+          },
+          "target_alternative": {
+            "accuracy": 0.9968726397280967,
+            "macro_f1": 0.9701140310978836,
+            "foreground_macro_f1": 0.9559728338365919,
+            "mean_iou": 0.942706739706087,
+            "foreground_mean_iou": 0.9156611166047837,
+            "per_class_f1": [
+              0.998396425620467,
+              0.9548662399474808,
+              0.9570794277257031
+            ],
+            "per_class_iou": [
+              0.9967979859086937,
+              0.9136306532663316,
+              0.9176915799432356
+            ],
+            "confusion": [
+              [
+                163123,
+                154,
+                137
+              ],
+              [
+                115,
+                2909,
+                5
+              ],
+              [
+                118,
+                1,
+                2910
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0010634870268404484,
+              "prediction_agreement": 0.9985366463661194
+            }
+          }
+        }
+      }
+    },
+    "visual_mean": {
+      "validation_delta_selected_layer": 2,
+      "validation_at_selected_layer": {
+        "absolute": 0.9337939840354038,
+        "target_alternative": 0.4664298469987177,
+        "delta": -0.4673641370366861
+      },
+      "test_at_selected_layer": {
+        "absolute": 0.9333367801125184,
+        "target_alternative": 0.462504064121231,
+        "delta": -0.4708327159912874
+      },
+      "coordinate_specific_validation_selected_layers": {
+        "absolute": {
+          "layer": "27",
+          "validation": {
+            "accuracy": 0.996759389013453,
+            "macro_f1": 0.9694846384029384,
+            "foreground_macro_f1": 0.9550589951415767,
+            "mean_iou": 0.9415549375074915,
+            "foreground_mean_iou": 0.9139937167901331,
+            "per_class_f1": [
+              0.9983359249256621,
+              0.9574552683896621,
+              0.9526627218934911
+            ],
+            "per_class_iou": [
+              0.9966773789422082,
+              0.9183829138062548,
+              0.9096045197740112
+            ],
+            "confusion": [
+              [
+                109788,
+                130,
+                54
+              ],
+              [
+                80,
+                2408,
+                0
+              ],
+              [
+                102,
+                4,
+                1610
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0,
+              "prediction_agreement": 1.0
+            }
+          },
+          "test": {
+            "accuracy": 0.9969434478851964,
+            "macro_f1": 0.9722397352754258,
+            "foreground_macro_f1": 0.9591432060181662,
+            "mean_iou": 0.9468129150669711,
+            "foreground_mean_iou": 0.9217841265184537,
+            "per_class_f1": [
+              0.9984327937899453,
+              0.9463525404484815,
+              0.9719338715878508
+            ],
+            "per_class_iou": [
+              0.9968704921640058,
+              0.8981681034482759,
+              0.9454001495886313
+            ],
+            "confusion": [
+              [
+                163092,
+                252,
+                70
+              ],
+              [
+                120,
+                3334,
+                2
+              ],
+              [
+                70,
+                4,
+                2528
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0,
+              "prediction_agreement": 1.0
+            }
+          }
+        },
+        "target_alternative": {
+          "layer": "25",
+          "validation": {
+            "accuracy": 0.9788834781390134,
+            "macro_f1": 0.6509094469425815,
+            "foreground_macro_f1": 0.47723292877169127,
+            "mean_iou": 0.5411420176326038,
+            "foreground_mean_iou": 0.31344752943660986,
+            "per_class_f1": [
+              0.9982624832843615,
+              0.467930029154519,
+              0.48653582838886356
+            ],
+            "per_class_iou": [
+              0.9965309940245918,
+              0.3054234062797336,
+              0.32147165259348615
+            ],
+            "confusion": [
+              [
+                109736,
+                88,
+                148
+              ],
+              [
+                73,
+                963,
+                1066
+              ],
+              [
+                73,
+                963,
+                1066
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.007928221486508846,
+              "prediction_agreement": 0.9625315070152283
+            }
+          },
+          "test": {
+            "accuracy": 0.9791883024924471,
+            "macro_f1": 0.6505187966742413,
+            "foreground_macro_f1": 0.47666315076357424,
+            "mean_iou": 0.5407609280941497,
+            "foreground_mean_iou": 0.31290817659352144,
+            "per_class_f1": [
+              0.9982300884955753,
+              0.47793997047728387,
+              0.47538633104986455
+            ],
+            "per_class_iou": [
+              0.9964664310954063,
+              0.3140086206896552,
+              0.3118077324973877
+            ],
+            "confusion": [
+              [
+                162996,
+                154,
+                264
+              ],
+              [
+                80,
+                1457,
+                1492
+              ],
+              [
+                80,
+                1457,
+                1492
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.00800616666674614,
+              "prediction_agreement": 0.9628375172615051
+            }
+          }
+        }
+      },
+      "common_validation_selected_layer": {
+        "layer": "14",
+        "validation": {
+          "absolute": {
+            "accuracy": 0.9966893217488789,
+            "macro_f1": 0.969059765807378,
+            "foreground_macro_f1": 0.9544401977017791,
+            "mean_iou": 0.9407790000149502,
+            "foreground_mean_iou": 0.9128667091836735,
+            "per_class_f1": [
+              0.9982989020185757,
+              0.9574468085106383,
+              0.9514335868929198
+            ],
+            "per_class_iou": [
+              0.9966035816775037,
+              0.9183673469387755,
+              0.9073660714285714
+            ],
+            "confusion": [
+              [
+                109742,
+                154,
+                76
+              ],
+              [
+                58,
+                2430,
+                0
+              ],
+              [
+                86,
+                4,
+                1626
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0,
+              "prediction_agreement": 1.0
+            }
+          },
+          "target_alternative": {
+            "accuracy": 0.9786995515695067,
+            "macro_f1": 0.6497794053524274,
+            "foreground_macro_f1": 0.47556987777733534,
+            "mean_iou": 0.5403162868254832,
+            "foreground_mean_iou": 0.3122727300275148,
+            "per_class_f1": [
+              0.9981984605026113,
+              0.4522513607125186,
+              0.4988883948421521
+            ],
+            "per_class_iou": [
+              0.9964034004214197,
+              0.2921994884910486,
+              0.33234597156398105
+            ],
+            "confusion": [
+              [
+                109708,
+                112,
+                152
+              ],
+              [
+                66,
+                914,
+                1122
+              ],
+              [
+                66,
+                914,
+                1122
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.007769799791276455,
+              "prediction_agreement": 0.9620586037635803
+            }
+          }
+        },
+        "test": {
+          "absolute": {
+            "accuracy": 0.996494996223565,
+            "macro_f1": 0.9683578759944469,
+            "foreground_macro_f1": 0.9534370197529871,
+            "mean_iou": 0.9396896284852801,
+            "foreground_mean_iou": 0.9113316185944156,
+            "per_class_f1": [
+              0.9981995884773663,
+              0.9400168966488314,
+              0.9668571428571429
+            ],
+            "per_class_iou": [
+              0.996405648267009,
+              0.8868225292242295,
+              0.9358407079646017
+            ],
+            "confusion": [
+              [
+                163002,
+                306,
+                106
+              ],
+              [
+                114,
+                3338,
+                4
+              ],
+              [
+                62,
+                2,
+                2538
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.0,
+              "prediction_agreement": 1.0
+            }
+          },
+          "target_alternative": {
+            "accuracy": 0.9790053814199395,
+            "macro_f1": 0.6486967368266807,
+            "foreground_macro_f1": 0.4739882703551607,
+            "mean_iou": 0.5393554927366886,
+            "foreground_mean_iou": 0.3109160177929562,
+            "per_class_f1": [
+              0.9981136697697207,
+              0.45051773892378205,
+              0.4974588017865394
+            ],
+            "per_class_iou": [
+              0.9962344426241534,
+              0.29075372480280454,
+              0.33107831078310784
+            ],
+            "confusion": [
+              [
+                162972,
+                208,
+                234
+              ],
+              [
+                87,
+                1327,
+                1615
+              ],
+              [
+                87,
+                1327,
+                1615
+              ]
+            ],
+            "paired_consistency": {
+              "mean_absolute_probability_error": 0.007567302789539099,
+              "prediction_agreement": 0.9627431035041809
+            }
+          }
+        }
+      }
+    }
+  }
+}

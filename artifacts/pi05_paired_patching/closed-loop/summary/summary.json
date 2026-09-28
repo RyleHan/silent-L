@@ -1,0 +1,753 @@
+{
+  "protocol": {
+    "selection": "block 13 and alpha=1 fixed by offline validation before closed-loop evaluation",
+    "primary_comparisons": [
+      "paired_minus_mismatch",
+      "paired_minus_random"
+    ],
+    "uncertainty": "95% paired initial-state bootstrap confidence intervals",
+    "positive_favorable_difference": true
+  },
+  "metric_definitions": {
+    "success": {
+      "label": "Success rate",
+      "favorable_sign": 1.0
+    },
+    "target_ever_grasped": {
+      "label": "Target grasp rate",
+      "favorable_sign": 1.0
+    },
+    "target_ever_in_basket": {
+      "label": "Target in-basket rate",
+      "favorable_sign": 1.0
+    },
+    "alternative_ever_grasped": {
+      "label": "Alternative grasp rate",
+      "favorable_sign": -1.0
+    },
+    "target_min_eef_distance": {
+      "label": "Target minimum EEF distance",
+      "favorable_sign": -1.0
+    },
+    "target_max_displacement": {
+      "label": "Target maximum displacement",
+      "favorable_sign": 1.0
+    }
+  },
+  "tasks": {
+    "0": {
+      "num_paired_initial_states": 20,
+      "init_state_ids": [
+        2,
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19,
+        22,
+        32,
+        33,
+        35,
+        36,
+        41,
+        42,
+        44,
+        48
+      ],
+      "conditions": {
+        "correct": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.017718577897176145,
+            "ci95_low": 0.014384653251618147,
+            "ci95_high": 0.021286711924476533
+          },
+          "target_max_displacement": {
+            "mean": 0.5388069838285446,
+            "ci95_low": 0.5336876609176398,
+            "ci95_high": 0.5442816452682018
+          }
+        },
+        "mismatch": {
+          "success": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "target_ever_grasped": {
+            "mean": 0.85,
+            "ci95_low": 0.7,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.05,
+            "ci95_low": 0.0,
+            "ci95_high": 0.15
+          },
+          "target_min_eef_distance": {
+            "mean": 0.04751370719168335,
+            "ci95_low": 0.017740258726407773,
+            "ci95_high": 0.08294381459360006
+          },
+          "target_max_displacement": {
+            "mean": 0.4685024321079254,
+            "ci95_low": 0.38307834818959235,
+            "ci95_high": 0.5504713469743728
+          }
+        },
+        "paired": {
+          "success": {
+            "mean": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "target_ever_grasped": {
+            "mean": 0.45,
+            "ci95_low": 0.25,
+            "ci95_high": 0.65
+          },
+          "target_ever_in_basket": {
+            "mean": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.15,
+            "ci95_low": 0.0,
+            "ci95_high": 0.3
+          },
+          "target_min_eef_distance": {
+            "mean": 0.09772968152537942,
+            "ci95_low": 0.05239346516202204,
+            "ci95_high": 0.1455875299940816
+          },
+          "target_max_displacement": {
+            "mean": 0.2928045876324177,
+            "ci95_low": 0.17851979924365877,
+            "ci95_high": 0.4082534629106517
+          }
+        },
+        "random": {
+          "success": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "target_ever_grasped": {
+            "mean": 0.85,
+            "ci95_low": 0.7,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.05,
+            "ci95_low": 0.0,
+            "ci95_high": 0.15
+          },
+          "target_min_eef_distance": {
+            "mean": 0.045646626106463375,
+            "ci95_low": 0.01503479698090814,
+            "ci95_high": 0.08131641661049796
+          },
+          "target_max_displacement": {
+            "mean": 0.4680060654878616,
+            "ci95_low": 0.3827543581277132,
+            "ci95_high": 0.5495820991694927
+          }
+        }
+      },
+      "comparisons": {
+        "paired_minus_mismatch": {
+          "success": {
+            "mean_favorable_difference": -0.6,
+            "ci95_low": -0.8,
+            "ci95_high": -0.4
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": -0.4,
+            "ci95_low": -0.6,
+            "ci95_high": -0.2
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": -0.6,
+            "ci95_low": -0.8,
+            "ci95_high": -0.4
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": -0.1,
+            "ci95_low": -0.25,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": -0.05021597433369607,
+            "ci95_low": -0.08838353309314698,
+            "ci95_high": -0.01704945487319499
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": -0.17569784447550774,
+            "ci95_low": -0.2853562841191888,
+            "ci95_high": -0.07215463772416121
+          }
+        },
+        "paired_minus_random": {
+          "success": {
+            "mean_favorable_difference": -0.6,
+            "ci95_low": -0.8,
+            "ci95_high": -0.4
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": -0.4,
+            "ci95_low": -0.6,
+            "ci95_high": -0.2
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": -0.6,
+            "ci95_low": -0.8,
+            "ci95_high": -0.4
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": -0.1,
+            "ci95_low": -0.25,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": -0.052083055418916044,
+            "ci95_low": -0.0911962365283398,
+            "ci95_high": -0.018549553449265673
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": -0.17520147785544396,
+            "ci95_low": -0.28264028007164593,
+            "ci95_high": -0.07161162719130516
+          }
+        },
+        "paired_minus_correct": {
+          "success": {
+            "mean_favorable_difference": -0.8,
+            "ci95_low": -0.95,
+            "ci95_high": -0.6
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": -0.55,
+            "ci95_low": -0.75,
+            "ci95_high": -0.35
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": -0.8,
+            "ci95_low": -0.95,
+            "ci95_high": -0.6
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": -0.15,
+            "ci95_low": -0.3,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": -0.08001110362820327,
+            "ci95_low": -0.12845451891771517,
+            "ci95_high": -0.03383018730906771
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": -0.24600239619612693,
+            "ci95_low": -0.36034303046762944,
+            "ci95_high": -0.13104119239375006
+          }
+        },
+        "correct_minus_mismatch": {
+          "success": {
+            "mean_favorable_difference": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": 0.15,
+            "ci95_low": 0.0,
+            "ci95_high": 0.3
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": 0.05,
+            "ci95_low": 0.0,
+            "ci95_high": 0.15
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": 0.029795129294507207,
+            "ci95_low": 0.00014256850816309454,
+            "ci95_high": 0.06585660112148614
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": 0.0703045517206192,
+            "ci95_low": -0.011056167110800742,
+            "ci95_high": 0.1560662558674812
+          }
+        }
+      }
+    },
+    "1": {
+      "num_paired_initial_states": 20,
+      "init_state_ids": [
+        3,
+        7,
+        9,
+        10,
+        14,
+        15,
+        17,
+        19,
+        20,
+        22,
+        25,
+        27,
+        30,
+        31,
+        34,
+        36,
+        43,
+        45,
+        47,
+        48
+      ],
+      "conditions": {
+        "correct": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.02021847851574421,
+            "ci95_low": 0.016223547043045985,
+            "ci95_high": 0.02425960240419954
+          },
+          "target_max_displacement": {
+            "mean": 0.4074995115399361,
+            "ci95_low": 0.4022781703993678,
+            "ci95_high": 0.41270161751657725
+          }
+        },
+        "mismatch": {
+          "success": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.20418424867093563,
+            "ci95_low": 0.187005716226995,
+            "ci95_high": 0.21529542261734605
+          },
+          "target_max_displacement": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          }
+        },
+        "paired": {
+          "success": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.2248620554804802,
+            "ci95_low": 0.22177651518955827,
+            "ci95_high": 0.22763778978958726
+          },
+          "target_max_displacement": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          }
+        },
+        "random": {
+          "success": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.21445315852761268,
+            "ci95_low": 0.2099969111941755,
+            "ci95_high": 0.2188130126334727
+          },
+          "target_max_displacement": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          }
+        }
+      },
+      "comparisons": {
+        "paired_minus_mismatch": {
+          "success": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": -0.15,
+            "ci95_high": 0.15
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": -0.020677806809544563,
+            "ci95_low": -0.03739479593932629,
+            "ci95_high": -0.010082711335271608
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          }
+        },
+        "paired_minus_random": {
+          "success": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": -0.15,
+            "ci95_high": 0.15
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": -0.010408896952867508,
+            "ci95_low": -0.01484023893252015,
+            "ci95_high": -0.006176375225186348
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          }
+        },
+        "paired_minus_correct": {
+          "success": {
+            "mean_favorable_difference": -1.0,
+            "ci95_low": -1.0,
+            "ci95_high": -1.0
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": -1.0,
+            "ci95_low": -1.0,
+            "ci95_high": -1.0
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": -1.0,
+            "ci95_low": -1.0,
+            "ci95_high": -1.0
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": -0.95,
+            "ci95_low": -1.0,
+            "ci95_high": -0.85
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": -0.20464357696473598,
+            "ci95_low": -0.21008816573477815,
+            "ci95_high": -0.1986630225746194
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": -0.4074995115399361,
+            "ci95_low": -0.412674695327878,
+            "ci95_high": -0.4023460231348872
+          }
+        },
+        "correct_minus_mismatch": {
+          "success": {
+            "mean_favorable_difference": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean_favorable_difference": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean_favorable_difference": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean_favorable_difference": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean_favorable_difference": 0.18396577015519142,
+            "ci95_low": 0.16726097538950854,
+            "ci95_high": 0.19464413113077172
+          },
+          "target_max_displacement": {
+            "mean_favorable_difference": 0.4074995115399361,
+            "ci95_low": 0.40236332260072233,
+            "ci95_high": 0.4127363643795252
+          }
+        }
+      }
+    }
+  },
+  "stratified_equal_task_average": {
+    "paired_minus_mismatch": {
+      "success": {
+        "mean_favorable_difference": -0.3,
+        "ci95_low": -0.4,
+        "ci95_high": -0.2
+      },
+      "target_ever_grasped": {
+        "mean_favorable_difference": -0.2,
+        "ci95_low": -0.3,
+        "ci95_high": -0.1
+      },
+      "target_ever_in_basket": {
+        "mean_favorable_difference": -0.3,
+        "ci95_low": -0.4,
+        "ci95_high": -0.2
+      },
+      "alternative_ever_grasped": {
+        "mean_favorable_difference": -0.05,
+        "ci95_low": -0.15000000000000002,
+        "ci95_high": 0.049999999999999996
+      },
+      "target_min_eef_distance": {
+        "mean_favorable_difference": -0.035446890571620315,
+        "ci95_low": -0.05594009366643149,
+        "ci95_high": -0.017631678243342334
+      },
+      "target_max_displacement": {
+        "mean_favorable_difference": -0.08784892223775387,
+        "ci95_low": -0.14229620876722038,
+        "ci95_high": -0.03533980191685262
+      }
+    },
+    "paired_minus_random": {
+      "success": {
+        "mean_favorable_difference": -0.3,
+        "ci95_low": -0.4,
+        "ci95_high": -0.2
+      },
+      "target_ever_grasped": {
+        "mean_favorable_difference": -0.2,
+        "ci95_low": -0.3,
+        "ci95_high": -0.1
+      },
+      "target_ever_in_basket": {
+        "mean_favorable_difference": -0.3,
+        "ci95_low": -0.4,
+        "ci95_high": -0.2
+      },
+      "alternative_ever_grasped": {
+        "mean_favorable_difference": -0.05,
+        "ci95_low": -0.15,
+        "ci95_high": 0.049999999999999996
+      },
+      "target_min_eef_distance": {
+        "mean_favorable_difference": -0.031245976185891776,
+        "ci95_low": -0.05086222028447082,
+        "ci95_high": -0.01420185123686682
+      },
+      "target_max_displacement": {
+        "mean_favorable_difference": -0.08760073892772198,
+        "ci95_low": -0.1427303861360997,
+        "ci95_high": -0.03540882352739575
+      }
+    },
+    "paired_minus_correct": {
+      "success": {
+        "mean_favorable_difference": -0.9,
+        "ci95_low": -0.975,
+        "ci95_high": -0.8
+      },
+      "target_ever_grasped": {
+        "mean_favorable_difference": -0.775,
+        "ci95_low": -0.875,
+        "ci95_high": -0.675
+      },
+      "target_ever_in_basket": {
+        "mean_favorable_difference": -0.9,
+        "ci95_low": -0.975,
+        "ci95_high": -0.8
+      },
+      "alternative_ever_grasped": {
+        "mean_favorable_difference": -0.5499999999999999,
+        "ci95_low": -0.65,
+        "ci95_high": -0.45
+      },
+      "target_min_eef_distance": {
+        "mean_favorable_difference": -0.14232734029646962,
+        "ci95_low": -0.16696788908477173,
+        "ci95_high": -0.11908686351554935
+      },
+      "target_max_displacement": {
+        "mean_favorable_difference": -0.3267509538680315,
+        "ci95_low": -0.3839817498531192,
+        "ci95_high": -0.2702986516989768
+      }
+    },
+    "correct_minus_mismatch": {
+      "success": {
+        "mean_favorable_difference": 0.6,
+        "ci95_low": 0.525,
+        "ci95_high": 0.7
+      },
+      "target_ever_grasped": {
+        "mean_favorable_difference": 0.575,
+        "ci95_low": 0.5,
+        "ci95_high": 0.65
+      },
+      "target_ever_in_basket": {
+        "mean_favorable_difference": 0.6,
+        "ci95_low": 0.525,
+        "ci95_high": 0.7
+      },
+      "alternative_ever_grasped": {
+        "mean_favorable_difference": 0.5,
+        "ci95_low": 0.425,
+        "ci95_high": 0.575
+      },
+      "target_min_eef_distance": {
+        "mean_favorable_difference": 0.10688044972484931,
+        "ci95_low": 0.09055306654598098,
+        "ci95_high": 0.1259580623047077
+      },
+      "target_max_displacement": {
+        "mean_favorable_difference": 0.23890203163027762,
+        "ci95_low": 0.19837503686547278,
+        "ci95_high": 0.28279393119737506
+      }
+    }
+  },
+  "sampler_audits": {
+    "0": {
+      "correct": 0.0,
+      "mismatch": 0.0,
+      "paired": 0.0,
+      "random": 0.0
+    },
+    "1": {
+      "correct": 0.0,
+      "mismatch": 0.0,
+      "paired": 0.0,
+      "random": 0.0
+    }
+  }
+}

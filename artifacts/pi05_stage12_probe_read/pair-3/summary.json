@@ -1,0 +1,106 @@
+{
+  "protocol": "Stage 12 read-only replay of Stage 11: unmodified pi0.5, official sample_actions, forward hooks that only store residuals; same initial states, prompts, and query-indexed noise as Stage 11",
+  "pair": {
+    "pair_id": 3,
+    "name": "tomato_sauce_vs_butter",
+    "task_ids": [
+      5,
+      6
+    ],
+    "object_instances": [
+      "tomato_sauce_1",
+      "butter_1"
+    ],
+    "object_names": [
+      "tomato sauce",
+      "butter"
+    ],
+    "prompts_plain": [
+      "pick up the tomato sauce and place it in the basket",
+      "pick up the butter and place it in the basket"
+    ],
+    "prompts_openvla": [
+      "In: What action should the robot take to pick up the tomato sauce and place it in the basket?\nOut:",
+      "In: What action should the robot take to pick up the butter and place it in the basket?\nOut:"
+    ]
+  },
+  "scene_side": 0,
+  "task_id": 5,
+  "task_language": "pick up the tomato sauce and place it in the basket",
+  "stage11_dir": "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_instruction_compliance_v1/pair-3",
+  "num_paired_initial_states": 50,
+  "num_rollouts": 100,
+  "init_state_ids": [
+    43,
+    3,
+    21,
+    31,
+    38,
+    27,
+    18,
+    37,
+    19,
+    10,
+    32,
+    20,
+    17,
+    14,
+    22,
+    30,
+    48,
+    4,
+    34,
+    33,
+    41,
+    7,
+    26,
+    25,
+    47,
+    46,
+    24,
+    2,
+    23,
+    16,
+    8,
+    5,
+    6,
+    28,
+    40,
+    39,
+    0,
+    1,
+    11,
+    9,
+    36,
+    44,
+    45,
+    15,
+    42,
+    13,
+    35,
+    29,
+    12,
+    49
+  ],
+  "audits": {
+    "patching": false,
+    "hooks_registered": true,
+    "hooks_return_none": true,
+    "sampler": "official pi0.5 model.sample_actions",
+    "prefix_hook_calls_per_query_per_block": 1,
+    "expert_hook_calls_per_query_per_block": 10,
+    "stage11_outcomes_reproduced": 100,
+    "stage11_outcomes_total": 100,
+    "all_stage11_outcomes_reproduced": true,
+    "max_first_query_hooked_vs_unhooked_action_error": 0.0
+  },
+  "residual_readouts": {
+    "prefix_prompt_end": "final prompt token after each PaliGemma block, [queries, 18, 2048]",
+    "expert_action_mean_t1": "ten-action-token mean after each expert block at the first denoising evaluation t=1, [queries, 18, 1024]",
+    "storage_dtype": "float16"
+  },
+  "replan_steps": 5,
+  "num_denoise_steps": 10,
+  "elapsed_seconds": 2429.6938953571953,
+  "max_cuda_memory_gib": 7.119950294494629
+}

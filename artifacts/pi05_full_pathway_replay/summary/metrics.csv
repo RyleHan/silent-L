@@ -1,0 +1,85 @@
+task_id,kind,name,metric,label,mean,ci95_low,ci95_high
+0,condition,correct,success,Success,1.0,1.0,1.0
+0,condition,correct,target_ever_grasped,Target grasp,1.0,1.0,1.0
+0,condition,correct,target_ever_in_basket,Target in basket,1.0,1.0,1.0
+0,condition,correct,alternative_ever_grasped,Alternative grasp,0.0,0.0,0.0
+0,condition,correct,target_min_eef_distance,Target minimum EEF distance,0.017718577897176145,0.014378223278326914,0.021337174267973744
+0,condition,correct,target_max_displacement,Target maximum displacement,0.5388069838285446,0.533662883490324,0.5443554253876209
+0,condition,mismatch,success,Success,0.8,0.6,0.95
+0,condition,mismatch,target_ever_grasped,Target grasp,0.85,0.7,1.0
+0,condition,mismatch,target_ever_in_basket,Target in basket,0.8,0.6,0.95
+0,condition,mismatch,alternative_ever_grasped,Alternative grasp,0.05,0.0,0.15
+0,condition,mismatch,target_min_eef_distance,Target minimum EEF distance,0.04751370719168335,0.017784743104712106,0.08320947884349145
+0,condition,mismatch,target_max_displacement,Target maximum displacement,0.4685024321079254,0.38231329955160614,0.5503087734431029
+0,condition,single_block,success,Success,0.2,0.05,0.4
+0,condition,single_block,target_ever_grasped,Target grasp,0.45,0.25,0.65
+0,condition,single_block,target_ever_in_basket,Target in basket,0.2,0.05,0.4
+0,condition,single_block,alternative_ever_grasped,Alternative grasp,0.15,0.0,0.3
+0,condition,single_block,target_min_eef_distance,Target minimum EEF distance,0.09772968152537942,0.05237112140515819,0.14559417100274
+0,condition,single_block,target_max_displacement,Target maximum displacement,0.2928045876324177,0.1789452682994306,0.40715603841468667
+0,condition,full_pathway,success,Success,1.0,1.0,1.0
+0,condition,full_pathway,target_ever_grasped,Target grasp,1.0,1.0,1.0
+0,condition,full_pathway,target_ever_in_basket,Target in basket,1.0,1.0,1.0
+0,condition,full_pathway,alternative_ever_grasped,Alternative grasp,0.0,0.0,0.0
+0,condition,full_pathway,target_min_eef_distance,Target minimum EEF distance,0.01769695905968547,0.014347807231824845,0.021239838504698124
+0,condition,full_pathway,target_max_displacement,Target maximum displacement,0.5396502286195755,0.534093669205904,0.5456819342821836
+0,favorable_contrast,full_pathway_minus_single_block,success,Success,0.8,0.6,0.95
+0,favorable_contrast,full_pathway_minus_single_block,target_ever_grasped,Target grasp,0.55,0.35,0.75
+0,favorable_contrast,full_pathway_minus_single_block,target_ever_in_basket,Target in basket,0.8,0.6,0.95
+0,favorable_contrast,full_pathway_minus_single_block,alternative_ever_grasped,Alternative grasp,0.15,0.0,0.3
+0,favorable_contrast,full_pathway_minus_single_block,target_min_eef_distance,Target minimum EEF distance,0.08003272246569396,0.03406235552858561,0.12952100066933775
+0,favorable_contrast,full_pathway_minus_single_block,target_max_displacement,Target maximum displacement,0.24684564098715783,0.1296517178043723,0.36130060629919164
+0,favorable_contrast,full_pathway_minus_mismatch,success,Success,0.2,0.05,0.4
+0,favorable_contrast,full_pathway_minus_mismatch,target_ever_grasped,Target grasp,0.15,0.0,0.3
+0,favorable_contrast,full_pathway_minus_mismatch,target_ever_in_basket,Target in basket,0.2,0.05,0.4
+0,favorable_contrast,full_pathway_minus_mismatch,alternative_ever_grasped,Alternative grasp,0.05,0.0,0.15
+0,favorable_contrast,full_pathway_minus_mismatch,target_min_eef_distance,Target minimum EEF distance,0.029816748131997882,-7.274211558978991e-05,0.06549747535143978
+0,favorable_contrast,full_pathway_minus_mismatch,target_max_displacement,Target maximum displacement,0.07114779651165008,-0.010049184262752532,0.15761967696249476
+0,favorable_contrast,full_pathway_minus_correct,success,Success,0.0,0.0,0.0
+0,favorable_contrast,full_pathway_minus_correct,target_ever_grasped,Target grasp,0.0,0.0,0.0
+0,favorable_contrast,full_pathway_minus_correct,target_ever_in_basket,Target in basket,0.0,0.0,0.0
+0,favorable_contrast,full_pathway_minus_correct,alternative_ever_grasped,Alternative grasp,0.0,0.0,0.0
+0,favorable_contrast,full_pathway_minus_correct,target_min_eef_distance,Target minimum EEF distance,2.1618837490677833e-05,-2.291519194841385e-07,6.474810652434826e-05
+0,favorable_contrast,full_pathway_minus_correct,target_max_displacement,Target maximum displacement,0.0008432447910308837,6.59075379371643e-05,0.0019627618044614787
+1,condition,correct,success,Success,1.0,1.0,1.0
+1,condition,correct,target_ever_grasped,Target grasp,1.0,1.0,1.0
+1,condition,correct,target_ever_in_basket,Target in basket,1.0,1.0,1.0
+1,condition,correct,alternative_ever_grasped,Alternative grasp,0.0,0.0,0.0
+1,condition,correct,target_min_eef_distance,Target minimum EEF distance,0.02021847851574421,0.0162341721059056,0.024229772183462037
+1,condition,correct,target_max_displacement,Target maximum displacement,0.4074995115399361,0.40234761316329243,0.41264711759984496
+1,condition,mismatch,success,Success,0.0,0.0,0.0
+1,condition,mismatch,target_ever_grasped,Target grasp,0.0,0.0,0.0
+1,condition,mismatch,target_ever_in_basket,Target in basket,0.0,0.0,0.0
+1,condition,mismatch,alternative_ever_grasped,Alternative grasp,0.95,0.85,1.0
+1,condition,mismatch,target_min_eef_distance,Target minimum EEF distance,0.20418424867093563,0.18719468377530576,0.2153092108108103
+1,condition,mismatch,target_max_displacement,Target maximum displacement,0.0,0.0,0.0
+1,condition,single_block,success,Success,0.0,0.0,0.0
+1,condition,single_block,target_ever_grasped,Target grasp,0.0,0.0,0.0
+1,condition,single_block,target_ever_in_basket,Target in basket,0.0,0.0,0.0
+1,condition,single_block,alternative_ever_grasped,Alternative grasp,0.95,0.85,1.0
+1,condition,single_block,target_min_eef_distance,Target minimum EEF distance,0.2248620554804802,0.22178634878247977,0.22765874337404965
+1,condition,single_block,target_max_displacement,Target maximum displacement,0.0,0.0,0.0
+1,condition,full_pathway,success,Success,1.0,1.0,1.0
+1,condition,full_pathway,target_ever_grasped,Target grasp,1.0,1.0,1.0
+1,condition,full_pathway,target_ever_in_basket,Target in basket,1.0,1.0,1.0
+1,condition,full_pathway,alternative_ever_grasped,Alternative grasp,0.0,0.0,0.0
+1,condition,full_pathway,target_min_eef_distance,Target minimum EEF distance,0.020218632789328693,0.016153400173643605,0.02425921663234476
+1,condition,full_pathway,target_max_displacement,Target maximum displacement,0.40739933103322984,0.4025050314515829,0.4123323778063059
+1,favorable_contrast,full_pathway_minus_single_block,success,Success,1.0,1.0,1.0
+1,favorable_contrast,full_pathway_minus_single_block,target_ever_grasped,Target grasp,1.0,1.0,1.0
+1,favorable_contrast,full_pathway_minus_single_block,target_ever_in_basket,Target in basket,1.0,1.0,1.0
+1,favorable_contrast,full_pathway_minus_single_block,alternative_ever_grasped,Alternative grasp,0.95,0.85,1.0
+1,favorable_contrast,full_pathway_minus_single_block,target_min_eef_distance,Target minimum EEF distance,0.2046434226911515,0.19854711464606226,0.21015470239915884
+1,favorable_contrast,full_pathway_minus_single_block,target_max_displacement,Target maximum displacement,0.40739933103322984,0.4025276403874159,0.4122224616259337
+1,favorable_contrast,full_pathway_minus_mismatch,success,Success,1.0,1.0,1.0
+1,favorable_contrast,full_pathway_minus_mismatch,target_ever_grasped,Target grasp,1.0,1.0,1.0
+1,favorable_contrast,full_pathway_minus_mismatch,target_ever_in_basket,Target in basket,1.0,1.0,1.0
+1,favorable_contrast,full_pathway_minus_mismatch,alternative_ever_grasped,Alternative grasp,0.95,0.85,1.0
+1,favorable_contrast,full_pathway_minus_mismatch,target_min_eef_distance,Target minimum EEF distance,0.18396561588160693,0.1669719591276953,0.19475805992318782
+1,favorable_contrast,full_pathway_minus_mismatch,target_max_displacement,Target maximum displacement,0.40739933103322984,0.4024473539367318,0.4123472221568227
+1,favorable_contrast,full_pathway_minus_correct,success,Success,0.0,0.0,0.0
+1,favorable_contrast,full_pathway_minus_correct,target_ever_grasped,Target grasp,0.0,0.0,0.0
+1,favorable_contrast,full_pathway_minus_correct,target_ever_in_basket,Target in basket,0.0,0.0,0.0
+1,favorable_contrast,full_pathway_minus_correct,alternative_ever_grasped,Alternative grasp,0.0,0.0,0.0
+1,favorable_contrast,full_pathway_minus_correct,target_min_eef_distance,Target minimum EEF distance,-1.5427358448505402e-07,-9.00179147720337e-06,1.028706319630146e-05
+1,favorable_contrast,full_pathway_minus_correct,target_max_displacement,Target maximum displacement,-0.00010018050670623779,-0.0007945150882005691,0.000517569743096828

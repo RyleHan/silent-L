@@ -1,0 +1,21 @@
+# Allowlist: this directory also holds personal notes, thesis material, and
+# third-party papers. Only the paths re-included below belong to the repository.
+/*
+!/.gitignore
+!/README.md
+!/vla_coordinates/
+!/scripts/
+!/configs/
+!/cluster/
+!/tests/
+!/docs/
+!/artifacts/
+!/LICENSE
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# Large intermediate arrays; regenerate from the listed scripts.
+/artifacts/pi05_coast_pilot/fit/coast_conceptor.npz

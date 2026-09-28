@@ -1,0 +1,116 @@
+{
+  "protocol": "paired prompts; validation-selected layers; test episode cluster bootstrap",
+  "num_test_episodes": 8,
+  "test_episodes": [
+    [
+      0,
+      21
+    ],
+    [
+      0,
+      22
+    ],
+    [
+      0,
+      23
+    ],
+    [
+      0,
+      24
+    ],
+    [
+      1,
+      21
+    ],
+    [
+      1,
+      22
+    ],
+    [
+      1,
+      23
+    ],
+    [
+      1,
+      24
+    ]
+  ],
+  "resamples": 10000,
+  "seed": 42,
+  "regression": {
+    "prompt_end": {
+      "target_xyz": {
+        "prompt_aware_layer": 12,
+        "visual_layer": 0,
+        "point_prompt_aware_r2": 0.6592492461204529,
+        "point_visual_r2": 0.26747608184814453,
+        "point_difference": 0.39177316427230835,
+        "bootstrap_difference": {
+          "mean": 0.3941665333196055,
+          "lower_95": 0.24223485514521598,
+          "upper_95": 0.5523933611810207,
+          "probability_positive": 1.0
+        }
+      },
+      "target_to_eef_xyz": {
+        "prompt_aware_layer": 8,
+        "visual_layer": 0,
+        "point_prompt_aware_r2": 0.7027016282081604,
+        "point_visual_r2": 0.4234677851200104,
+        "point_difference": 0.27923384308815,
+        "bootstrap_difference": {
+          "mean": 0.27888023065030576,
+          "lower_95": 0.1854594022035599,
+          "upper_95": 0.38663941621780396,
+          "probability_positive": 1.0
+        }
+      },
+      "target_to_basket_xyz": {
+        "prompt_aware_layer": 13,
+        "visual_layer": 0,
+        "point_prompt_aware_r2": 0.6611762046813965,
+        "point_visual_r2": 0.28517958521842957,
+        "point_difference": 0.3759966194629669,
+        "bootstrap_difference": {
+          "mean": 0.37668468415513634,
+          "lower_95": 0.20853301994502546,
+          "upper_95": 0.5288006477057933,
+          "probability_positive": 0.9997
+        }
+      },
+      "target_displacement_xyz": {
+        "prompt_aware_layer": 12,
+        "visual_layer": 0,
+        "point_prompt_aware_r2": 0.6858221888542175,
+        "point_visual_r2": 0.25892406702041626,
+        "point_difference": 0.42689812183380127,
+        "bootstrap_difference": {
+          "mean": 0.4345719769654563,
+          "lower_95": 0.3701486814767122,
+          "upper_95": 0.5087534764781594,
+          "probability_positive": 1.0
+        }
+      }
+    }
+  },
+  "phase_coarse": {
+    "prompt_end": {
+      "prompt_aware_layer": 12,
+      "visual_layer": 0,
+      "point_prompt_aware_macro_f1": 0.798386962264782,
+      "point_visual_macro_f1": 0.6289659836342734,
+      "point_difference": 0.16942097863050865,
+      "bootstrap_difference": {
+        "mean": 0.17046504872535803,
+        "lower_95": 0.12488707330906591,
+        "upper_95": 0.21847207739765495,
+        "probability_positive": 1.0
+      },
+      "phase_names": [
+        "approach",
+        "pregrasp",
+        "manipulation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "task_id": 1,
+  "task_language": "pick up the cream cheese and place it in the basket",
+  "target_prompt_index": 1,
+  "unused_init_state_protocol": true,
+  "init_state_ids": [
+    14,
+    20,
+    17,
+    10,
+    31,
+    25,
+    43,
+    22,
+    48,
+    47,
+    30,
+    45,
+    19,
+    3,
+    34,
+    15,
+    27,
+    9,
+    36,
+    7
+  ],
+  "conditions": [
+    "null"
+  ],
+  "null_prompt": "pick up an object and place it in the basket",
+  "layer": 13,
+  "alpha": 1.0,
+  "replan_steps": 5,
+  "num_denoise_steps": 10,
+  "sampler_audits": {
+    "null": 0.0
+  },
+  "condition_summaries": {
+    "null": {
+      "num_trials": 20,
+      "success_rate": 0.8,
+      "target_grasp_rate": 0.8,
+      "alternative_grasp_rate": 0.15,
+      "target_in_basket_rate": 0.8,
+      "target_min_eef_distance_mean": 0.05675276280380785,
+      "target_max_displacement_mean": 0.3205262452363968
+    }
+  },
+  "elapsed_seconds": 369.31898898794316,
+  "max_cuda_memory_gib": 7.119950294494629
+}

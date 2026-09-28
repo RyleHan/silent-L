@@ -1,0 +1,659 @@
+{
+  "protocol": {
+    "purpose": "operator positive control for Stage 5 single-block replacement",
+    "base": "mismatched prompt",
+    "source": "correct prompt on the same observation, robot state, and noise",
+    "intervention": "overwrite all 18 action-expert block outputs at every denoising step",
+    "selection": "no layer or strength sweep",
+    "exact_tolerance": 1e-06,
+    "uncertainty": "95% paired initial-state bootstrap confidence intervals"
+  },
+  "metric_definitions": {
+    "success": {
+      "label": "Success",
+      "favorable_sign": 1.0
+    },
+    "target_ever_grasped": {
+      "label": "Target grasp",
+      "favorable_sign": 1.0
+    },
+    "target_ever_in_basket": {
+      "label": "Target in basket",
+      "favorable_sign": 1.0
+    },
+    "alternative_ever_grasped": {
+      "label": "Alternative grasp",
+      "favorable_sign": -1.0
+    },
+    "target_min_eef_distance": {
+      "label": "Target minimum EEF distance",
+      "favorable_sign": -1.0
+    },
+    "target_max_displacement": {
+      "label": "Target maximum displacement",
+      "favorable_sign": 1.0
+    }
+  },
+  "tasks": {
+    "0": {
+      "num_paired_initial_states": 20,
+      "init_state_ids": [
+        2,
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19,
+        22,
+        32,
+        33,
+        35,
+        36,
+        41,
+        42,
+        44,
+        48
+      ],
+      "conditions": {
+        "correct": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.017718577897176145,
+            "ci95_low": 0.014378223278326914,
+            "ci95_high": 0.021337174267973744
+          },
+          "target_max_displacement": {
+            "mean": 0.5388069838285446,
+            "ci95_low": 0.533662883490324,
+            "ci95_high": 0.5443554253876209
+          }
+        },
+        "mismatch": {
+          "success": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "target_ever_grasped": {
+            "mean": 0.85,
+            "ci95_low": 0.7,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.05,
+            "ci95_low": 0.0,
+            "ci95_high": 0.15
+          },
+          "target_min_eef_distance": {
+            "mean": 0.04751370719168335,
+            "ci95_low": 0.017784743104712106,
+            "ci95_high": 0.08320947884349145
+          },
+          "target_max_displacement": {
+            "mean": 0.4685024321079254,
+            "ci95_low": 0.38231329955160614,
+            "ci95_high": 0.5503087734431029
+          }
+        },
+        "single_block": {
+          "success": {
+            "mean": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "target_ever_grasped": {
+            "mean": 0.45,
+            "ci95_low": 0.25,
+            "ci95_high": 0.65
+          },
+          "target_ever_in_basket": {
+            "mean": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.15,
+            "ci95_low": 0.0,
+            "ci95_high": 0.3
+          },
+          "target_min_eef_distance": {
+            "mean": 0.09772968152537942,
+            "ci95_low": 0.05237112140515819,
+            "ci95_high": 0.14559417100274
+          },
+          "target_max_displacement": {
+            "mean": 0.2928045876324177,
+            "ci95_low": 0.1789452682994306,
+            "ci95_high": 0.40715603841468667
+          }
+        },
+        "full_pathway": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.01769695905968547,
+            "ci95_low": 0.014347807231824845,
+            "ci95_high": 0.021239838504698124
+          },
+          "target_max_displacement": {
+            "mean": 0.5396502286195755,
+            "ci95_low": 0.534093669205904,
+            "ci95_high": 0.5456819342821836
+          }
+        }
+      },
+      "contrasts": {
+        "full_pathway_minus_single_block": {
+          "success": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "target_ever_grasped": {
+            "mean": 0.55,
+            "ci95_low": 0.35,
+            "ci95_high": 0.75
+          },
+          "target_ever_in_basket": {
+            "mean": 0.8,
+            "ci95_low": 0.6,
+            "ci95_high": 0.95
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.15,
+            "ci95_low": 0.0,
+            "ci95_high": 0.3
+          },
+          "target_min_eef_distance": {
+            "mean": 0.08003272246569396,
+            "ci95_low": 0.03406235552858561,
+            "ci95_high": 0.12952100066933775
+          },
+          "target_max_displacement": {
+            "mean": 0.24684564098715783,
+            "ci95_low": 0.1296517178043723,
+            "ci95_high": 0.36130060629919164
+          }
+        },
+        "full_pathway_minus_mismatch": {
+          "success": {
+            "mean": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "target_ever_grasped": {
+            "mean": 0.15,
+            "ci95_low": 0.0,
+            "ci95_high": 0.3
+          },
+          "target_ever_in_basket": {
+            "mean": 0.2,
+            "ci95_low": 0.05,
+            "ci95_high": 0.4
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.05,
+            "ci95_low": 0.0,
+            "ci95_high": 0.15
+          },
+          "target_min_eef_distance": {
+            "mean": 0.029816748131997882,
+            "ci95_low": -7.274211558978991e-05,
+            "ci95_high": 0.06549747535143978
+          },
+          "target_max_displacement": {
+            "mean": 0.07114779651165008,
+            "ci95_low": -0.010049184262752532,
+            "ci95_high": 0.15761967696249476
+          }
+        },
+        "full_pathway_minus_correct": {
+          "success": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": 2.1618837490677833e-05,
+            "ci95_low": -2.291519194841385e-07,
+            "ci95_high": 6.474810652434826e-05
+          },
+          "target_max_displacement": {
+            "mean": 0.0008432447910308837,
+            "ci95_low": 6.59075379371643e-05,
+            "ci95_high": 0.0019627618044614787
+          }
+        }
+      },
+      "trajectory_agreement_with_correct": {
+        "success": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "target_ever_grasped": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "target_ever_in_basket": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "alternative_ever_grasped": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "target_min_eef_distance": {
+          "max_abs_difference": 0.0004266873002052307,
+          "exact_match_fraction": 0.7
+        },
+        "alternative_min_eef_distance": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "target_max_displacement": {
+          "max_abs_difference": 0.009352624416351318,
+          "exact_match_fraction": 0.35
+        },
+        "alternative_max_displacement": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "executed_steps": {
+          "max_abs_difference": 12.0,
+          "exact_match_fraction": 0.8
+        },
+        "num_policy_queries": {
+          "max_abs_difference": 2.0,
+          "exact_match_fraction": 0.8
+        }
+      },
+      "operator_fidelity": {
+        "action_max_abs_difference": 0.0,
+        "velocity_max_abs_difference": 0.0,
+        "layer_hook_count_min": 10,
+        "layer_hook_count_max": 10,
+        "source_vs_official_max_abs_difference": 0.0,
+        "replay_vs_official_source_max_abs_difference": 0.0
+      }
+    },
+    "1": {
+      "num_paired_initial_states": 20,
+      "init_state_ids": [
+        3,
+        7,
+        9,
+        10,
+        14,
+        15,
+        17,
+        19,
+        20,
+        22,
+        25,
+        27,
+        30,
+        31,
+        34,
+        36,
+        43,
+        45,
+        47,
+        48
+      ],
+      "conditions": {
+        "correct": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.02021847851574421,
+            "ci95_low": 0.0162341721059056,
+            "ci95_high": 0.024229772183462037
+          },
+          "target_max_displacement": {
+            "mean": 0.4074995115399361,
+            "ci95_low": 0.40234761316329243,
+            "ci95_high": 0.41264711759984496
+          }
+        },
+        "mismatch": {
+          "success": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.20418424867093563,
+            "ci95_low": 0.18719468377530576,
+            "ci95_high": 0.2153092108108103
+          },
+          "target_max_displacement": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          }
+        },
+        "single_block": {
+          "success": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.2248620554804802,
+            "ci95_low": 0.22178634878247977,
+            "ci95_high": 0.22765874337404965
+          },
+          "target_max_displacement": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          }
+        },
+        "full_pathway": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.020218632789328693,
+            "ci95_low": 0.016153400173643605,
+            "ci95_high": 0.02425921663234476
+          },
+          "target_max_displacement": {
+            "mean": 0.40739933103322984,
+            "ci95_low": 0.4025050314515829,
+            "ci95_high": 0.4123323778063059
+          }
+        }
+      },
+      "contrasts": {
+        "full_pathway_minus_single_block": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.2046434226911515,
+            "ci95_low": 0.19854711464606226,
+            "ci95_high": 0.21015470239915884
+          },
+          "target_max_displacement": {
+            "mean": 0.40739933103322984,
+            "ci95_low": 0.4025276403874159,
+            "ci95_high": 0.4122224616259337
+          }
+        },
+        "full_pathway_minus_mismatch": {
+          "success": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_grasped": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "target_ever_in_basket": {
+            "mean": 1.0,
+            "ci95_low": 1.0,
+            "ci95_high": 1.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.95,
+            "ci95_low": 0.85,
+            "ci95_high": 1.0
+          },
+          "target_min_eef_distance": {
+            "mean": 0.18396561588160693,
+            "ci95_low": 0.1669719591276953,
+            "ci95_high": 0.19475805992318782
+          },
+          "target_max_displacement": {
+            "mean": 0.40739933103322984,
+            "ci95_low": 0.4024473539367318,
+            "ci95_high": 0.4123472221568227
+          }
+        },
+        "full_pathway_minus_correct": {
+          "success": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_ever_in_basket": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "alternative_ever_grasped": {
+            "mean": 0.0,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0
+          },
+          "target_min_eef_distance": {
+            "mean": -1.5427358448505402e-07,
+            "ci95_low": -9.00179147720337e-06,
+            "ci95_high": 1.028706319630146e-05
+          },
+          "target_max_displacement": {
+            "mean": -0.00010018050670623779,
+            "ci95_low": -0.0007945150882005691,
+            "ci95_high": 0.000517569743096828
+          }
+        }
+      },
+      "trajectory_agreement_with_correct": {
+        "success": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "target_ever_grasped": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "target_ever_in_basket": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "alternative_ever_grasped": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "target_min_eef_distance": {
+          "max_abs_difference": 8.004438132047653e-05,
+          "exact_match_fraction": 0.8
+        },
+        "alternative_min_eef_distance": {
+          "max_abs_difference": 0.0009208172559738159,
+          "exact_match_fraction": 0.85
+        },
+        "target_max_displacement": {
+          "max_abs_difference": 0.004042118787765503,
+          "exact_match_fraction": 0.3
+        },
+        "alternative_max_displacement": {
+          "max_abs_difference": 0.0,
+          "exact_match_fraction": 1.0
+        },
+        "executed_steps": {
+          "max_abs_difference": 41.0,
+          "exact_match_fraction": 0.85
+        },
+        "num_policy_queries": {
+          "max_abs_difference": 8.0,
+          "exact_match_fraction": 0.95
+        }
+      },
+      "operator_fidelity": {
+        "action_max_abs_difference": 0.0,
+        "velocity_max_abs_difference": 0.0,
+        "layer_hook_count_min": 10,
+        "layer_hook_count_max": 10,
+        "source_vs_official_max_abs_difference": 0.0,
+        "replay_vs_official_source_max_abs_difference": 0.0
+      }
+    }
+  },
+  "global_operator_fidelity": {
+    "action_max_abs_difference": 0.0,
+    "velocity_max_abs_difference": 0.0,
+    "layer_hook_count_min": 10,
+    "layer_hook_count_max": 10,
+    "source_vs_official_max_abs_difference": 0.0,
+    "replay_vs_official_source_max_abs_difference": 0.0
+  },
+  "positive_control_gate": {
+    "passed": true,
+    "exact_action_and_velocity_replay": true,
+    "all_18_hooks_called_once_per_denoising_step": true,
+    "full_pathway_success_matches_correct_prompt": true
+  }
+}

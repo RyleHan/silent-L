@@ -1,0 +1,4 @@
+{
+  "validation_dose_response": "validation layer/alpha sweep; endpoint block 17 is a control",
+  "locked_test_controls": "selected block 13, alpha=1; test episodes with cluster-bootstrap CI"
+}

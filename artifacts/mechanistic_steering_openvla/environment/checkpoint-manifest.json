@@ -1,0 +1,73 @@
+{
+  "repo_id": "openvla/openvla-7b-finetuned-libero-10",
+  "revision": "80970322773f81baa2e22fe495d0487b93a05cfa",
+  "snapshot": "/home/woody/iwnt/iwnt144h/vla_coordinates/cache/hf/transformers/models--openvla--openvla-7b-finetuned-libero-10/snapshots/80970322773f81baa2e22fe495d0487b93a05cfa",
+  "num_files": 16,
+  "total_size_bytes": 15085050947,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 1519
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 1865
+    },
+    {
+      "path": "added_tokens.json",
+      "size_bytes": 21
+    },
+    {
+      "path": "config.json",
+      "size_bytes": 3528
+    },
+    {
+      "path": "dataset_statistics.json",
+      "size_bytes": 2129
+    },
+    {
+      "path": "generation_config.json",
+      "size_bytes": 136
+    },
+    {
+      "path": "model-00001-of-00004.safetensors",
+      "size_bytes": 4925122448
+    },
+    {
+      "path": "model-00002-of-00004.safetensors",
+      "size_bytes": 4947392496
+    },
+    {
+      "path": "model-00003-of-00004.safetensors",
+      "size_bytes": 4947417456
+    },
+    {
+      "path": "model-00004-of-00004.safetensors",
+      "size_bytes": 262668432
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "size_bytes": 94764
+    },
+    {
+      "path": "preprocessor_config.json",
+      "size_bytes": 1690
+    },
+    {
+      "path": "special_tokens_map.json",
+      "size_bytes": 552
+    },
+    {
+      "path": "tokenizer.json",
+      "size_bytes": 1842976
+    },
+    {
+      "path": "tokenizer.model",
+      "size_bytes": 499723
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size_bytes": 1212
+    }
+  ]
+}

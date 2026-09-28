@@ -1,0 +1,84 @@
+{
+  "task_id": 0,
+  "task_language": "pick up the alphabet soup and place it in the basket",
+  "target_prompt_index": 0,
+  "unused_init_state_protocol": true,
+  "init_state_ids": [
+    14,
+    13,
+    12,
+    6,
+    10,
+    22,
+    8,
+    42,
+    19,
+    36,
+    32,
+    48,
+    11,
+    33,
+    41,
+    35,
+    2,
+    15,
+    16,
+    44
+  ],
+  "conditions": [
+    "correct",
+    "mismatch",
+    "paired",
+    "random"
+  ],
+  "layer": 13,
+  "alpha": 1.0,
+  "replan_steps": 5,
+  "num_denoise_steps": 10,
+  "sampler_audits": {
+    "correct": 0.0,
+    "mismatch": 0.0,
+    "paired": 0.0,
+    "random": 0.0
+  },
+  "condition_summaries": {
+    "correct": {
+      "num_trials": 20,
+      "success_rate": 1.0,
+      "target_grasp_rate": 1.0,
+      "alternative_grasp_rate": 0.0,
+      "target_in_basket_rate": 1.0,
+      "target_min_eef_distance_mean": 0.017718577897176145,
+      "target_max_displacement_mean": 0.5388069838285446
+    },
+    "mismatch": {
+      "num_trials": 20,
+      "success_rate": 0.8,
+      "target_grasp_rate": 0.85,
+      "alternative_grasp_rate": 0.05,
+      "target_in_basket_rate": 0.8,
+      "target_min_eef_distance_mean": 0.04751370719168335,
+      "target_max_displacement_mean": 0.4685024321079254
+    },
+    "paired": {
+      "num_trials": 20,
+      "success_rate": 0.2,
+      "target_grasp_rate": 0.45,
+      "alternative_grasp_rate": 0.15,
+      "target_in_basket_rate": 0.2,
+      "target_min_eef_distance_mean": 0.09772968152537942,
+      "target_max_displacement_mean": 0.2928045876324177
+    },
+    "random": {
+      "num_trials": 20,
+      "success_rate": 0.8,
+      "target_grasp_rate": 0.85,
+      "alternative_grasp_rate": 0.05,
+      "target_in_basket_rate": 0.8,
+      "target_min_eef_distance_mean": 0.045646626106463375,
+      "target_max_displacement_mean": 0.4680060654878616
+    }
+  },
+  "elapsed_seconds": 2186.20052410895,
+  "max_cuda_memory_gib": 7.262603759765625
+}

@@ -1,0 +1,65 @@
+{
+  "task_id": 1,
+  "task_language": "pick up the cream cheese and place it in the basket",
+  "target_prompt_index": 1,
+  "unused_init_state_protocol": true,
+  "init_state_ids": [
+    14
+  ],
+  "conditions": [
+    "correct",
+    "mismatch",
+    "paired",
+    "random"
+  ],
+  "layer": 13,
+  "alpha": 1.0,
+  "replan_steps": 5,
+  "num_denoise_steps": 10,
+  "sampler_audits": {
+    "correct": 0.0,
+    "mismatch": 0.0,
+    "paired": 0.0,
+    "random": 0.0
+  },
+  "condition_summaries": {
+    "correct": {
+      "num_trials": 1,
+      "success_rate": 1.0,
+      "target_grasp_rate": 1.0,
+      "alternative_grasp_rate": 0.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.015095120295882225,
+      "target_max_displacement_mean": 0.4104830324649811
+    },
+    "mismatch": {
+      "num_trials": 1,
+      "success_rate": 0.0,
+      "target_grasp_rate": 0.0,
+      "alternative_grasp_rate": 1.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.18307742476463318,
+      "target_max_displacement_mean": 0.0
+    },
+    "paired": {
+      "num_trials": 1,
+      "success_rate": 0.0,
+      "target_grasp_rate": 0.0,
+      "alternative_grasp_rate": 1.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.21742026507854462,
+      "target_max_displacement_mean": 0.0
+    },
+    "random": {
+      "num_trials": 1,
+      "success_rate": 0.0,
+      "target_grasp_rate": 0.0,
+      "alternative_grasp_rate": 1.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.2102324366569519,
+      "target_max_displacement_mean": 0.0
+    }
+  },
+  "elapsed_seconds": 142.94578490406275,
+  "max_cuda_memory_gib": 7.262603759765625
+}

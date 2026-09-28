@@ -1,0 +1,55 @@
+{
+  "protocol": "fixed COAST KS3 held-out pilot",
+  "task_id": 2,
+  "task_language": "turn on the stove and put the moka pot on it",
+  "checkpoint": "/home/woody/iwnt/iwnt144h/vla_coordinates/checkpoints/openpi-libero-2000-pytorch",
+  "conceptor": "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_coast_pilot/fit/coast_conceptor.npz",
+  "fit_task": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it",
+  "fit_episode_counts": {
+    "success": 8,
+    "failure": 7
+  },
+  "layer": 5,
+  "aperture": 0.5,
+  "beta": 0.1,
+  "conditions": [
+    "baseline",
+    "coast",
+    "random"
+  ],
+  "init_state_ids": [
+    15
+  ],
+  "fit_test_disjoint": true,
+  "sampler_audits": {
+    "beta_zero_vs_official_max_abs_difference": 0.0,
+    "beta_zero_hook_count": 0,
+    "coast_first_action_max_abs_change": 0.053121984004974365,
+    "random_first_action_max_abs_change": 0.09244175255298615
+  },
+  "condition_summaries": {
+    "baseline": {
+      "num_trials": 1,
+      "num_successes": 0,
+      "success_rate": 0.0,
+      "executed_steps_mean": 520.0,
+      "relative_residual_change_mean": 0.0
+    },
+    "coast": {
+      "num_trials": 1,
+      "num_successes": 1,
+      "success_rate": 1.0,
+      "executed_steps_mean": 205.0,
+      "relative_residual_change_mean": 0.09528091724325971
+    },
+    "random": {
+      "num_trials": 1,
+      "num_successes": 0,
+      "success_rate": 0.0,
+      "executed_steps_mean": 520.0,
+      "relative_residual_change_mean": 0.09771467089079894
+    }
+  },
+  "elapsed_seconds": 124.76012557488866,
+  "max_cuda_memory_gib": 7.1199541091918945
+}

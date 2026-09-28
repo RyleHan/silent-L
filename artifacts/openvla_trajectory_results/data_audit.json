@@ -1,0 +1,97 @@
+{
+  "input_h5": "/home/woody/iwnt/iwnt144h/vla_coordinates/datasets/libero_object_trajectories_v1/paired_trajectories.h5",
+  "layouts": {
+    "0": {
+      "num_samples": 953,
+      "images": {
+        "num_unique": 953,
+        "reference_mean_absolute_difference_min_median_max": [
+          0.0,
+          8.010031700134277,
+          10.833619117736816
+        ]
+      },
+      "masks": {
+        "num_unique": 600,
+        "reference_mean_absolute_difference_min_median_max": [
+          0.0,
+          0.0018235809402540326,
+          0.008579798974096775
+        ]
+      },
+      "simulator_states": {
+        "num_unique": 953,
+        "reference_mean_absolute_difference_min_median_max": [
+          0.0,
+          0.07108797878026962,
+          0.13150624930858612
+        ]
+      },
+      "patch_labels": {
+        "num_unique": 146,
+        "object_a_union_cells": 70,
+        "object_b_union_cells": 4,
+        "object_a_always_positive_cells": 0,
+        "object_b_always_positive_cells": 4
+      }
+    },
+    "1": {
+      "num_samples": 993,
+      "images": {
+        "num_unique": 993,
+        "reference_mean_absolute_difference_min_median_max": [
+          0.0,
+          8.728754997253418,
+          11.522839546203613
+        ]
+      },
+      "masks": {
+        "num_unique": 727,
+        "reference_mean_absolute_difference_min_median_max": [
+          0.0,
+          0.001694036996923387,
+          0.005899234674870968
+        ]
+      },
+      "simulator_states": {
+        "num_unique": 993,
+        "reference_mean_absolute_difference_min_median_max": [
+          0.0,
+          0.06778916716575623,
+          0.1729511320590973
+        ]
+      },
+      "patch_labels": {
+        "num_unique": 102,
+        "object_a_union_cells": 6,
+        "object_b_union_cells": 36,
+        "object_a_always_positive_cells": 0,
+        "object_b_always_positive_cells": 0
+      }
+    }
+  },
+  "split_support": {
+    "train": {
+      "num_samples": 1392,
+      "num_unique_patch_labels": 206,
+      "object_a_union_cells": 69,
+      "object_b_union_cells": 37
+    },
+    "valid": {
+      "num_samples": 223,
+      "num_unique_patch_labels": 84,
+      "object_a_union_cells": 48,
+      "object_b_union_cells": 34,
+      "object_a_cells_unseen_in_train": 1,
+      "object_b_cells_unseen_in_train": 0
+    },
+    "test": {
+      "num_samples": 331,
+      "num_unique_patch_labels": 85,
+      "object_a_union_cells": 41,
+      "object_b_union_cells": 30,
+      "object_a_cells_unseen_in_train": 0,
+      "object_b_cells_unseen_in_train": 1
+    }
+  }
+}

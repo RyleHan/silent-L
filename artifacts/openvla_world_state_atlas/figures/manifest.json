@@ -1,0 +1,14 @@
+{
+  "atlas_root": "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas",
+  "protocol": "paired prompt; validation-selected layers; held-out episode test",
+  "figures": [
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_headline_scores.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_headline_scores.pdf",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_layer_curves.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_layer_curves.pdf",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_layer_heatmap.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_layer_heatmap.pdf",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_episode_bootstrap.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/figures/paired_episode_bootstrap.pdf"
+  ]
+}

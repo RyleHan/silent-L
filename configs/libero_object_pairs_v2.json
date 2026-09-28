@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "suite": "libero_object",
+  "basket_region": "basket_1_contain_region",
+  "pairs": [
+    {
+      "pair_id": 0,
+      "name": "alphabet_soup_vs_cream_cheese",
+      "task_ids": [0, 1],
+      "object_instances": ["alphabet_soup_1", "cream_cheese_1"],
+      "object_names": ["alphabet soup", "cream cheese"]
+    },
+    {
+      "pair_id": 1,
+      "name": "salad_dressing_vs_ketchup",
+      "task_ids": [2, 4],
+      "object_instances": ["salad_dressing_1", "ketchup_1"],
+      "object_names": ["salad dressing", "ketchup"]
+    },
+    {
+      "pair_id": 2,
+      "name": "bbq_sauce_vs_chocolate_pudding",
+      "task_ids": [3, 8],
+      "object_instances": ["bbq_sauce_1", "chocolate_pudding_1"],
+      "object_names": ["bbq sauce", "chocolate pudding"]
+    },
+    {
+      "pair_id": 3,
+      "name": "tomato_sauce_vs_butter",
+      "task_ids": [5, 6],
+      "object_instances": ["tomato_sauce_1", "butter_1"],
+      "object_names": ["tomato sauce", "butter"]
+    }
+  ],
+  "reserve_task_ids": [7, 9],
+  "protocol": {
+    "episodes_per_task": 50,
+    "max_action_steps": 180,
+    "sample_every": 4,
+    "split_fractions": [0.7, 0.15, 0.15],
+    "split_unit": "episode",
+    "probe_seeds": [42, 43, 44],
+    "primary_models": ["openvla", "pi05_prefix", "pi05_action_expert"]
+  }
+}

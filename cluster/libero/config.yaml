@@ -1,0 +1,7 @@
+# Example LIBERO config. The job scripts point LIBERO_CONFIG_PATH at
+# ${VLA_WORK_ROOT}/config/libero; copy this file there and replace the paths.
+assets: /path/to/LIBERO/libero/libero/assets
+bddl_files: /path/to/LIBERO/libero/libero/bddl_files
+benchmark_root: /path/to/LIBERO/libero/libero
+datasets: /path/to/work/vla_coordinates/datasets
+init_states: /path/to/LIBERO/libero/libero/init_files

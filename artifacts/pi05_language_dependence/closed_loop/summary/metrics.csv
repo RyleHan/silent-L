@@ -1,0 +1,61 @@
+task_id,result_type,condition_or_contrast,metric,label,mean,ci95_low,ci95_high
+0,condition,correct,success,Success rate,1.0,1.0,1.0
+0,condition,correct,target_ever_grasped,Target grasp rate,1.0,1.0,1.0
+0,condition,correct,target_ever_in_basket,Target in-basket rate,1.0,1.0,1.0
+0,condition,correct,alternative_ever_grasped,Alternative grasp rate,0.0,0.0,0.0
+0,condition,correct,target_min_eef_distance,Target minimum EEF distance (m),0.017718577897176145,0.014384653251618147,0.021286711924476533
+0,condition,correct,target_max_displacement,Target maximum displacement (m),0.5388069838285446,0.5336876609176398,0.5442816452682018
+0,condition,swapped,success,Success rate,0.8,0.6,0.95
+0,condition,swapped,target_ever_grasped,Target grasp rate,0.85,0.7,1.0
+0,condition,swapped,target_ever_in_basket,Target in-basket rate,0.8,0.6,0.95
+0,condition,swapped,alternative_ever_grasped,Alternative grasp rate,0.05,0.0,0.15
+0,condition,swapped,target_min_eef_distance,Target minimum EEF distance (m),0.04751370719168335,0.017740258726407773,0.08294381459360006
+0,condition,swapped,target_max_displacement,Target maximum displacement (m),0.4685024321079254,0.38307834818959235,0.5504713469743728
+0,condition,null,success,Success rate,0.85,0.7,1.0
+0,condition,null,target_ever_grasped,Target grasp rate,0.8,0.6,0.95
+0,condition,null,target_ever_in_basket,Target in-basket rate,0.85,0.7,1.0
+0,condition,null,alternative_ever_grasped,Alternative grasp rate,0.0,0.0,0.0
+0,condition,null,target_min_eef_distance,Target minimum EEF distance (m),0.033853189134970305,0.011511416236171499,0.06607154912082479
+0,condition,null,target_max_displacement,Target maximum displacement (m),0.47146408557891845,0.38992522783577444,0.5376440642774105
+0,favorable_contrast,null_minus_correct,success,Success rate,-0.15,-0.3,0.0
+0,favorable_contrast,null_minus_correct,target_ever_grasped,Target grasp rate,-0.2,-0.4,-0.05
+0,favorable_contrast,null_minus_correct,target_ever_in_basket,Target in-basket rate,-0.15,-0.3,0.0
+0,favorable_contrast,null_minus_correct,alternative_ever_grasped,Alternative grasp rate,0.0,0.0,0.0
+0,favorable_contrast,null_minus_correct,target_min_eef_distance,Target minimum EEF distance (m),-0.01613461123779416,-0.04812244559056126,0.006937139112269506
+0,favorable_contrast,null_minus_correct,target_max_displacement,Target maximum displacement (m),-0.06734289824962617,-0.14834017664194107,-0.0014951828122139073
+0,favorable_contrast,null_minus_swapped,success,Success rate,0.05,0.0,0.15
+0,favorable_contrast,null_minus_swapped,target_ever_grasped,Target grasp rate,-0.05,-0.15,0.0
+0,favorable_contrast,null_minus_swapped,target_ever_in_basket,Target in-basket rate,0.05,0.0,0.15
+0,favorable_contrast,null_minus_swapped,alternative_ever_grasped,Alternative grasp rate,0.05,0.0,0.15
+0,favorable_contrast,null_minus_swapped,target_min_eef_distance,Target minimum EEF distance (m),0.013660518056713044,-0.0023660594731336458,0.03901053421664982
+0,favorable_contrast,null_minus_swapped,target_max_displacement,Target maximum displacement (m),0.002961653470993042,-0.015227559357881545,0.033229389190673794
+1,condition,correct,success,Success rate,1.0,1.0,1.0
+1,condition,correct,target_ever_grasped,Target grasp rate,1.0,1.0,1.0
+1,condition,correct,target_ever_in_basket,Target in-basket rate,1.0,1.0,1.0
+1,condition,correct,alternative_ever_grasped,Alternative grasp rate,0.0,0.0,0.0
+1,condition,correct,target_min_eef_distance,Target minimum EEF distance (m),0.02021847851574421,0.01621854079712648,0.02424897811608389
+1,condition,correct,target_max_displacement,Target maximum displacement (m),0.4074995115399361,0.40236251827329395,0.4127233540639281
+1,condition,swapped,success,Success rate,0.0,0.0,0.0
+1,condition,swapped,target_ever_grasped,Target grasp rate,0.0,0.0,0.0
+1,condition,swapped,target_ever_in_basket,Target in-basket rate,0.0,0.0,0.0
+1,condition,swapped,alternative_ever_grasped,Alternative grasp rate,0.95,0.85,1.0
+1,condition,swapped,target_min_eef_distance,Target minimum EEF distance (m),0.20418424867093563,0.18730592525564133,0.21543961703777312
+1,condition,swapped,target_max_displacement,Target maximum displacement (m),0.0,0.0,0.0
+1,condition,null,success,Success rate,0.8,0.6,0.95
+1,condition,null,target_ever_grasped,Target grasp rate,0.8,0.6,0.95
+1,condition,null,target_ever_in_basket,Target in-basket rate,0.8,0.6,0.95
+1,condition,null,alternative_ever_grasped,Alternative grasp rate,0.15,0.0,0.3
+1,condition,null,target_min_eef_distance,Target minimum EEF distance (m),0.05675276280380785,0.028081773404264824,0.09207036017207426
+1,condition,null,target_max_displacement,Target maximum displacement (m),0.3205262452363968,0.24087800994515418,0.3820725481212139
+1,favorable_contrast,null_minus_correct,success,Success rate,-0.2,-0.4,-0.05
+1,favorable_contrast,null_minus_correct,target_ever_grasped,Target grasp rate,-0.2,-0.4,-0.05
+1,favorable_contrast,null_minus_correct,target_ever_in_basket,Target in-basket rate,-0.2,-0.4,-0.05
+1,favorable_contrast,null_minus_correct,alternative_ever_grasped,Alternative grasp rate,-0.15,-0.3,0.0
+1,favorable_contrast,null_minus_correct,target_min_eef_distance,Target minimum EEF distance (m),-0.03653428428806364,-0.071848155799089,-0.007987245261902
+1,favorable_contrast,null_minus_correct,target_max_displacement,Target maximum displacement (m),-0.08697326630353927,-0.16911667566746474,-0.023581284433603307
+1,favorable_contrast,null_minus_swapped,success,Success rate,0.8,0.6,0.95
+1,favorable_contrast,null_minus_swapped,target_ever_grasped,Target grasp rate,0.8,0.6,0.95
+1,favorable_contrast,null_minus_swapped,target_ever_in_basket,Target in-basket rate,0.8,0.6,0.95
+1,favorable_contrast,null_minus_swapped,alternative_ever_grasped,Alternative grasp rate,0.8,0.6,0.95
+1,favorable_contrast,null_minus_swapped,target_min_eef_distance,Target minimum EEF distance (m),0.1474314858671278,0.10351243450772017,0.18274338747083674
+1,favorable_contrast,null_minus_swapped,target_max_displacement,Target maximum displacement (m),0.3205262452363968,0.24121785137802362,0.38190778613090515

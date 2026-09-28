@@ -1,0 +1,1814 @@
+{
+  "protocols": {
+    "actual": "one residual per image under the rollout instruction",
+    "paired": "same image under prompt A and B; absolute labels repeat and target-relative labels swap within each pair"
+  },
+  "paired_prompt_minus_visual": {
+    "prompt_end": {
+      "target_xyz": {
+        "prompt_aware_test_r2": 0.8948395848274231,
+        "visual_control_test_r2": 0.29673123359680176,
+        "difference": 0.5981083512306213
+      },
+      "alternative_xyz": {
+        "prompt_aware_test_r2": 0.9042860865592957,
+        "visual_control_test_r2": 0.30072513222694397,
+        "difference": 0.6035609543323517
+      },
+      "target_to_eef_xyz": {
+        "prompt_aware_test_r2": 0.8985415101051331,
+        "visual_control_test_r2": 0.4321173429489136,
+        "difference": 0.4664241671562195
+      },
+      "alternative_to_eef_xyz": {
+        "prompt_aware_test_r2": 0.9057143330574036,
+        "visual_control_test_r2": 0.44338735938072205,
+        "difference": 0.4623269736766815
+      },
+      "target_to_basket_xyz": {
+        "prompt_aware_test_r2": 0.9077884554862976,
+        "visual_control_test_r2": 0.2835472524166107,
+        "difference": 0.6242412030696869
+      },
+      "eef_target_distance": {
+        "prompt_aware_test_r2": 0.8639935255050659,
+        "visual_control_test_r2": 0.1283661127090454,
+        "difference": 0.7356274127960205
+      },
+      "target_basket_distance": {
+        "prompt_aware_test_r2": 0.92060387134552,
+        "visual_control_test_r2": 0.3404735326766968,
+        "difference": 0.5801303386688232
+      },
+      "target_displacement_xyz": {
+        "prompt_aware_test_r2": 0.879849910736084,
+        "visual_control_test_r2": 0.3332116901874542,
+        "difference": 0.5466382205486298
+      }
+    },
+    "action_boundary": {
+      "target_xyz": {
+        "prompt_aware_test_r2": 0.858243465423584,
+        "visual_control_test_r2": 0.29673123359680176,
+        "difference": 0.5615122318267822
+      },
+      "alternative_xyz": {
+        "prompt_aware_test_r2": 0.8742311000823975,
+        "visual_control_test_r2": 0.30072513222694397,
+        "difference": 0.5735059678554535
+      },
+      "target_to_eef_xyz": {
+        "prompt_aware_test_r2": 0.8664836883544922,
+        "visual_control_test_r2": 0.4321173429489136,
+        "difference": 0.4343663454055786
+      },
+      "alternative_to_eef_xyz": {
+        "prompt_aware_test_r2": 0.8760092258453369,
+        "visual_control_test_r2": 0.44338735938072205,
+        "difference": 0.43262186646461487
+      },
+      "target_to_basket_xyz": {
+        "prompt_aware_test_r2": 0.8728986382484436,
+        "visual_control_test_r2": 0.2835472524166107,
+        "difference": 0.5893513858318329
+      },
+      "eef_target_distance": {
+        "prompt_aware_test_r2": 0.8059650659561157,
+        "visual_control_test_r2": 0.1283661127090454,
+        "difference": 0.6775989532470703
+      },
+      "target_basket_distance": {
+        "prompt_aware_test_r2": 0.8879629969596863,
+        "visual_control_test_r2": 0.3404735326766968,
+        "difference": 0.5474894642829895
+      },
+      "target_displacement_xyz": {
+        "prompt_aware_test_r2": 0.8471853733062744,
+        "visual_control_test_r2": 0.3332116901874542,
+        "difference": 0.5139736831188202
+      }
+    }
+  },
+  "paired_phase_minus_visual": {
+    "prompt_end": {
+      "prompt_aware_test_macro_f1": 0.8660833760304167,
+      "visual_control_test_macro_f1": 0.6113430025685841,
+      "difference": 0.25474037346183265
+    },
+    "action_boundary": {
+      "prompt_aware_test_macro_f1": 0.8801666555011476,
+      "visual_control_test_macro_f1": 0.6113430025685841,
+      "difference": 0.2688236529325635
+    }
+  },
+  "paired_onset_layers": {
+    "prompt_end": {
+      "regression": {
+        "object_a_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9327159523963928,
+          "threshold": 0.8394443571567536
+        },
+        "object_b_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9337698817253113,
+          "threshold": 0.8403928935527801
+        },
+        "target_xyz": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8671319484710693,
+          "threshold": 0.7804187536239624
+        },
+        "alternative_xyz": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8720902800559998,
+          "threshold": 0.7848812520503998
+        },
+        "eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9776053428649902,
+          "threshold": 0.8798448085784912
+        },
+        "robot_joint_pos": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9661138653755188,
+          "threshold": 0.8695024788379669
+        },
+        "gripper_width": {
+          "first_layer_at_90_percent_validation_peak": 4,
+          "validation_peak": 0.8702705502510071,
+          "threshold": 0.7832434952259064
+        },
+        "target_to_eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 2,
+          "validation_peak": 0.8974248766899109,
+          "threshold": 0.8076823890209198
+        },
+        "alternative_to_eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 2,
+          "validation_peak": 0.8940401077270508,
+          "threshold": 0.8046360969543457
+        },
+        "target_to_basket_xyz": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8696234822273254,
+          "threshold": 0.7826611340045929
+        },
+        "eef_target_distance": {
+          "first_layer_at_90_percent_validation_peak": 5,
+          "validation_peak": 0.8389455080032349,
+          "threshold": 0.7550509572029114
+        },
+        "eef_alternative_distance": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8214555382728577,
+          "threshold": 0.7393099844455719
+        },
+        "target_basket_distance": {
+          "first_layer_at_90_percent_validation_peak": 2,
+          "validation_peak": 0.9033451676368713,
+          "threshold": 0.8130106508731842
+        },
+        "target_displacement_xyz": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.7986752986907959,
+          "threshold": 0.7188077688217164
+        },
+        "target_speed_per_action_step": {
+          "first_layer_at_90_percent_validation_peak": 7,
+          "validation_peak": 0.8010704517364502,
+          "threshold": 0.7209634065628052
+        },
+        "normalized_action_progress": {
+          "first_layer_at_90_percent_validation_peak": 1,
+          "validation_peak": 0.7622586488723755,
+          "threshold": 0.686032783985138
+        }
+      },
+      "binary": {
+        "target_grasped": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9974296536796536,
+          "threshold": 0.8976866883116883
+        },
+        "target_moved": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9944289693593314,
+          "threshold": 0.8949860724233983
+        },
+        "target_lifted": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9981058975462763,
+          "threshold": 0.8982953077916487
+        },
+        "near_target": {
+          "first_layer_at_90_percent_validation_peak": 1,
+          "validation_peak": 0.9974605477961183,
+          "threshold": 0.8977144930165064
+        },
+        "near_basket": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9940406976744186,
+          "threshold": 0.8946366279069767
+        }
+      },
+      "phase_coarse": {
+        "first_layer_at_90_percent_validation_peak": 2,
+        "validation_peak": 0.9470443349753696,
+        "threshold": 0.8523399014778326
+      }
+    },
+    "action_boundary": {
+      "regression": {
+        "object_a_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9355888366699219,
+          "threshold": 0.8420299530029297
+        },
+        "object_b_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9342129826545715,
+          "threshold": 0.8407916843891144
+        },
+        "target_xyz": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8451655507087708,
+          "threshold": 0.7606489956378937
+        },
+        "alternative_xyz": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8493876457214355,
+          "threshold": 0.764448881149292
+        },
+        "eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9734072685241699,
+          "threshold": 0.8760665416717529
+        },
+        "robot_joint_pos": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.967345118522644,
+          "threshold": 0.8706106066703797
+        },
+        "gripper_width": {
+          "first_layer_at_90_percent_validation_peak": 4,
+          "validation_peak": 0.8511236906051636,
+          "threshold": 0.7660113215446472
+        },
+        "target_to_eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 2,
+          "validation_peak": 0.8678326606750488,
+          "threshold": 0.781049394607544
+        },
+        "alternative_to_eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 2,
+          "validation_peak": 0.8648386001586914,
+          "threshold": 0.7783547401428222
+        },
+        "target_to_basket_xyz": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8556833863258362,
+          "threshold": 0.7701150476932526
+        },
+        "eef_target_distance": {
+          "first_layer_at_90_percent_validation_peak": 4,
+          "validation_peak": 0.7953037023544312,
+          "threshold": 0.7157733321189881
+        },
+        "eef_alternative_distance": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.7826654314994812,
+          "threshold": 0.7043988883495331
+        },
+        "target_basket_distance": {
+          "first_layer_at_90_percent_validation_peak": 3,
+          "validation_peak": 0.8862457871437073,
+          "threshold": 0.7976212084293366
+        },
+        "target_displacement_xyz": {
+          "first_layer_at_90_percent_validation_peak": 4,
+          "validation_peak": 0.7717022895812988,
+          "threshold": 0.694532060623169
+        },
+        "target_speed_per_action_step": {
+          "first_layer_at_90_percent_validation_peak": 5,
+          "validation_peak": 0.7608209848403931,
+          "threshold": 0.6847388863563538
+        },
+        "normalized_action_progress": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.7772677540779114,
+          "threshold": 0.6995409786701202
+        }
+      },
+      "binary": {
+        "target_grasped": {
+          "first_layer_at_90_percent_validation_peak": 1,
+          "validation_peak": 0.991504329004329,
+          "threshold": 0.8923538961038961
+        },
+        "target_moved": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9902346876700925,
+          "threshold": 0.8912112189030833
+        },
+        "target_lifted": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9967570670110489,
+          "threshold": 0.897081360309944
+        },
+        "near_target": {
+          "first_layer_at_90_percent_validation_peak": 1,
+          "validation_peak": 0.9950344639941955,
+          "threshold": 0.8955310175947759
+        },
+        "near_basket": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9960755813953488,
+          "threshold": 0.896468023255814
+        }
+      },
+      "phase_coarse": {
+        "first_layer_at_90_percent_validation_peak": 2,
+        "validation_peak": 0.9361310428713377,
+        "threshold": 0.842517938584204
+      }
+    },
+    "visual_mean": {
+      "regression": {
+        "object_a_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9510641694068909,
+          "threshold": 0.8559577524662018
+        },
+        "object_b_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9555781483650208,
+          "threshold": 0.8600203335285187
+        },
+        "target_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.28191035985946655,
+          "threshold": 0.2537193238735199
+        },
+        "alternative_xyz": {
+          "first_layer_at_90_percent_validation_peak": 1,
+          "validation_peak": 0.2941085398197174,
+          "threshold": 0.26469768583774567
+        },
+        "eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9782736897468567,
+          "threshold": 0.880446320772171
+        },
+        "robot_joint_pos": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.9733280539512634,
+          "threshold": 0.8759952485561371
+        },
+        "gripper_width": {
+          "first_layer_at_90_percent_validation_peak": 1,
+          "validation_peak": 0.8456215262413025,
+          "threshold": 0.7610593736171722
+        },
+        "target_to_eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.4656991958618164,
+          "threshold": 0.4191292762756348
+        },
+        "alternative_to_eef_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.4580376446247101,
+          "threshold": 0.4122338801622391
+        },
+        "target_to_basket_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.2913992702960968,
+          "threshold": 0.26225934326648714
+        },
+        "eef_target_distance": {
+          "first_layer_at_90_percent_validation_peak": 2,
+          "validation_peak": 0.1932694911956787,
+          "threshold": 0.17394254207611085
+        },
+        "eef_alternative_distance": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.1927470564842224,
+          "threshold": 0.17347235083580018
+        },
+        "target_basket_distance": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.26915842294692993,
+          "threshold": 0.24224258065223694
+        },
+        "target_displacement_xyz": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.3517031967639923,
+          "threshold": 0.3165328770875931
+        },
+        "target_speed_per_action_step": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.28590255975723267,
+          "threshold": 0.25731230378150943
+        },
+        "normalized_action_progress": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.792899489402771,
+          "threshold": 0.7136095404624939
+        }
+      },
+      "binary": {
+        "target_grasped": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.8343614718614718,
+          "threshold": 0.7509253246753247
+        },
+        "target_moved": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.8787660487305093,
+          "threshold": 0.7908894438574584
+        },
+        "target_lifted": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.8536231884057971,
+          "threshold": 0.7682608695652174
+        },
+        "near_target": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.7516325049882097,
+          "threshold": 0.6764692544893887
+        },
+        "near_basket": {
+          "first_layer_at_90_percent_validation_peak": 0,
+          "validation_peak": 0.979360465116279,
+          "threshold": 0.8814244186046511
+        }
+      },
+      "phase_coarse": {
+        "first_layer_at_90_percent_validation_peak": 0,
+        "validation_peak": 0.6525446963046743,
+        "threshold": 0.5872902266742068
+      }
+    }
+  },
+  "headline": {
+    "prompt_end_target_xyz_test_r2": 0.8948395848274231,
+    "visual_target_xyz_test_r2": 0.29673123359680176,
+    "prompt_end_target_to_eef_test_r2": 0.8985415101051331,
+    "visual_target_to_eef_test_r2": 0.4321173429489136,
+    "prompt_end_phase_test_macro_f1": 0.8660833760304167,
+    "visual_phase_test_macro_f1": 0.6113430025685841
+  },
+  "rows": [
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "object_a_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9562812447547913,
+      "test": 0.9608647227287292
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "object_b_xyz",
+      "layer": 6,
+      "metric": "mean_r2",
+      "validation": 0.9412310123443604,
+      "test": 0.9529364705085754
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9483652710914612,
+      "test": 0.9667204022407532
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "alternative_xyz",
+      "layer": 0,
+      "metric": "mean_r2",
+      "validation": 0.9916194081306458,
+      "test": 0.9888210892677307
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "eef_xyz",
+      "layer": 1,
+      "metric": "mean_r2",
+      "validation": 0.9771172404289246,
+      "test": 0.9728312492370605
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "robot_joint_pos",
+      "layer": 6,
+      "metric": "mean_r2",
+      "validation": 0.9668390154838562,
+      "test": 0.9632653594017029
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "gripper_width",
+      "layer": 13,
+      "metric": "mean_r2",
+      "validation": 0.8563100695610046,
+      "test": 0.8863601684570312
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_to_eef_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.8999783396720886,
+      "test": 0.9059191346168518
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "alternative_to_eef_xyz",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9625714421272278,
+      "test": 0.9712532162666321
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_to_basket_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9552209973335266,
+      "test": 0.9597694873809814
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "eef_target_distance",
+      "layer": 2,
+      "metric": "mean_r2",
+      "validation": 0.937551736831665,
+      "test": 0.882847011089325
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "eef_alternative_distance",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.9554998278617859,
+      "test": 0.8539209365844727
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_basket_distance",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9698199033737183,
+      "test": 0.9734307527542114
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_displacement_xyz",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9213805198669434,
+      "test": 0.9494073390960693
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_speed_per_action_step",
+      "layer": 6,
+      "metric": "mean_r2",
+      "validation": 0.8659582138061523,
+      "test": 0.8320326805114746
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "normalized_action_progress",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.7862555980682373,
+      "test": 0.7904178500175476
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "raw_action",
+      "layer": 2,
+      "metric": "mean_r2",
+      "validation": 0.5006119608879089,
+      "test": 0.3138999044895172
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "target_grasped",
+      "layer": 18,
+      "metric": "auc",
+      "validation": 0.9986323411102173,
+      "test": 0.9923172605546207
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "target_moved",
+      "layer": 4,
+      "metric": "auc",
+      "validation": 0.9997464503042597,
+      "test": 0.9997335160651744
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "target_lifted",
+      "layer": 10,
+      "metric": "auc",
+      "validation": 1.0,
+      "test": 0.9998896247240618
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "near_target",
+      "layer": 12,
+      "metric": "auc",
+      "validation": 0.9998198198198198,
+      "test": 0.9894454818543477
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "near_basket",
+      "layer": 1,
+      "metric": "auc",
+      "validation": 0.9972826086956522,
+      "test": 0.9972545219638242
+    },
+    {
+      "protocol": "actual",
+      "readout": "prompt_end",
+      "family": "phase",
+      "factor": "phase_coarse",
+      "layer": 19,
+      "metric": "macro_f1",
+      "validation": 0.976263370194153,
+      "test": 0.9308212777579589
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "object_a_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9539785385131836,
+      "test": 0.9636467099189758
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "object_b_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9438097476959229,
+      "test": 0.946526050567627
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_xyz",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.9475309252738953,
+      "test": 0.9703595042228699
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "alternative_xyz",
+      "layer": 0,
+      "metric": "mean_r2",
+      "validation": 0.9903590679168701,
+      "test": 0.9855949878692627
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "eef_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9752864241600037,
+      "test": 0.9684259295463562
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "robot_joint_pos",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9673925638198853,
+      "test": 0.9599693417549133
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "gripper_width",
+      "layer": 13,
+      "metric": "mean_r2",
+      "validation": 0.8541402220726013,
+      "test": 0.8671826124191284
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_to_eef_xyz",
+      "layer": 13,
+      "metric": "mean_r2",
+      "validation": 0.8992144465446472,
+      "test": 0.8652516007423401
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "alternative_to_eef_xyz",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.9558768272399902,
+      "test": 0.9631136059761047
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_to_basket_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9497048258781433,
+      "test": 0.9627153277397156
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "eef_target_distance",
+      "layer": 1,
+      "metric": "mean_r2",
+      "validation": 0.9466468095779419,
+      "test": 0.8741037845611572
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "eef_alternative_distance",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.9560130834579468,
+      "test": 0.8767382502555847
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_basket_distance",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.9722945690155029,
+      "test": 0.9768365025520325
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_displacement_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9193205237388611,
+      "test": 0.9553187489509583
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_speed_per_action_step",
+      "layer": 16,
+      "metric": "mean_r2",
+      "validation": 0.8629945516586304,
+      "test": 0.710692822933197
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "normalized_action_progress",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.7954121828079224,
+      "test": 0.7575826048851013
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "raw_action",
+      "layer": 9,
+      "metric": "mean_r2",
+      "validation": 0.4912795424461365,
+      "test": 0.3157028555870056
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "target_grasped",
+      "layer": 12,
+      "metric": "auc",
+      "validation": 0.9974255832662913,
+      "test": 0.9704031608985146
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "target_moved",
+      "layer": 4,
+      "metric": "auc",
+      "validation": 0.9997464503042597,
+      "test": 0.9990102025277905
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "target_lifted",
+      "layer": 10,
+      "metric": "auc",
+      "validation": 1.0,
+      "test": 0.9998528329654157
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "near_target",
+      "layer": 12,
+      "metric": "auc",
+      "validation": 0.9998198198198198,
+      "test": 0.9893642932532273
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "near_basket",
+      "layer": 2,
+      "metric": "auc",
+      "validation": 0.9975845410628019,
+      "test": 0.9948320413436692
+    },
+    {
+      "protocol": "actual",
+      "readout": "action_boundary",
+      "family": "phase",
+      "factor": "phase_coarse",
+      "layer": 14,
+      "metric": "macro_f1",
+      "validation": 0.9737882081703465,
+      "test": 0.9021211065364557
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "object_a_xyz",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9541694521903992,
+      "test": 0.9583757519721985
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "object_b_xyz",
+      "layer": 0,
+      "metric": "mean_r2",
+      "validation": 0.9570493698120117,
+      "test": 0.9615471959114075
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_xyz",
+      "layer": 1,
+      "metric": "mean_r2",
+      "validation": 0.9602740406990051,
+      "test": 0.9668178558349609
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "alternative_xyz",
+      "layer": 6,
+      "metric": "mean_r2",
+      "validation": 0.9787171483039856,
+      "test": 0.9692020416259766
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "eef_xyz",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9807993769645691,
+      "test": 0.9764544367790222
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "robot_joint_pos",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9724302291870117,
+      "test": 0.9634861946105957
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "gripper_width",
+      "layer": 13,
+      "metric": "mean_r2",
+      "validation": 0.839784562587738,
+      "test": 0.9012120962142944
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_to_eef_xyz",
+      "layer": 9,
+      "metric": "mean_r2",
+      "validation": 0.9370129108428955,
+      "test": 0.9125834107398987
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "alternative_to_eef_xyz",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9692316651344299,
+      "test": 0.9719481468200684
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_to_basket_xyz",
+      "layer": 7,
+      "metric": "mean_r2",
+      "validation": 0.9590134620666504,
+      "test": 0.9653943181037903
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "eef_target_distance",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.9613024592399597,
+      "test": 0.9531168937683105
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "eef_alternative_distance",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.9691082239151001,
+      "test": 0.9674386382102966
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_basket_distance",
+      "layer": 0,
+      "metric": "mean_r2",
+      "validation": 0.9802463054656982,
+      "test": 0.984893798828125
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_displacement_xyz",
+      "layer": 0,
+      "metric": "mean_r2",
+      "validation": 0.9366326332092285,
+      "test": 0.9468092322349548
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_speed_per_action_step",
+      "layer": 15,
+      "metric": "mean_r2",
+      "validation": 0.9074475169181824,
+      "test": 0.8323683738708496
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "normalized_action_progress",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.7920122146606445,
+      "test": 0.7711641788482666
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "raw_action",
+      "layer": 13,
+      "metric": "mean_r2",
+      "validation": 0.4912971556186676,
+      "test": 0.2591112554073334
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "target_grasped",
+      "layer": 12,
+      "metric": "auc",
+      "validation": 0.9968624296057924,
+      "test": 0.988914904514524
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "target_moved",
+      "layer": 6,
+      "metric": "auc",
+      "validation": 0.9990703177822853,
+      "test": 0.9996193086645347
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "target_lifted",
+      "layer": 11,
+      "metric": "auc",
+      "validation": 0.9999188443434507,
+      "test": 0.9999264164827079
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "near_target",
+      "layer": 0,
+      "metric": "auc",
+      "validation": 0.9998198198198198,
+      "test": 0.9900949906633109
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "near_basket",
+      "layer": 14,
+      "metric": "auc",
+      "validation": 0.9972826086956522,
+      "test": 0.997093023255814
+    },
+    {
+      "protocol": "actual",
+      "readout": "visual_mean",
+      "family": "phase",
+      "factor": "phase_coarse",
+      "layer": 12,
+      "metric": "macro_f1",
+      "validation": 0.9726041570930061,
+      "test": 0.9275903723465388
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "object_a_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9327159523963928,
+      "test": 0.9505184292793274
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "object_b_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9337698817253113,
+      "test": 0.9523579478263855
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_xyz",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.8671319484710693,
+      "test": 0.8948395848274231
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "alternative_xyz",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.8720902800559998,
+      "test": 0.9042860865592957
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "eef_xyz",
+      "layer": 2,
+      "metric": "mean_r2",
+      "validation": 0.9776053428649902,
+      "test": 0.9714915156364441
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "robot_joint_pos",
+      "layer": 6,
+      "metric": "mean_r2",
+      "validation": 0.9661138653755188,
+      "test": 0.9591416120529175
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "gripper_width",
+      "layer": 13,
+      "metric": "mean_r2",
+      "validation": 0.8702705502510071,
+      "test": 0.9032613635063171
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_to_eef_xyz",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.8974248766899109,
+      "test": 0.8985415101051331
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "alternative_to_eef_xyz",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.8940401077270508,
+      "test": 0.9057143330574036
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_to_basket_xyz",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.8696234822273254,
+      "test": 0.9077884554862976
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "eef_target_distance",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.8389455080032349,
+      "test": 0.8639935255050659
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "eef_alternative_distance",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.8214555382728577,
+      "test": 0.8633231520652771
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_basket_distance",
+      "layer": 14,
+      "metric": "mean_r2",
+      "validation": 0.9033451676368713,
+      "test": 0.92060387134552
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_displacement_xyz",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.7986752986907959,
+      "test": 0.879849910736084
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "target_speed_per_action_step",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.8010704517364502,
+      "test": 0.6310926675796509
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "regression",
+      "factor": "normalized_action_progress",
+      "layer": 2,
+      "metric": "mean_r2",
+      "validation": 0.7622586488723755,
+      "test": 0.7089641094207764
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "target_grasped",
+      "layer": 3,
+      "metric": "auc",
+      "validation": 0.9974296536796536,
+      "test": 0.9447835041189472
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "target_moved",
+      "layer": 26,
+      "metric": "auc",
+      "validation": 0.9944289693593314,
+      "test": 0.9942967409948542
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "target_lifted",
+      "layer": 3,
+      "metric": "auc",
+      "validation": 0.9981058975462763,
+      "test": 0.9839556252510984
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "near_target",
+      "layer": 3,
+      "metric": "auc",
+      "validation": 0.9974605477961183,
+      "test": 0.9713509380940574
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "binary",
+      "factor": "near_basket",
+      "layer": 10,
+      "metric": "auc",
+      "validation": 0.9940406976744186,
+      "test": 0.9957921629034076
+    },
+    {
+      "protocol": "paired",
+      "readout": "prompt_end",
+      "family": "phase",
+      "factor": "phase_coarse",
+      "layer": 26,
+      "metric": "macro_f1",
+      "validation": 0.9470443349753696,
+      "test": 0.8660833760304167
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "object_a_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9355888366699219,
+      "test": 0.9577617645263672
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "object_b_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.9342129826545715,
+      "test": 0.953289270401001
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_xyz",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.8451655507087708,
+      "test": 0.858243465423584
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "alternative_xyz",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.8493876457214355,
+      "test": 0.8742311000823975
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "eef_xyz",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.9734072685241699,
+      "test": 0.9759253859519958
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "robot_joint_pos",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.967345118522644,
+      "test": 0.9608503580093384
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "gripper_width",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.8511236906051636,
+      "test": 0.8595337271690369
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_to_eef_xyz",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.8678326606750488,
+      "test": 0.8664836883544922
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "alternative_to_eef_xyz",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.8648386001586914,
+      "test": 0.8760092258453369
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_to_basket_xyz",
+      "layer": 9,
+      "metric": "mean_r2",
+      "validation": 0.8556833863258362,
+      "test": 0.8728986382484436
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "eef_target_distance",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.7953037023544312,
+      "test": 0.8059650659561157
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "eef_alternative_distance",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.7826654314994812,
+      "test": 0.8355342149734497
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_basket_distance",
+      "layer": 14,
+      "metric": "mean_r2",
+      "validation": 0.8862457871437073,
+      "test": 0.8879629969596863
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_displacement_xyz",
+      "layer": 11,
+      "metric": "mean_r2",
+      "validation": 0.7717022895812988,
+      "test": 0.8471853733062744
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "target_speed_per_action_step",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.7608209848403931,
+      "test": 0.7110893130302429
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "regression",
+      "factor": "normalized_action_progress",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.7772677540779114,
+      "test": 0.7599774599075317
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "target_grasped",
+      "layer": 14,
+      "metric": "auc",
+      "validation": 0.991504329004329,
+      "test": 0.974043098251959
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "target_moved",
+      "layer": 16,
+      "metric": "auc",
+      "validation": 0.9902346876700925,
+      "test": 0.9883218982275586
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "target_lifted",
+      "layer": 14,
+      "metric": "auc",
+      "validation": 0.9967570670110489,
+      "test": 0.9931312450590324
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "near_target",
+      "layer": 14,
+      "metric": "auc",
+      "validation": 0.9950344639941955,
+      "test": 0.9876539383420118
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "binary",
+      "factor": "near_basket",
+      "layer": 26,
+      "metric": "auc",
+      "validation": 0.9960755813953488,
+      "test": 0.9876394785287598
+    },
+    {
+      "protocol": "paired",
+      "readout": "action_boundary",
+      "family": "phase",
+      "factor": "phase_coarse",
+      "layer": 17,
+      "metric": "macro_f1",
+      "validation": 0.9361310428713377,
+      "test": 0.8801666555011476
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "object_a_xyz",
+      "layer": 9,
+      "metric": "mean_r2",
+      "validation": 0.9510641694068909,
+      "test": 0.9675237536430359
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "object_b_xyz",
+      "layer": 2,
+      "metric": "mean_r2",
+      "validation": 0.9555781483650208,
+      "test": 0.9581425786018372
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_xyz",
+      "layer": 15,
+      "metric": "mean_r2",
+      "validation": 0.28191035985946655,
+      "test": 0.29673123359680176
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "alternative_xyz",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.2941085398197174,
+      "test": 0.30072513222694397
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "eef_xyz",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.9782736897468567,
+      "test": 0.9776089787483215
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "robot_joint_pos",
+      "layer": 9,
+      "metric": "mean_r2",
+      "validation": 0.9733280539512634,
+      "test": 0.9643892645835876
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "gripper_width",
+      "layer": 21,
+      "metric": "mean_r2",
+      "validation": 0.8456215262413025,
+      "test": 0.8845667839050293
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_to_eef_xyz",
+      "layer": 0,
+      "metric": "mean_r2",
+      "validation": 0.4656991958618164,
+      "test": 0.4321173429489136
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "alternative_to_eef_xyz",
+      "layer": 0,
+      "metric": "mean_r2",
+      "validation": 0.4580376446247101,
+      "test": 0.44338735938072205
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_to_basket_xyz",
+      "layer": 12,
+      "metric": "mean_r2",
+      "validation": 0.2913992702960968,
+      "test": 0.2835472524166107
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "eef_target_distance",
+      "layer": 3,
+      "metric": "mean_r2",
+      "validation": 0.1932694911956787,
+      "test": 0.1283661127090454
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "eef_alternative_distance",
+      "layer": 10,
+      "metric": "mean_r2",
+      "validation": 0.1927470564842224,
+      "test": 0.13156616687774658
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_basket_distance",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.26915842294692993,
+      "test": 0.3404735326766968
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_displacement_xyz",
+      "layer": 4,
+      "metric": "mean_r2",
+      "validation": 0.3517031967639923,
+      "test": 0.3332116901874542
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "target_speed_per_action_step",
+      "layer": 17,
+      "metric": "mean_r2",
+      "validation": 0.28590255975723267,
+      "test": 0.1909053921699524
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "regression",
+      "factor": "normalized_action_progress",
+      "layer": 5,
+      "metric": "mean_r2",
+      "validation": 0.792899489402771,
+      "test": 0.7454901933670044
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "target_grasped",
+      "layer": 19,
+      "metric": "auc",
+      "validation": 0.8343614718614718,
+      "test": 0.8387582881253768
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "target_moved",
+      "layer": 3,
+      "metric": "auc",
+      "validation": 0.8787660487305093,
+      "test": 0.8751858204688394
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "target_lifted",
+      "layer": 20,
+      "metric": "auc",
+      "validation": 0.8536231884057971,
+      "test": 0.8513951348479154
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "near_target",
+      "layer": 13,
+      "metric": "auc",
+      "validation": 0.7516325049882097,
+      "test": 0.7453095297131995
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "binary",
+      "factor": "near_basket",
+      "layer": 28,
+      "metric": "auc",
+      "validation": 0.979360465116279,
+      "test": 0.958654243528572
+    },
+    {
+      "protocol": "paired",
+      "readout": "visual_mean",
+      "family": "phase",
+      "factor": "phase_coarse",
+      "layer": 21,
+      "metric": "macro_f1",
+      "validation": 0.6525446963046743,
+      "test": 0.6113430025685841
+    }
+  ]
+}

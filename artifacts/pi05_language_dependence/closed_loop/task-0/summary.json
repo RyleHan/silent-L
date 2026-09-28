@@ -1,0 +1,52 @@
+{
+  "task_id": 0,
+  "task_language": "pick up the alphabet soup and place it in the basket",
+  "target_prompt_index": 0,
+  "unused_init_state_protocol": true,
+  "init_state_ids": [
+    14,
+    13,
+    12,
+    6,
+    10,
+    22,
+    8,
+    42,
+    19,
+    36,
+    32,
+    48,
+    11,
+    33,
+    41,
+    35,
+    2,
+    15,
+    16,
+    44
+  ],
+  "conditions": [
+    "null"
+  ],
+  "null_prompt": "pick up an object and place it in the basket",
+  "layer": 13,
+  "alpha": 1.0,
+  "replan_steps": 5,
+  "num_denoise_steps": 10,
+  "sampler_audits": {
+    "null": 0.0
+  },
+  "condition_summaries": {
+    "null": {
+      "num_trials": 20,
+      "success_rate": 0.85,
+      "target_grasp_rate": 0.8,
+      "alternative_grasp_rate": 0.0,
+      "target_in_basket_rate": 0.85,
+      "target_min_eef_distance_mean": 0.033853189134970305,
+      "target_max_displacement_mean": 0.47146408557891845
+    }
+  },
+  "elapsed_seconds": 439.1729709438514,
+  "max_cuda_memory_gib": 7.119950294494629
+}

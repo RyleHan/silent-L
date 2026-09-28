@@ -1,0 +1,15 @@
+{
+  "prefix_root": "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_world_state_atlas",
+  "expert_root": "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas",
+  "protocol": "paired prompt; t=1.0; validation-selected layers; held-out episode test",
+  "figures": [
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/prefix_expert_headline_scores.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/prefix_expert_headline_scores.pdf",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/prefix_expert_layer_curves.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/prefix_expert_layer_curves.pdf",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/expert_minus_prefix_bootstrap.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/expert_minus_prefix_bootstrap.pdf",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/expert_action_mean_heatmap.png",
+    "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/pi05_action_expert_atlas/figures/expert_action_mean_heatmap.pdf"
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "method": "COAST paper-guided independent reimplementation",
+  "task_name": "KITCHEN_SCENE3_turn_on_the_stove_and_put_the_moka_pot_on_it",
+  "checkpoint": "brandonyang/openpi-libero-2000",
+  "strategy": "global contrastive conceptor",
+  "layer": 5,
+  "public_layer_indices": [
+    0,
+    5,
+    11,
+    17
+  ],
+  "aperture": 0.5,
+  "beta": 0.1,
+  "random_seed": 20260812,
+  "num_episodes": 15,
+  "num_success_episodes": 8,
+  "num_failure_episodes": 7,
+  "num_success_vectors": 4130,
+  "num_failure_vectors": 7280,
+  "success_failure_overlap": 0.9955401138258676,
+  "diagnostics": {
+    "success": {
+      "hidden_size": 1024,
+      "quota": 0.041940538216977075,
+      "min_eigenvalue": 2.8789105818867662e-06,
+      "max_eigenvalue": 0.9925484533701845,
+      "effective_rank": 71.58050166646258,
+      "symmetry_max_abs_error": 0.0
+    },
+    "failure": {
+      "hidden_size": 1024,
+      "quota": 0.04264433809916568,
+      "min_eigenvalue": 6.874919227603451e-06,
+      "max_eigenvalue": 0.9921901440440248,
+      "effective_rank": 75.16147480749913,
+      "symmetry_max_abs_error": 0.0
+    },
+    "steering": {
+      "hidden_size": 1024,
+      "quota": 0.010453028257529695,
+      "min_eigenvalue": 2.8789119693752184e-06,
+      "max_eigenvalue": 0.3555352458450325,
+      "effective_rank": 115.28996827566277,
+      "symmetry_max_abs_error": 0.0
+    },
+    "random": {
+      "hidden_size": 1024,
+      "quota": 0.010453028244683082,
+      "min_eigenvalue": 2.8788645068942003e-06,
+      "max_eigenvalue": 0.3555352458059782,
+      "effective_rank": 115.28996750931628,
+      "symmetry_max_abs_error": 0.0
+    }
+  },
+  "episodes": [
+    {
+      "episode": "episode_000_env_000",
+      "success": false,
+      "num_policy_queries": 104,
+      "num_activation_vectors": 1040
+    },
+    {
+      "episode": "episode_001_env_000",
+      "success": true,
+      "num_policy_queries": 45,
+      "num_activation_vectors": 450
+    },
+    {
+      "episode": "episode_002_env_000",
+      "success": true,
+      "num_policy_queries": 47,
+      "num_activation_vectors": 470
+    },
+    {
+      "episode": "episode_003_env_000",
+      "success": false,
+      "num_policy_queries": 104,
+      "num_activation_vectors": 1040
+    },
+    {
+      "episode": "episode_004_env_000",
+      "success": true,
+      "num_policy_queries": 47,
+      "num_activation_vectors": 470
+    },
+    {
+      "episode": "episode_005_env_000",
+      "success": false,
+      "num_policy_queries": 104,
+      "num_activation_vectors": 1040
+    },
+    {
+      "episode": "episode_006_env_000",
+      "success": false,
+      "num_policy_queries": 104,
+      "num_activation_vectors": 1040
+    },
+    {
+      "episode": "episode_007_env_000",
+      "success": false,
+      "num_policy_queries": 104,
+      "num_activation_vectors": 1040
+    },
+    {
+      "episode": "episode_008_env_000",
+      "success": false,
+      "num_policy_queries": 104,
+      "num_activation_vectors": 1040
+    },
+    {
+      "episode": "episode_009_env_000",
+      "success": true,
+      "num_policy_queries": 91,
+      "num_activation_vectors": 910
+    },
+    {
+      "episode": "episode_010_env_000",
+      "success": true,
+      "num_policy_queries": 47,
+      "num_activation_vectors": 470
+    },
+    {
+      "episode": "episode_011_env_000",
+      "success": true,
+      "num_policy_queries": 54,
+      "num_activation_vectors": 540
+    },
+    {
+      "episode": "episode_012_env_000",
+      "success": true,
+      "num_policy_queries": 40,
+      "num_activation_vectors": 400
+    },
+    {
+      "episode": "episode_013_env_000",
+      "success": false,
+      "num_policy_queries": 104,
+      "num_activation_vectors": 1040
+    },
+    {
+      "episode": "episode_014_env_000",
+      "success": true,
+      "num_policy_queries": 42,
+      "num_activation_vectors": 420
+    }
+  ]
+}

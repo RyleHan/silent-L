@@ -1,0 +1,65 @@
+{
+  "task_id": 0,
+  "task_language": "pick up the alphabet soup and place it in the basket",
+  "target_prompt_index": 0,
+  "unused_init_state_protocol": true,
+  "init_state_ids": [
+    14
+  ],
+  "conditions": [
+    "correct",
+    "mismatch",
+    "paired",
+    "random"
+  ],
+  "layer": 13,
+  "alpha": 1.0,
+  "replan_steps": 5,
+  "num_denoise_steps": 10,
+  "sampler_audits": {
+    "correct": 0.0,
+    "mismatch": 0.0,
+    "paired": 0.0,
+    "random": 0.0
+  },
+  "condition_summaries": {
+    "correct": {
+      "num_trials": 1,
+      "success_rate": 1.0,
+      "target_grasp_rate": 1.0,
+      "alternative_grasp_rate": 0.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.03093438595533371,
+      "target_max_displacement_mean": 0.5353583693504333
+    },
+    "mismatch": {
+      "num_trials": 1,
+      "success_rate": 1.0,
+      "target_grasp_rate": 1.0,
+      "alternative_grasp_rate": 0.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.005552152171730995,
+      "target_max_displacement_mean": 0.537267804145813
+    },
+    "paired": {
+      "num_trials": 1,
+      "success_rate": 0.0,
+      "target_grasp_rate": 1.0,
+      "alternative_grasp_rate": 0.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.036040306091308594,
+      "target_max_displacement_mean": 0.3113609850406647
+    },
+    "random": {
+      "num_trials": 1,
+      "success_rate": 1.0,
+      "target_grasp_rate": 1.0,
+      "alternative_grasp_rate": 0.0,
+      "target_in_basket_rate": 0.0,
+      "target_min_eef_distance_mean": 0.006039812229573727,
+      "target_max_displacement_mean": 0.5399129986763
+    }
+  },
+  "elapsed_seconds": 111.73042696202174,
+  "max_cuda_memory_gib": 7.262603759765625
+}

@@ -1,0 +1,53 @@
+{
+  "selection_rule": "Layer maximizes validation target/alternative minus absolute foreground macro-F1.",
+  "resampling_unit": "complete (task_id, episode_id) test episode",
+  "bootstrap_samples": 10000,
+  "seed": 42,
+  "readouts": {
+    "prompt_end": {
+      "selected_layer": 23,
+      "num_test_episodes": 8,
+      "test_foreground_macro_f1": {
+        "absolute": 0.9481854208010574,
+        "target_alternative": 0.9469100768668481
+      },
+      "test_delta": -0.0012753439342092499,
+      "bootstrap_delta_95_percent_ci": [
+        -0.005506453817260925,
+        0.004592554732897325
+      ],
+      "bootstrap_probability_delta_positive": 0.3089,
+      "one_sided_p_delta_le_zero": 0.6911308869113089
+    },
+    "action_boundary": {
+      "selected_layer": 22,
+      "num_test_episodes": 8,
+      "test_foreground_macro_f1": {
+        "absolute": 0.9494072281948045,
+        "target_alternative": 0.948425040297098
+      },
+      "test_delta": -0.0009821878977065435,
+      "bootstrap_delta_95_percent_ci": [
+        -0.007270219066123446,
+        0.005213435366659412
+      ],
+      "bootstrap_probability_delta_positive": 0.4108,
+      "one_sided_p_delta_le_zero": 0.5892410758924107
+    },
+    "visual_mean": {
+      "selected_layer": 2,
+      "num_test_episodes": 8,
+      "test_foreground_macro_f1": {
+        "absolute": 0.9333367801125184,
+        "target_alternative": 0.462504064121231
+      },
+      "test_delta": -0.4708327159912874,
+      "bootstrap_delta_95_percent_ci": [
+        -0.4753073564748793,
+        -0.46668936301415376
+      ],
+      "bootstrap_probability_delta_positive": 0.0,
+      "one_sided_p_delta_le_zero": 1.0
+    }
+  }
+}

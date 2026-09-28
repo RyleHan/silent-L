@@ -1,0 +1,146 @@
+{
+  "protocol": {
+    "task": "LIBERO-10 KS3",
+    "fit": "15 public on-policy rollouts: 8 success / 7 failure",
+    "test": "30 disjoint initial states",
+    "configuration": "global, expert layer 5, aperture 0.5, beta 0.1",
+    "selection": "published configuration; no local test sweep",
+    "control": "matched-eigenvalue-spectrum random rotation",
+    "uncertainty": "paired initial-state bootstrap, 95% CI"
+  },
+  "num_heldout_states": 30,
+  "init_state_ids": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "conditions": {
+    "baseline": {
+      "mean": 0.4,
+      "ci95_low": 0.23333333333333334,
+      "ci95_high": 0.5666666666666667
+    },
+    "coast": {
+      "mean": 0.5333333333333333,
+      "ci95_low": 0.36666666666666664,
+      "ci95_high": 0.7
+    },
+    "random": {
+      "mean": 0.43333333333333335,
+      "ci95_low": 0.26666666666666666,
+      "ci95_high": 0.6
+    }
+  },
+  "contrasts": {
+    "coast_minus_baseline": {
+      "mean": 0.13333333333333333,
+      "ci95_low": -0.03333333333333333,
+      "ci95_high": 0.3
+    },
+    "coast_minus_random": {
+      "mean": 0.1,
+      "ci95_low": -0.03333333333333333,
+      "ci95_high": 0.23333333333333334
+    },
+    "random_minus_baseline": {
+      "mean": 0.03333333333333333,
+      "ci95_low": -0.13333333333333333,
+      "ci95_high": 0.2
+    }
+  },
+  "paired_transitions": {
+    "coast_vs_baseline": {
+      "both_failure": 12,
+      "rescued_by_coast": 6,
+      "harmed_by_coast": 2,
+      "both_success": 10,
+      "discordant_states": 8,
+      "net_success_gain": 4,
+      "exact_two_sided_sign_p": 0.2890625
+    },
+    "coast_vs_random": {
+      "both_failure": 13,
+      "rescued_by_coast": 4,
+      "harmed_by_coast": 1,
+      "both_success": 12,
+      "discordant_states": 5,
+      "net_success_gain": 3,
+      "exact_two_sided_sign_p": 0.375
+    }
+  },
+  "operator_valid": true,
+  "decision": "positive_but_underpowered",
+  "decision_rules": {
+    "strong_specific_replication": "COAST beats baseline and random with paired CI lower bounds > 0",
+    "primary_replication_without_random_specificity": "COAST beats baseline with CI lower bound > 0, but not the stronger random control",
+    "positive_but_underpowered": "COAST-baseline point estimate > 0 but its CI includes 0",
+    "not_replicated": "invalid operator or COAST-baseline point estimate is non-positive"
+  },
+  "run_sampler_audits": {
+    "beta_zero_vs_official_max_abs_difference": 0.0,
+    "beta_zero_hook_count": 0,
+    "coast_first_action_max_abs_change": 0.053121984004974365,
+    "random_first_action_max_abs_change": 0.09244175255298615
+  },
+  "fit_diagnostics": {
+    "success": {
+      "hidden_size": 1024,
+      "quota": 0.041940538216977075,
+      "min_eigenvalue": 2.8789105818867662e-06,
+      "max_eigenvalue": 0.9925484533701845,
+      "effective_rank": 71.58050166646258,
+      "symmetry_max_abs_error": 0.0
+    },
+    "failure": {
+      "hidden_size": 1024,
+      "quota": 0.04264433809916568,
+      "min_eigenvalue": 6.874919227603451e-06,
+      "max_eigenvalue": 0.9921901440440248,
+      "effective_rank": 75.16147480749913,
+      "symmetry_max_abs_error": 0.0
+    },
+    "steering": {
+      "hidden_size": 1024,
+      "quota": 0.010453028257529695,
+      "min_eigenvalue": 2.8789119693752184e-06,
+      "max_eigenvalue": 0.3555352458450325,
+      "effective_rank": 115.28996827566277,
+      "symmetry_max_abs_error": 0.0
+    },
+    "random": {
+      "hidden_size": 1024,
+      "quota": 0.010453028244683082,
+      "min_eigenvalue": 2.8788645068942003e-06,
+      "max_eigenvalue": 0.3555352458059782,
+      "effective_rank": 115.28996750931628,
+      "symmetry_max_abs_error": 0.0
+    }
+  }
+}

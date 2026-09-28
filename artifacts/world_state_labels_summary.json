@@ -1,0 +1,277 @@
+{
+  "source_h5": "/home/woody/iwnt/iwnt144h/vla_coordinates/datasets/libero_object_trajectories_v1/paired_trajectories.h5",
+  "output_h5": "/home/woody/iwnt/iwnt144h/vla_coordinates/runs/openvla_world_state_atlas/world_state_labels.h5",
+  "num_samples": 1946,
+  "source_indices_contiguous": true,
+  "split_counts": {
+    "train": 1392,
+    "valid": 223,
+    "test": 331
+  },
+  "task_counts": {
+    "0": 953,
+    "1": 993
+  },
+  "binary_positive_counts": {
+    "object_a_in_basket": 0,
+    "object_b_in_basket": 0,
+    "object_a_grasped": 469,
+    "object_b_grasped": 357,
+    "task_success": 0,
+    "target_grasped": 826,
+    "target_in_basket": 0,
+    "target_moved": 690,
+    "target_lifted": 780,
+    "near_target": 1263,
+    "near_basket": 145
+  },
+  "phase_counts": {
+    "approach": 681,
+    "pregrasp": 413,
+    "transport": 835,
+    "placing": 17,
+    "complete": 0
+  },
+  "continuous_summaries": {
+    "target_xyz": {
+      "shape": [
+        1946,
+        3
+      ],
+      "finite": 5838,
+      "min": -0.25152984261512756,
+      "median": 0.008921477012336254,
+      "max": 0.3057754337787628,
+      "mean": 0.0029351111682439455,
+      "std": 0.1360908365292251
+    },
+    "alternative_xyz": {
+      "shape": [
+        1946,
+        3
+      ],
+      "finite": 5838,
+      "min": -0.2397812157869339,
+      "median": -0.11909425258636475,
+      "max": 0.06463197618722916,
+      "mean": -0.06756410515254907,
+      "std": 0.11016682451266752
+    },
+    "target_to_eef_xyz": {
+      "shape": [
+        1946,
+        3
+      ],
+      "finite": 5838,
+      "min": -0.08690999448299408,
+      "median": 0.006366340676322579,
+      "max": 0.3106409013271332,
+      "mean": 0.03903276625417671,
+      "std": 0.0746472743995735
+    },
+    "alternative_to_eef_xyz": {
+      "shape": [
+        1946,
+        3
+      ],
+      "finite": 5838,
+      "min": -0.3313083350658417,
+      "median": 0.03562930040061474,
+      "max": 0.533865749835968,
+      "mean": 0.04825673151094096,
+      "std": 0.17749982848430979
+    },
+    "target_to_basket_xyz": {
+      "shape": [
+        1946,
+        3
+      ],
+      "finite": 5838,
+      "min": -0.23850861191749573,
+      "median": 0.05825016833841801,
+      "max": 0.5191752910614014,
+      "mean": 0.10677521776396351,
+      "std": 0.19578183621207834
+    },
+    "target_displacement_xyz": {
+      "shape": [
+        1946,
+        3
+      ],
+      "finite": 5838,
+      "min": -0.11522245407104492,
+      "median": 0.0,
+      "max": 0.5279954671859741,
+      "mean": 0.06223771382527156,
+      "std": 0.1186478427466946
+    },
+    "eef_displacement_xyz": {
+      "shape": [
+        1946,
+        3
+      ],
+      "finite": 5838,
+      "min": -0.2681206166744232,
+      "median": -0.004422187805175781,
+      "max": 0.297874391078949,
+      "mean": -0.008456760791989261,
+      "std": 0.14340366552669637
+    },
+    "eef_target_distance": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.005432160571217537,
+      "median": 0.03189953416585922,
+      "max": 0.40806692838668823,
+      "mean": 0.09628187350446371,
+      "std": 0.10962261602354859
+    },
+    "eef_alternative_distance": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.1617637723684311,
+      "median": 0.30354611575603485,
+      "max": 0.5632666945457458,
+      "mean": 0.30659487257727863,
+      "std": 0.08662727994012304
+    },
+    "target_basket_distance": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.07766570895910263,
+      "median": 0.3714536726474762,
+      "max": 0.533157229423523,
+      "mean": 0.3626190717202848,
+      "std": 0.13304822520938914
+    },
+    "target_xy_displacement": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.0,
+      "median": 0.002680219942703843,
+      "max": 0.535243034362793,
+      "mean": 0.10989732461789474,
+      "std": 0.16863265461914634
+    },
+    "target_height_delta": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": -0.005715148989111185,
+      "median": 0.0,
+      "max": 0.26738253235816956,
+      "mean": 0.0705607436221181,
+      "std": 0.09142930710309047
+    },
+    "target_speed_per_action_step": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.0,
+      "median": 3.141859815514181e-05,
+      "max": 0.04323812574148178,
+      "mean": 0.0036239891154746765,
+      "std": 0.004917255587734823
+    },
+    "eef_speed_per_action_step": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.0,
+      "median": 0.008689694572240114,
+      "max": 0.013914141803979874,
+      "mean": 0.006953513407770263,
+      "std": 0.004301682916249724
+    },
+    "gripper_width": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.0009995563887059689,
+      "median": 0.06383107602596283,
+      "max": 0.08040386438369751,
+      "mean": 0.06189908631617837,
+      "std": 0.020655496387402737
+    },
+    "normalized_action_progress": {
+      "shape": [
+        1946
+      ],
+      "finite": 1946,
+      "min": 0.0,
+      "median": 0.42222222685813904,
+      "max": 0.9777777791023254,
+      "mean": 0.42866279432724275,
+      "std": 0.2616018910916456
+    }
+  },
+  "definitions": {
+    "raw": {
+      "object_a": "alphabet_soup_1",
+      "object_b": "cream_cheese_1",
+      "basket_region": "basket_1_contain_region",
+      "in_basket": "LIBERO in predicate: contact with and contained by basket region",
+      "grasped": "robosuite _check_grasp using gripper and object contact geoms"
+    },
+    "derived": {
+      "target": "object selected by the actual rollout task instruction",
+      "target_to_basket_xyz": "basket_xyz - target_xyz in world coordinates",
+      "displacement": "current xyz - first cached xyz in the same task/episode",
+      "speed_per_action_step": "Euclidean finite difference divided by action-step gap",
+      "phase_heuristic": {
+        "0": "approach",
+        "1": "pregrasp",
+        "2": "transport",
+        "3": "placing",
+        "4": "complete"
+      }
+    },
+    "thresholds_m": {
+      "near_target": 0.08,
+      "near_basket": 0.12,
+      "target_moved_xy": 0.03,
+      "target_lifted_z": 0.03
+    }
+  },
+  "tasks": [
+    {
+      "task_id": 0,
+      "language": "pick up the alphabet soup and place it in the basket",
+      "bddl_path": "/home/hpc/iwnt/iwnt144h/code/LIBERO/libero/libero/bddl_files/libero_object/pick_up_the_alphabet_soup_and_place_it_in_the_basket.bddl",
+      "goal_state": [
+        [
+          "in",
+          "alphabet_soup_1",
+          "basket_1_contain_region"
+        ]
+      ],
+      "target_object": "alphabet_soup_1"
+    },
+    {
+      "task_id": 1,
+      "language": "pick up the cream cheese and place it in the basket",
+      "bddl_path": "/home/hpc/iwnt/iwnt144h/code/LIBERO/libero/libero/bddl_files/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket.bddl",
+      "goal_state": [
+        [
+          "in",
+          "cream_cheese_1",
+          "basket_1_contain_region"
+        ]
+      ],
+      "target_object": "cream_cheese_1"
+    }
+  ],
+  "elapsed_seconds": 71.03313256800175
+}
