@@ -15,6 +15,8 @@
 
 **π0.5 hears the instruction. What it hears does not decide what it does.**
 
+[Erhan Lai](https://github.com/RyleHan)
+
 Vision-language-action models often act on visual shortcuts instead of
 language ([LIBERO-Plus](https://arxiv.org/abs/2510.13626),
 [LIBERO-CF](https://arxiv.org/abs/2602.17659),
@@ -244,7 +246,7 @@ npm install && npm run figures     # re-render assets/figures/*.png with local C
 ```bibtex
 @misc{silentl2026,
   title        = {The Silent L? Paired-Prompt Probing of Whether Vision-Language-Action Models Hear, Obey, and Can Be Written with Language},
-  author       = {RyleHan},
+  author       = {Lai, Erhan},
   year         = {2026},
   howpublished = {\url{https://github.com/RyleHan/silent-L}}
 }
